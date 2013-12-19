@@ -1,5 +1,5 @@
 """
-Django settings for FantasyKnessetWeb project.
+Django settings for fknesset project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=gl$zmd=*q%ohq2$zibg*gmmt(lo!py!tjl$b^mul901(qull)'
+SECRET_KEY = '3wnx8%hq+3u&4lf3j0eunsz)bop6!cj4l913q(l=n*uetbhzpz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,9 +47,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'FantasyKnessetWeb.urls'
+ROOT_URLCONF = 'fknesset.urls'
 
-WSGI_APPLICATION = 'FantasyKnessetWeb.wsgi.application'
+WSGI_APPLICATION = 'fknesset.wsgi.application'
 
 
 # Database
