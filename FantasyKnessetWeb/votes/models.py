@@ -9,3 +9,5 @@ class Candidate(models.Model):
     wikpedia_url = models.URLField(null=True)
     image_url = models.URLField(null=True)
     users = models.ManyToManyField(User)
+    def __unicode__(self):  
+        return self.name
