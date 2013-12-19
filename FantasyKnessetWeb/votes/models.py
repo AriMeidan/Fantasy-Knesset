@@ -1,9 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
-
-
 class Candidate(models.Model):
     name = models.CharField(max_length=200)
     pesonal_site = models.URLField(null=True)

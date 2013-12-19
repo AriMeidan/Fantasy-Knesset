@@ -1,8 +1,4 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 
-class indexView(generic.ListView):
-    template_name = 'fknesset/index.html'
-    context_object_name = 'Top 20 Knesset members'
-    
-    def get_queryset(self):
-        return Candidtae.objects
+def index(request):
+    return HttpResponse("Hello, world. You're at the poll index.")
