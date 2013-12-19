@@ -12,5 +12,5 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
 
-        return Candidate.objects[:20]
+        return Candidate.objects.all()[:20]
 
