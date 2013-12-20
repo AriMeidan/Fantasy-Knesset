@@ -3,11 +3,11 @@ from django.contrib.auth.models import User
 
 class Candidate(models.Model):
     name = models.CharField(max_length=200)
-    pesonal_site = models.URLField(null=True)
-    facebook_page = models.URLField(null=True)
-    wikpedia_article = models.URLField(null=True)
-    wikpedia_url = models.URLField(null=True)
-    image_url = models.URLField(null=True)
-    users = models.ManyToManyField(User)
+    pesonal_site = models.URLField(null=True, blank=True)
+    facebook_page = models.URLField(null=True, blank=True)
+    wikpedia_article = models.URLField(null=True, blank=True)
+    wikpedia_url = models.URLField(null=True, blank=True)
+    image_url = models.URLField(null=True, blank=True)
+    users = models.ManyToManyField(User, null=True, blank=True)
     def __unicode__(self):  
         return self.name
