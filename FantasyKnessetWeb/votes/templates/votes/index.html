@@ -1,1 +1,6 @@
-<li><a href="#">{{ poll.question }}</a></li>
+<h1>List Of Knesset Members</h1>
+<ul>
+{% for candidate in candidate_list %}
+    <li>{{ candidate.name }}</li>
+{% endfor %}
+</ul>

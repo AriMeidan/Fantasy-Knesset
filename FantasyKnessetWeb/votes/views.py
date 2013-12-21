@@ -8,7 +8,7 @@ from votes.models import Candidate
 
 class IndexView(generic.ListView):
     template_name = 'votes/index.html'
-    context_object_name = 'Top 20 Knesset members'
+    context_object_name = 'candidate_list'
 
     def get_queryset(self):
 
