@@ -11,6 +11,9 @@ class IndexView(generic.ListView):
     context_object_name = 'candidate_list'
 
     def get_queryset(self):
+        return Candidate.objects.all()[:20]    
 
-        return Candidate.objects.all()[:20]
+
+def register_signin(request):
+    return render(request, 'votes/register.html')
 
