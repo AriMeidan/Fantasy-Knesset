@@ -1,0 +1,14 @@
+        
+
+        
+        <div class="navbar-collapse collapse">
+          <div class="navbar-right navbar-form">
+          	{% if user_signed_in %}
+				<a  class="btn btn-success">Logout</a>
+          	{% else %}
+				<a  href="{% url 'votes:register' %}" class="btn btn-success">Register</a>
+	            <button type="button" class="btn btn-success">Sign in</button>
+            {% endif %}
+          </div>
+        </div><!--/.navbar-collapse -->
+

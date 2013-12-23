@@ -1,8 +1,11 @@
 	
 	{% extends "base.html" %}
-	{% include "register_signin.html" %}
 
-	
+    {% block register_signin %}
+		{% include "register_signin.html" %}
+    {% endblock %}
+    
+    
 	
 	{% block content %}
 
