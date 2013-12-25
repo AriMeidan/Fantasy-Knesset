@@ -15,5 +15,7 @@ class IndexView(generic.ListView):
 
 
 def register_signin(request):
-    return render(request, 'votes/register.html')
+    return render(request, 'votes/register_tabbed.html')
 
+def login(request):
+    return render(request, 'votes/login.html')

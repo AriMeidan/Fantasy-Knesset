@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="container">
+<div class="well">
+
+<div class="container">
+      <div class="row">
+  <div class="col-xs-5 col-xs-offset-3">
+  <div class="well">
+
+  
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li>
+    <a href="#home" data-toggle="tab">Home</a>
+  </li>
+  <li>
+    <a href="#profile" data-toggle="tab">Profile</a>
+  </li>
+</ul>
+
+
+
+    
+    <!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home">
+    
+          <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" class="form-control" placeholder="Password" required>
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+    
+  </div>
+  <div class="tab-pane" id="profile">
+    ...
+  </div>
+
+</div>
+</div>
+</div>
+    
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}
