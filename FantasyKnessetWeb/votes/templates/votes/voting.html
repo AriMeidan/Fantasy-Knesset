@@ -14,7 +14,7 @@
       <div class="container">
         <h1>Hello, Voters!</h1>
         <p>Choose your own Knesset Members, Check the differences between our representitves and what people accually want!</p>
-        <p><a class="btn btn-primary btn-lg" href= "voting" role="button">Vote Now &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href= ".." role="button">Back</a></p>
       </div>
     </div>
 
@@ -22,11 +22,11 @@
       <!-- Example row of columns -->
       <div class="row">
       	<h1 align= 'center'>Top 20</h1>
-      	{% for candidate in candidate_list%}
+      	{% for candidate in candidate_list %}
         <div class="col-md-2">
 			    <p align= 'center'>{{ candidate.name }}</p>  
-			    <p align= 'center'> <img src= {{ candidate.image_url}} alt="some_text" width="64" height="64"> </p> 
-			    <p align= 'center'><a class="btn btn-default" href="{{candidate.pesonal_site}}" role="button">View candidate</a></p> 	 
+			    <p align= 'center'> <img src= {{ candidate.image_url}} alt="some_text" width="42" height="42"> </p>  
+			    <p align= 'center'><a class="btn btn-default" href="#" role="button">Vote candidate!</a></p>  
 		</div>
 		{% endfor %} 
 
