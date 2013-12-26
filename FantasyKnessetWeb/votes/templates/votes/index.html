@@ -24,7 +24,7 @@
       	<h1 align= 'center'>Top 20 Members</h1>
       	{% for candidate in candidate_list%}
         <div class="col-md-2">
-			    <p align= 'center'>{{ candidate.name }}</p>  
+			    <p align= 'center'><b>{{ candidate.name}} </b> {{candidate.num_of_votes}} קולות</p>  
 			    <p align= 'center'> <img src= {{ candidate.image_url}} alt="some_text" width="64" height="64"> </p> 
 			    <p align= 'center'><a class="btn btn-default" href="{{candidate.pesonal_site}}" role="button">View candidate</a></p> 	 
 		</div>

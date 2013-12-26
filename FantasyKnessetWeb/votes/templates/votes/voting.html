@@ -25,7 +25,8 @@
       	{% for candidate in candidate_list %}
         <div class="col-md-2">
 			    <p align= 'center'>{{ candidate.name }}</p>  
-			    <p align= 'center'> <img src= {{ candidate.image_url}} alt="some_text" width="42" height="42"> </p>  
+			    <p align= 'center'> <img src= {{ candidate.image_url}} alt="some_text" width="42" height="42"> </p> 
+			    <p align= 'center'>{{voted}}</p> 
 			    <p align= 'center'><a class="btn btn-default" href="#" role="button">Vote candidate!</a></p>  
 		</div>
 		{% endfor %} 
