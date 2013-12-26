@@ -8,6 +8,9 @@ class Candidate(models.Model):
     wikpedia_article = models.URLField(null=True, blank=True)
     wikpedia_url = models.URLField(null=True, blank=True)
     image_url = models.URLField(null=True, blank=True)
+    num_of_votes = models.IntegerField(default=0)
+
     users = models.ManyToManyField(User, null=True, blank=True)
+    
     def __unicode__(self):  
         return self.name
