@@ -8,6 +8,16 @@ class Candidate(models.Model):
     wikpedia_article = models.URLField(null=True, blank=True)
     wikpedia_url = models.URLField(null=True, blank=True)
     image_url = models.URLField(null=True, blank=True)
+    
     users = models.ManyToManyField(User, null=True, blank=True)
+    
     def __unicode__(self):  
         return self.name
+    
+class Votes(models.Model):    
+    candidte = models.ForeignKey(Candidate, related_name='candidates_voted_for')
+    num_of_votes = models.IntegerField()
+    
+    def __unicode__(self):
+        return self.candidate
+    
