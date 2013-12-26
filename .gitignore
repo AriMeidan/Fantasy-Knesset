@@ -4,3 +4,5 @@
 *.pyc
 .project
 .pydevproject
+*.conflict
+.settings/

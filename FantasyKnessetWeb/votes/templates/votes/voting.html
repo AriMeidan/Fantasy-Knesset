@@ -1,0 +1,45 @@
+	
+	{% extends "base.html" %}
+    {% load voting %}
+    {% block register_signin %}
+		{% include "register_signin.html" %}
+    {% endblock %}
+    
+    
+	
+	{% block content %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Let's Vote!</h1>
+        <p>Choose your own Knesset Members, Check the differences between our representitves and what people accually want!</p>
+        <p><a class="btn btn-primary btn-lg" href= ".." role="button">Back</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+      	<h1 align= 'center'>Candidates</h1>
+      	{% for candidate in candidate_list %}
+        <div class="col-md-2">
+			    <p align= 'center'>{{ candidate.name }}</p>  
+			    <p align= 'center'> <img src= {{ candidate.image_url}} alt="some_text" width="42" height="42"> </p> 
+			    <p align= 'center'>{{voted}}</p> 
+			    {% if user|voted_for:candidate %}
+			    <p align= 'center'><a class="btn btn-default" href="#" role="button">unVote candidate!</a></p> 
+			    {% else %}
+			    <p align= 'center'><a class="btn btn-default" href="#" role="button">Vote candidate!</a></p> 
+			    {% endif %}
+			    
+		</div>
+		{% endfor %} 
+
+      <hr>
+
+
+    </div> <!-- /container -->
+    
+    {% endblock %}
+

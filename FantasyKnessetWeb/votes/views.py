@@ -19,10 +19,7 @@ class voting(generic.ListView):
     voted = 'true'
     
     def get_queryset(self):
-        return Candidate.objects.all()[:20]   
-     
-
-   
+        return Candidate.objects.all()[:20]
 
 
 def register_signin(request):
