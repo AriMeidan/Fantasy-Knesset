@@ -15,7 +15,7 @@ class Candidate(models.Model):
         return self.name
     
 class Votes(models.Model):    
-    candidte = models.ForeignKey(Candidate, related_name='candidates_voted_for')
+    candidate = models.ForeignKey(Candidate, related_name='candidates_voted_for')
     num_of_votes = models.IntegerField()
     
     def __unicode__(self):
