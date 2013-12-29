@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.conf import settings
 
 
 class Candidate(models.Model):
@@ -8,7 +9,7 @@ class Candidate(models.Model):
     facebook_page = models.URLField(null=True, blank=True)
     wikpedia_article = models.URLField(null=True, blank=True)
     image_url = models.URLField(null=True, blank=True)
-    voters = models.ManyToManyField(User, null=True, blank=True)
+    voters = models.ManyToManyField(settings.AUTH_USER_MODEL, null=True, blank=True)
 
     def __unicode__(self):
         return self.name

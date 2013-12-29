@@ -1,13 +1,30 @@
 {% extends "base.html" %}
 
+<link href="{{ STATIC_URL }}css/facebook.css" type="text/css" rel="stylesheet" media="all" />
+{% include 'django_facebook/_facebook_js.html' %}
+
 {% block content %}
 
 <div class="container">
-	<div class="well">
+    <div class="well">
+
+  <div class="row">
+  <div class="col-md-4 col-md-offset-4">
+  <div class="well">
+
+
+<form action="{% url 'facebook_connect' %}?facebook_login=1" method="post">
+    <input type="hidden" value="{{ request.path }}" name="next" />
+    <input type="hidden" value="{{ request.path }}" name="register_next" />
+    <input type="hidden" value="{{ request.path }}" name="error_next" />
+    {% csrf_token %}
+    <input onclick="F.connect(this.parentNode); return false;" type="image" src="{{ STATIC_URL }}django_facebook/images/facebook_login.png" />
+</form>
 
 		{% if form.errors %}
 			<p>Your username and password didn't match. Please try again.</p>
 		{% endif %}
+
 
 		<form class="form-signin" role="form" method="post" action="{% url 'votes:login' %}">
 			{% csrf_token %}
@@ -17,7 +34,9 @@
 			<input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign in" />
 			<input type="hidden" name="next" value="{% url 'votes:index' %}" />
 		</form>
-
+		</div>
+		</div>
+  </div>
 	</div>
 </div>
 
