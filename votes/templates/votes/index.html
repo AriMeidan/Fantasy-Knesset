@@ -1,7 +1,8 @@
 {% extends "base.html" %}
+{% load voting %}
 
-{% block register_signin %}
-	{% include "register_signin.html" %}
+{% block navbar_panel %}
+	{% include "register_login_panel.html" %}
 {% endblock %}
 
 {% block content %}
@@ -11,19 +12,25 @@
 	<div class="container">
 		<h1>Hello, Voters!</h1>
 		<p>Choose your own Knesset Members, Check the differences between our representitves and what people accually want!</p>
-		<p><a class="btn btn-primary btn-lg" href= "voting" role="button">Vote Now &raquo;</a></p>
 	</div>
 </div>
 
 <div class="container">
 	<div class="row">
-		<h1 align= 'center'>Top 20 Members</h1>
-		{% for candidate in candidate_list%}
+		<h1 align="center">Top 20 Candidates</h1>
+		{% for candidate in candidate_list %}
 			<div class="col-md-2">
-				<p align= 'center'><b>{{ candidate.name}} </b> {{candidate.number_of_votes}} קולות</p>
-				<p align= 'center'> <img src= {{ candidate.image_url}} alt="some_text" width="64" height="64"> </p> 
-				<p align= 'center'>
-					<a class="btn btn-default" href="{{candidate.pesonal_site}}" role="button">View candidate</a>
+				<p align="center"><b>{{ candidate.name }}</b> {{ candidate.number_of_votes }} קולות</p>
+				<p align="center"> <img src={{ candidate.image_url}} width="64" height="64"> </p> 
+				<p align="center">
+					<a class="btn btn-default" href="{{ candidate.pesonal_site }}" role="button">Candidate site</a>
+					{% if user.id %}
+							{% if user|voted_for:candidate %}
+								<a class="btn btn-default" href="#" role="button">unVote candidate!</a>
+							{% else %}
+								<a class="btn btn-default" href="#" role="button">Vote candidate!</a>
+							{% endif %}
+					{% endif %}
 				</p>
 			</div>
 		{% endfor %} 

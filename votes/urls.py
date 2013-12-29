@@ -1,10 +1,15 @@
 from django.conf.urls import patterns, url
+from django.views.generic import TemplateView
 
 from votes import views
 
 urlpatterns = patterns('',
+
     url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^register/$', views.register_signin, name='register'),
-    url(r'^login/$', views.login, name='login'),
-    url(r'^voting/$', views.voting.as_view(), name='voting'),
+
+	url(r'^account/register/$', views.register, name='register'),
+
+	url(r'^account/login/$', views.login, name='login'),
+
+    url(r'^account/logout/do$', views.logout, name='logout'),
 )
