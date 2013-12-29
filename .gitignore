@@ -5,4 +5,4 @@
 .project
 .pydevproject
 *.conflict
-.settings/
+*.sqlite3
