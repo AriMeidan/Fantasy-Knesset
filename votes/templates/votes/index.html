@@ -30,9 +30,9 @@
 					<a class="btn btn-default" href="{{ candidate.pesonal_site }}" role="button">Candidate site</a>
 					{% if user.id %}
 							{% if user|voted_for:candidate %}
-								<a class="btn btn-default" href="#" role="button">unVote candidate!</a>
+								<a class="btn btn-primary" href="{% url 'votes:unvote' candidate.pk %}" role="button">unVote candidate!</a>
 							{% else %}
-								<a class="btn btn-default" href="#" role="button">Vote candidate!</a>
+								<a class="btn btn-default" href="{% url 'votes:vote' candidate.pk %}" role="button">Vote candidate!</a>
 							{% endif %}
 					{% endif %}
 				</p>

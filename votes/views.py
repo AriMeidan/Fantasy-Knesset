@@ -18,10 +18,7 @@ class IndexView(generic.ListView):
 
 def register(request):
 
-    if request.method == 'GET':
-        context = {}
-        context.update(csrf(request))
-        return render_to_response('votes/register.html', context)
+    error = None
 
     if request.method == 'POST':
 
@@ -30,14 +27,39 @@ def register(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
 
-        # create and save the user to the db
-        user = User.objects.create_user(username, email, password)
-        user.save()
+        # continue only if the username is unique
+        if len(User.objects.filter(username=username)) == 0:
 
-        # authenticate the user
-        user = authenticate(username=username, password=password)
+            # create and save the user to the db
+            user = User.objects.create_user(username, email, password)
+            user.save()
 
-        # log the user in
-        login(request, user)
+            # authenticate the user, log in and redirect
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return redirect('votes:index')
 
+        # if username is not unique set the error
+        error = 'Username already exist'
+            
+    context = dict(error=error)
+    context.update(csrf(request))
+    return render_to_response('votes/register.html', context)
+
+
+def vote(request, candidate_pk):
+    candidate = Candidate.objects.get(pk=candidate_pk)
+    if request.user not in candidate.voters.all():
+        candidate.voters.add(request.user)
         return redirect('votes:index')
+    else:
+        return HttpResponse('user did not voted')
+
+
+def unvote(request, candidate_pk):
+    candidate = Candidate.objects.get(pk=candidate_pk)
+    if request.user in candidate.voters.all():
+        candidate.voters.remove(request.user)
+        return redirect('votes:index')
+    else:
+        return HttpResponse('user did not voted')
