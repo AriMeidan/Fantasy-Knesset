@@ -3,17 +3,18 @@
 {% block content %}
 
 <div class="container">
-	<div class="row">
-		<div class="col-xs-4 col-xs-offset-4">
-			<div class="well">
-				<form class="form-signin" role="form">
-					<h2 class="form-signin-heading">Please register</h2>
-					<input type="text" class="form-control" placeholder="Email address" required autofocus>
-					<input type="password" class="form-control" placeholder="Password" required>
-					<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-				</form>
-			</div>
-		</div>
+	<div class="well">
+
+		<form class="form-signin" role="form" method="post" action="{% url 'votes:register' %}">
+			{% csrf_token %}
+			<h2 class="form-signin-heading">Please register</h2>
+			<input type="text" class="form-control" placeholder="Username" name="username" required autofocus>
+			<input type="text" class="form-control" placeholder="eMail" name="email" required>
+			<input type="password" class="form-control" placeholder="Password" name="password" required>
+			<input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign up" />
+			<input type="hidden" name="next" value="{% url 'votes:index' %}" />
+		</form>
+
 	</div>
 </div>
 

@@ -10,7 +10,11 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
 	<div class="container">
-		<h1>Hello, Voters!</h1>
+		{% if user.id %}
+			<h1> Hello, {{ user.username }}!</h1>
+		{% else %}
+			<h1>Hello, Voters!</h1>
+		{% endif %}
 		<p>Choose your own Knesset Members, Check the differences between our representitves and what people accually want!</p>
 	</div>
 </div>
@@ -20,7 +24,7 @@
 		<h1 align="center">Top 20 Candidates</h1>
 		{% for candidate in candidate_list %}
 			<div class="col-md-2">
-				<p align="center"><b>{{ candidate.name }}</b> {{ candidate.number_of_votes }} קולות</p>
+				<p align="center"><b>{{ candidate.name }}</b><br >{{ candidate.number_of_votes }} votes</p>
 				<p align="center"> <img src={{ candidate.image_url}} width="64" height="64"> </p> 
 				<p align="center">
 					<a class="btn btn-default" href="{{ candidate.pesonal_site }}" role="button">Candidate site</a>

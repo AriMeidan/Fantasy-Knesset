@@ -1,6 +1,9 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect, render_to_response
 from django.views import generic
+from django.shortcuts import render_to_response, redirect
+from django.core.context_processors import csrf
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.models import User
 
 from votes.models import Candidate
 
@@ -14,20 +17,27 @@ class IndexView(generic.ListView):
 
 
 def register(request):
-	if request.method == 'GET':
-		return render_to_response('votes/register.html')
-	if request.method == 'POST':
-		return HttpResponse("in post method")
-	# name = request.POST.get('name')
-	# return HttpResponse("name=" + name)
 
-def login(request):
-	if request.method == 'GET':
-		return render_to_response('votes/login.html')
-	if request.method == 'POST':
-		return HttpResponse("in post method")
-	# name = request.POST.get('name')
-	# return HttpResponse("name=" + name)
+    if request.method == 'GET':
+        context = {}
+        context.update(csrf(request))
+        return render_to_response('votes/register.html', context)
 
-def logout(request):
-	return redirect('votes:index')
+    if request.method == 'POST':
+
+        # extract form parameters
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        # create and save the user to the db
+        user = User.objects.create_user(username, email, password)
+        user.save()
+
+        # authenticate the user
+        user = authenticate(username=username, password=password)
+
+        # log the user in
+        login(request, user)
+
+        return redirect('votes:index')
