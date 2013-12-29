@@ -12,3 +12,6 @@ class Candidate(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def number_of_votes(self):
+        return self.voters.count()
