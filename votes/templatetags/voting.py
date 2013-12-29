@@ -7,5 +7,5 @@ register = template.Library()
 def voted_for(user, candidate):
     if not user.id:
         return False
-    
-    return candidate.users.filter(id=user.id).exists()
+
+    return candidate.voters.filter(id=user.id).exists()
