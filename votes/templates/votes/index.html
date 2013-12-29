@@ -1,39 +1,33 @@
 {% extends "base.html" %}
 
-
 {% block register_signin %}
 	{% include "register_signin.html" %}
 {% endblock %}
-
-
 
 {% block content %}
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
-  <div class="container">
-    <h1>Hello, Voters!</h1>
-    <p>Choose your own Knesset Members, Check the differences between our representitves and what people accually want!</p>
-    <p><a class="btn btn-primary btn-lg" href= "voting" role="button">Vote Now &raquo;</a></p>
-  </div>
+	<div class="container">
+		<h1>Hello, Voters!</h1>
+		<p>Choose your own Knesset Members, Check the differences between our representitves and what people accually want!</p>
+		<p><a class="btn btn-primary btn-lg" href= "voting" role="button">Vote Now &raquo;</a></p>
+	</div>
 </div>
 
 <div class="container">
-  <!-- Example row of columns -->
-  <div class="row">
-  	<h1 align= 'center'>Top 20 Members</h1>
-  	{% for candidate in candidate_list%}
-    <div class="col-md-2">
-		    <p align= 'center'><b>{{ candidate.name}} </b> {{candidate.num_of_votes}} קולות</p>
-		    <p align= 'center'> <img src= {{ candidate.image_url}} alt="some_text" width="64" height="64"> </p> 
-		    <p align= 'center'><a class="btn btn-default" href="{{candidate.pesonal_site}}" role="button">View candidate</a></p> 	 
+	<div class="row">
+		<h1 align= 'center'>Top 20 Members</h1>
+		{% for candidate in candidate_list%}
+			<div class="col-md-2">
+				<p align= 'center'><b>{{ candidate.name}} </b> {{candidate.number_of_votes}} קולות</p>
+				<p align= 'center'> <img src= {{ candidate.image_url}} alt="some_text" width="64" height="64"> </p> 
+				<p align= 'center'>
+					<a class="btn btn-default" href="{{candidate.pesonal_site}}" role="button">View candidate</a>
+				</p>
+			</div>
+		{% endfor %} 
 	</div>
-	{% endfor %} 
-
-  <hr>
-
-
 </div> <!-- /container -->
 
 {% endblock %}
-
