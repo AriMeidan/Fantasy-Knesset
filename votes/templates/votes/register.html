@@ -5,11 +5,14 @@
 <div class="container">
 	<div class="well">
 
-		<form class="form-signin" role="form" method="post" action="{% url 'votes:register' %}">
+		{% if error %}
+			<div style="color: red">{{ error }}</div>
+		{% endif %}
+
+		<form class="form-signin" role="form" method="POST" action="{% url 'votes:register' %}">
 			{% csrf_token %}
 			<h2 class="form-signin-heading">Please register</h2>
 			<input type="text" class="form-control" placeholder="Username" name="username" required autofocus>
-			<input type="text" class="form-control" placeholder="eMail" name="email" required>
 			<input type="password" class="form-control" placeholder="Password" name="password" required>
 			<input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign up" />
 			<input type="hidden" name="next" value="{% url 'votes:index' %}" />
