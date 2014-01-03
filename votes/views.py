@@ -2,8 +2,10 @@ from django.http import HttpResponse
 from django.db.models import F
 from django.views import generic
 from django.shortcuts import render_to_response, redirect
+from django.core.urlresolvers import reverse_lazy
 from django.core.context_processors import csrf
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 from votes.models import Candidate
@@ -47,7 +49,7 @@ def register(request):
     context.update(csrf(request))
     return render_to_response('votes/register.html', context)
 
-
+@login_required(login_url=reverse_lazy('votes:login'))
 def vote(request, candidate_pk):
     candidate = Candidate.objects.get(pk=candidate_pk)
     if request.user not in candidate.voters.all():
@@ -57,7 +59,7 @@ def vote(request, candidate_pk):
 
     return redirect('votes:index')
 
-
+@login_required(login_url=reverse_lazy('votes:login'))
 def unvote(request, candidate_pk):
     candidate = Candidate.objects.get(pk=candidate_pk)
     if request.user in candidate.voters.all():

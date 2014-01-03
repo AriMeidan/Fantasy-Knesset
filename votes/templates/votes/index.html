@@ -27,12 +27,10 @@
 				<p><b>{{ candidate.name }}</b></p>
 				<p><img class="img-thumbnail" src={{ candidate.image_url}} width="96" height="96"></p>
 				<p>
-					{% if user.is_authenticated %}
-							{% if user|voted_for:candidate %}
-								<a class="btn btn-primary" href="{% url 'votes:unvote' candidate.pk %}" role="button">unVote candidate!</a>
-							{% else %}
-								<a class="btn btn-default" href="{% url 'votes:vote' candidate.pk %}" role="button">Vote candidate!</a>
-							{% endif %}
+					{% if user|voted_for:candidate %}
+						<a class="btn btn-primary" href="{% url 'votes:unvote' candidate.pk %}" role="button">unVote!</a>
+					{% else %}
+						<a class="btn btn-default" href="{% url 'votes:vote' candidate.pk %}" role="button">Vote!</a>
 					{% endif %}
 				</p>
 			</div>
