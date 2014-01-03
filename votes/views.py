@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.db.models import F
 from django.views import generic
 from django.shortcuts import render_to_response, redirect
 from django.core.context_processors import csrf
@@ -41,7 +42,7 @@ def register(request):
 
         # if username is not unique set the error
         error = 'Username already exist'
-            
+
     context = dict(error=error)
     context.update(csrf(request))
     return render_to_response('votes/register.html', context)
@@ -51,15 +52,17 @@ def vote(request, candidate_pk):
     candidate = Candidate.objects.get(pk=candidate_pk)
     if request.user not in candidate.voters.all():
         candidate.voters.add(request.user)
-        return redirect('votes:index')
-    else:
-        return HttpResponse('user did not voted')
+        candidate.number_of_votes = F('number_of_votes') + 1
+        candidate.save()
+
+    return redirect('votes:index')
 
 
 def unvote(request, candidate_pk):
     candidate = Candidate.objects.get(pk=candidate_pk)
     if request.user in candidate.voters.all():
         candidate.voters.remove(request.user)
-        return redirect('votes:index')
-    else:
-        return HttpResponse('user did not voted')
+        candidate.number_of_votes = F('number_of_votes') - 1
+        candidate.save()
+
+    return redirect('votes:index')
