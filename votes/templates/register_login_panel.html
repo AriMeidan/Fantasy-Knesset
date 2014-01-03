@@ -3,7 +3,7 @@
 	<div class="navbar-right navbar-form">
 		{% if user.id %}
 			<a  href="{% url 'votes:logout' %}" class="btn btn-success">Logout</a>
-			<img src="{{ user|fb_image }}" class="img-thumbnail">
+			<img src="{{ user|fb_image }}" class="img-circle">
 		{% else %}
 			<a  href="{% url 'votes:register' %}" class="btn btn-success">Register</a>
 			<a  href="{% url 'votes:login' %}" class="btn btn-success">Login</a>
