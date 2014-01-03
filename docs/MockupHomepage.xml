@@ -1,0 +1,489 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1723" measuredH="953" mockupW="1698" mockupH="953">
+  <controls>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="275" y="0" w="1129" h="953" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Fantasi%20Knesset%0Ahttp%3A//www.fantasiknesset.co.il</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Canvas" x="275" y="72" w="1129" h="30" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <color>10066329</color>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Image" x="292" y="120" w="69" h="68" measuredW="77" measuredH="79" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Logo</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::Label" x="384" y="111" w="-1" h="-1" measuredW="444" measuredH="68" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>60</size>
+        <text>Fantasi%20Knesset</text>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::DataGrid" x="1076" y="553" w="311" h="355" measuredW="278" measuredH="137" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <borderStyle>square</borderStyle>
+        <color>16777215</color>
+        <hasHeader>true</hasHeader>
+        <hLines>false</hLines>
+        <rowHeight>29</rowHeight>
+        <text>Name%20%28Party%29%2C%20Change%0AAhmad%20Tibi%20%28Balad%29%2C%20+%0AJosephus%20Flavius%20%28HaAvoda%29%2C%20-%0AMiri%20Mesika%20%28Independent%29%2C%20-%0ASilvester%20Stalone%20%28Independent%29%2C%20+%0A%7B100L%2C%2020C%7D</text>
+        <verticalScrollbar>true</verticalScrollbar>
+        <vLines>true</vLines>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::Label" x="307" y="232" w="-1" h="-1" measuredW="103" measuredH="40" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>32</size>
+        <text>Top%2020</text>
+      </controlProperties>
+    </control>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::Canvas" x="292" y="553" w="761" h="322" measuredW="100" measuredH="70" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <value>0</value>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::Label" x="307" y="513" w="-1" h="-1" measuredW="130" measuredH="40" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>32</size>
+        <text>Rest%20100</text>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::FieldSet" x="313" y="290" w="106" h="91" measuredW="200" measuredH="170" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ahmed%20Tibi</text>
+      </controlProperties>
+    </control>
+    <control controlID="62" controlTypeID="com.balsamiq.mockups::Image" x="338" y="305" w="53" h="39" measuredW="77" measuredH="79" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::Button" x="338" y="344" w="53" h="27" measuredW="49" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::FieldSet" x="419" y="290" w="106" h="91" measuredW="200" measuredH="170" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Miri%20Regev</text>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::Image" x="444" y="305" w="53" h="39" measuredW="77" measuredH="79" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::Button" x="429" y="344" w="83" h="27" measuredW="65" measuredH="27" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <text>UnVote</text>
+      </controlProperties>
+    </control>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::FieldSet" x="524" y="290" w="106" h="91" measuredW="200" measuredH="170" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>...%20the%20king</text>
+      </controlProperties>
+    </control>
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::Image" x="550" y="305" w="53" h="39" measuredW="77" measuredH="79" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::Button" x="550" y="344" w="53" h="27" measuredW="49" measuredH="27" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::FieldSet" x="630" y="290" w="106" h="91" measuredW="200" measuredH="170" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Bibi</text>
+      </controlProperties>
+    </control>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::Image" x="655" y="305" w="53" h="39" measuredW="77" measuredH="79" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::Button" x="655" y="344" w="53" h="27" measuredW="49" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::FieldSet" x="735" y="290" w="106" h="91" measuredW="200" measuredH="170" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::Image" x="762" y="305" w="53" h="39" measuredW="77" measuredH="79" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="75" controlTypeID="com.balsamiq.mockups::Button" x="762" y="344" w="53" h="27" measuredW="49" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::FieldSet" x="841" y="290" w="106" h="91" measuredW="200" measuredH="170" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::Image" x="867" y="305" w="54" h="39" measuredW="77" measuredH="79" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::Button" x="867" y="344" w="54" h="27" measuredW="49" measuredH="27" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::FieldSet" x="947" y="290" w="106" h="91" measuredW="200" measuredH="170" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::Image" x="973" y="305" w="54" h="39" measuredW="77" measuredH="79" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::FieldSet" x="1052" y="290" w="106" h="91" measuredW="200" measuredH="170" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::Image" x="1079" y="305" w="54" h="39" measuredW="77" measuredH="79" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Button" x="1079" y="344" w="54" h="27" measuredW="49" measuredH="27" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::FieldSet" x="1158" y="290" w="106" h="91" measuredW="200" measuredH="170" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::Image" x="1184" y="305" w="54" h="39" measuredW="77" measuredH="79" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::Button" x="1184" y="344" w="54" h="27" measuredW="49" measuredH="27" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::FieldSet" x="1264" y="290" w="106" h="91" measuredW="200" measuredH="170" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::Image" x="1290" y="305" w="54" h="39" measuredW="77" measuredH="79" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::Button" x="1290" y="344" w="54" h="27" measuredW="49" measuredH="27" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::FieldSet" x="313" y="395" w="106" h="91" measuredW="200" measuredH="170" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::Image" x="338" y="410" w="53" h="39" measuredW="77" measuredH="79" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::Button" x="338" y="449" w="53" h="27" measuredW="49" measuredH="27" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="94" controlTypeID="com.balsamiq.mockups::FieldSet" x="419" y="395" w="106" h="91" measuredW="200" measuredH="170" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="95" controlTypeID="com.balsamiq.mockups::Image" x="444" y="410" w="53" h="39" measuredW="77" measuredH="79" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="96" controlTypeID="com.balsamiq.mockups::Button" x="444" y="449" w="53" h="27" measuredW="49" measuredH="27" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::FieldSet" x="524" y="395" w="106" h="91" measuredW="200" measuredH="170" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="98" controlTypeID="com.balsamiq.mockups::Image" x="550" y="410" w="53" h="39" measuredW="77" measuredH="79" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="100" controlTypeID="com.balsamiq.mockups::FieldSet" x="630" y="395" w="106" h="91" measuredW="200" measuredH="170" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="101" controlTypeID="com.balsamiq.mockups::Image" x="655" y="410" w="53" h="39" measuredW="77" measuredH="79" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::Button" x="655" y="449" w="53" h="27" measuredW="49" measuredH="27" zOrder="48" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="103" controlTypeID="com.balsamiq.mockups::FieldSet" x="735" y="395" w="106" h="91" measuredW="200" measuredH="170" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="104" controlTypeID="com.balsamiq.mockups::Image" x="762" y="410" w="53" h="39" measuredW="77" measuredH="79" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::Button" x="762" y="449" w="53" h="27" measuredW="49" measuredH="27" zOrder="51" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="106" controlTypeID="com.balsamiq.mockups::FieldSet" x="841" y="395" w="106" h="91" measuredW="200" measuredH="170" zOrder="52" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="107" controlTypeID="com.balsamiq.mockups::Image" x="867" y="410" w="54" h="39" measuredW="77" measuredH="79" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="108" controlTypeID="com.balsamiq.mockups::Button" x="867" y="449" w="54" h="27" measuredW="49" measuredH="27" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::FieldSet" x="947" y="395" w="106" h="91" measuredW="200" measuredH="170" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::Image" x="973" y="410" w="54" h="39" measuredW="77" measuredH="79" zOrder="56" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="111" controlTypeID="com.balsamiq.mockups::Button" x="973" y="449" w="54" h="27" measuredW="49" measuredH="27" zOrder="57" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="112" controlTypeID="com.balsamiq.mockups::FieldSet" x="1052" y="395" w="106" h="91" measuredW="200" measuredH="170" zOrder="58" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="113" controlTypeID="com.balsamiq.mockups::Image" x="1079" y="410" w="54" h="39" measuredW="77" measuredH="79" zOrder="59" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="114" controlTypeID="com.balsamiq.mockups::Button" x="1079" y="449" w="54" h="27" measuredW="49" measuredH="27" zOrder="60" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="115" controlTypeID="com.balsamiq.mockups::FieldSet" x="1158" y="395" w="106" h="91" measuredW="200" measuredH="170" zOrder="61" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="116" controlTypeID="com.balsamiq.mockups::Image" x="1184" y="410" w="54" h="39" measuredW="77" measuredH="79" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="117" controlTypeID="com.balsamiq.mockups::Button" x="1184" y="449" w="54" h="27" measuredW="49" measuredH="27" zOrder="63" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="118" controlTypeID="com.balsamiq.mockups::FieldSet" x="1264" y="395" w="106" h="91" measuredW="200" measuredH="170" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mishehu</text>
+      </controlProperties>
+    </control>
+    <control controlID="119" controlTypeID="com.balsamiq.mockups::Image" x="1290" y="410" w="54" h="39" measuredW="77" measuredH="79" zOrder="65" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="120" controlTypeID="com.balsamiq.mockups::Button" x="1290" y="449" w="54" h="27" measuredW="49" measuredH="27" zOrder="66" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="126" controlTypeID="com.balsamiq.mockups::Button" x="1328" y="74" w="-1" h="-1" measuredW="63" measuredH="27" zOrder="67" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Logout</text>
+      </controlProperties>
+    </control>
+    <control controlID="159" controlTypeID="com.balsamiq.mockups::Button" x="536" y="449" w="83" h="27" measuredW="65" measuredH="27" zOrder="68" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <text>UnVote</text>
+      </controlProperties>
+    </control>
+    <control controlID="160" controlTypeID="com.balsamiq.mockups::Button" x="959" y="344" w="83" h="27" measuredW="65" measuredH="27" zOrder="69" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <text>UnVote</text>
+      </controlProperties>
+    </control>
+    <control controlID="161" controlTypeID="com.balsamiq.mockups::Label" x="1076" y="513" w="-1" h="-1" measuredW="237" measuredH="40" zOrder="70" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>32</size>
+        <text>Weekly%20changes</text>
+      </controlProperties>
+    </control>
+    <control controlID="166" controlTypeID="com.balsamiq.mockups::Arrow" x="512" y="243" w="66" h="101" measuredW="150" measuredH="100" zOrder="71" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="167" controlTypeID="com.balsamiq.mockups::CallOut" x="585" y="216" w="-1" h="-1" measuredW="241" measuredH="37" zOrder="72" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Candidate%20voted%20by%20the%20current%20user</text>
+      </controlProperties>
+    </control>
+    <control controlID="168" controlTypeID="com.balsamiq.mockups::TextArea" x="292" y="272" w="1095" h="226" measuredW="200" measuredH="140" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="169" controlTypeID="com.balsamiq.mockups::CallOut" x="77" y="188" w="-1" h="-1" measuredW="133" measuredH="40" zOrder="73" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Randomly%20ordered</text>
+      </controlProperties>
+    </control>
+    <control controlID="170" controlTypeID="com.balsamiq.mockups::Arrow" x="217" y="206" w="83" h="37" measuredW="150" measuredH="100" zOrder="74" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>top</direction>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="171" controlTypeID="com.balsamiq.mockups::CallOut" x="25" y="331" w="200" h="53" measuredW="200" measuredH="39" zOrder="75" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>The%20name%20is%20also%20a%20link%20to%20the%5Crcandidate%20detailes%20page</text>
+      </controlProperties>
+    </control>
+    <control controlID="172" controlTypeID="com.balsamiq.mockups::Arrow" x="225" y="296" w="95" h="35" measuredW="150" measuredH="100" zOrder="76" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="173" controlTypeID="com.balsamiq.mockups::Button" x="1004" y="881" w="-1" h="-1" measuredW="49" measuredH="27" zOrder="77" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <text>Vote</text>
+      </controlProperties>
+    </control>
+    <control controlID="174" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="305" y="570" w="-1" h="-1" measuredW="100" measuredH="281" zOrder="78" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%5B%20%5D%20Kahlon%0A%5Bx%5D%20Steinitz%0A%5Bx%5D%20Steinly%20Fisher%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu</text>
+      </controlProperties>
+    </control>
+    <control controlID="180" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="482" y="574" w="-1" h="-1" measuredW="54" measuredH="281" zOrder="79" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu</text>
+      </controlProperties>
+    </control>
+    <control controlID="183" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="645" y="568" w="-1" h="-1" measuredW="54" measuredH="281" zOrder="80" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu</text>
+      </controlProperties>
+    </control>
+    <control controlID="184" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="790" y="568" w="-1" h="-1" measuredW="54" measuredH="281" zOrder="81" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu</text>
+      </controlProperties>
+    </control>
+    <control controlID="185" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="923" y="569" w="-1" h="-1" measuredW="54" measuredH="281" zOrder="82" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu%0A%5B%20%5D%20Mishu</text>
+      </controlProperties>
+    </control>
+    <control controlID="186" controlTypeID="com.balsamiq.mockups::CallOut" x="29" y="559" w="193" h="53" measuredW="193" measuredH="39" zOrder="83" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>5%20columns%20of%2020%20candidates%2C%5Crordered%20by%20name</text>
+      </controlProperties>
+    </control>
+    <control controlID="187" controlTypeID="com.balsamiq.mockups::Arrow" x="225" y="530" w="75" h="29" measuredW="150" measuredH="100" zOrder="84" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="188" controlTypeID="com.balsamiq.mockups::CallOut" x="741" y="875" w="-1" h="-1" measuredW="153" measuredH="39" zOrder="85" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vote%20with%20checkboxes</text>
+      </controlProperties>
+    </control>
+    <control controlID="189" controlTypeID="com.balsamiq.mockups::Arrow" x="923" y="889" w="59" h="10" measuredW="150" measuredH="100" zOrder="86" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="190" controlTypeID="com.balsamiq.mockups::CallOut" x="25" y="647" w="-1" h="-1" measuredW="219" measuredH="39" zOrder="87" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Candidate%20voted%20by%20current%20user</text>
+      </controlProperties>
+    </control>
+    <control controlID="191" controlTypeID="com.balsamiq.mockups::Arrow" x="232" y="605" w="60" h="36" measuredW="150" measuredH="100" zOrder="88" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="192" controlTypeID="com.balsamiq.mockups::Label" x="384" y="173" w="-1" h="-1" measuredW="467" measuredH="21" zOrder="89" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Text%20text%20text%20text%20text%20text%20text%20text%20text%20text%20text%20text%20text%20text%20text%20text%20text%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="193" controlTypeID="com.balsamiq.mockups::CallOut" x="1426" y="580" w="297" h="67" measuredW="297" measuredH="40" zOrder="90" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Showing%20the%20changes%20in%20the%20120%20candidate%20list%5Crsince%207%20days%20ago.%5CrMay%20be%20sorted%20by%20name%20or%20by%20%22change%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="194" controlTypeID="com.balsamiq.mockups::Arrow" x="1323" y="533" w="103" h="47" measuredW="150" measuredH="100" zOrder="91" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
