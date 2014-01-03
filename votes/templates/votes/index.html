@@ -23,11 +23,10 @@
 	<div class="row">
 		<h1 align="center">Top 20 Candidates</h1>
 		{% for candidate in candidate_list %}
-			<div class="col-md-2">
-				<p align="center"><b>{{ candidate.name }}</b><br >{{ candidate.number_of_votes }} votes</p>
-				<p align="center"> <img src={{ candidate.image_url}} width="64" height="64"> </p> 
-				<p align="center">
-					<a class="btn btn-default" href="{{ candidate.pesonal_site }}" role="button">Candidate site</a>
+			<div class="col-md-2 text-center">
+				<p><b>{{ candidate.name }}</b></p>
+				<p><img class="img-thumbnail" src={{ candidate.image_url}} width="96" height="96"></p>
+				<p>
 					{% if user.is_authenticated %}
 							{% if user|voted_for:candidate %}
 								<a class="btn btn-primary" href="{% url 'votes:unvote' candidate.pk %}" role="button">unVote candidate!</a>
