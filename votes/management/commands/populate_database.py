@@ -21,5 +21,7 @@ class Command(BaseCommand):
                 if reader.line_num != 1:  # skip first row
                     p, created = Party.objects.get_or_create(
                         name=row[2])
-                    c = Candidate.objects.create(name=row[1],
-                                                 party=p)
+                    c = Candidate.objects.get_or_create(
+                        name=row[1], party=p, is_knesset_member=True,
+                        image_url=row[4]
+                    )

@@ -1,121 +1,121 @@
-number,name,party,address
-25,באסל גטאס,"בל""ד",כפר ראמה
-41,חנין זועבי,"בל""ד",נצרת
-42,ג`מאל זחאלקה,"בל""ד",כפר קרע
-5,אורי אורבך,הבית היהודי,מודיעין
-8,אריאל אטיאס,הבית היהודי,ירושלים
-15,אורי יהודה אריאל,הבית היהודי,כפר אדומים
-19,אלי בן-דהן,הבית היהודי,???
-20,נפתלי בנט,הבית היהודי,רעננה
-38,אבי וורצמן,הבית היהודי,באר שבע
-49,מרדכי יוגב,הבית היהודי,דולב
-57,זבולון כלפה,הבית היהודי,קיבוץ שומריה
-73,שולי מועלם-רפאלי,הבית היהודי,נווה דניאל
-85,אורית סטרוק,הבית היהודי,חברון
-86,ניסן סלומינסקי,הבית היהודי,אלקנה
-109,יוני שטבון,הבית היהודי,ירושלים
-119,איילת שקד,הבית היהודי,תל אביב
-3,יולי - יואל אדלשטיין,הליכוד,נווה דניאל
-12,זאב אלקין,הליכוד,ירושלים
-13,אופיר אקוניס,הליכוד,תל אביב
-14,גלעד ארדן,הליכוד,אשקלון
-28,גילה גמליאל,הליכוד,תל אביב
-32,דני דנון,הליכוד,מושב משמרת
-37,צחי הנגבי,הליכוד,מבשרת ציון
-44,ציפי חוטובלי,הליכוד,רחובות
-51,משה יעלון,הליכוד,מכבים-רעות
-58,חיים כץ,הליכוד,שוהם
-59,ישראל כץ,הליכוד,מושב כפר אחים
-62,לימור לבנת,הליכוד,תל אביב
-65,יריב לוין,הליכוד,מודיעין
-83,בנימין נתניהו,הליכוד,ירושלים
-84,גדעון סער,הליכוד,תל אביב
-90,משה זלמן פייגלין,הליכוד,גינות שומורון
-103,מירי רגב,הליכוד,ראש העין
-108,ראובן ריבלין,הליכוד,ירושלים
-110,יובל שטייניץ,הליכוד,מבשרת ציון
-114,סילבן שלום,הליכוד,רמת גן 
-17,מיכל בירן,העבודה,תל אביב
-18,בנימין (פואד) בן-אליעזר,העבודה,ראשון לציון
-21,עמר בר-לב,העבודה,כוכב יאיר
-22,חיליק בר,העבודה,ירושלים
-23,אבישי ברוורמן,העבודה,תל אביב
-36,יצחק הרצוג,העבודה,תל אביב
-50,שלי יחימוביץ`,העבודה,תל אביב
-53,איתן כבל,העבודה,ראש העין
-75,משה מזרחי,העבודה,שוהם
-77,מרב מיכאלי,העבודה,תל אביב
-81,אראל מרגלית,העבודה,ירושלים
-105,מיקי רוזנטל,העבודה,גבעתיים
-113,נחמן שי,העבודה,מבשרת ציון
-116,איציק שמולי,העבודה,לוד
-118,סתיו שפיר,העבודה,?
-61,ציפי לבני,התנועה,תל אביב
-78,עמרם מצנע,התנועה,חיפה
-96,עמיר פרץ,התנועה,שדרות
-97,דוד צור,התנועה,?
-111,מאיר שטרית,התנועה,יבנה
-112,אלעזר שטרן,התנועה,הושעיה
-2,עפו אגבאריה,"חד""ש",אום אל פחם
-24,מוחמד ברכה,"חד""ש",שפרעם
-45,דב חנין,"חד""ש",תל אביב
-87,חנא סוייד,"חד""ש",עילבון
-9,ישראל אייכלר,יהדות התורה,ירושלים
-16,יעקב אשר,יהדות התורה,בני ברק
-30,משה גפני,יהדות התורה,בני ברק
-68,יעקב ליצמן,יהדות התורה,ירושלים
-72,מנחם אליעזר מוזס,יהדות התורה,ירושלים
-79,אורי מקלב,יהדות התורה,ירושלים
-92,מאיר פרוש,יהדות התורה,ירושלים
-11,קארין אלהרר,יש עתיד,קריית אונו
-31,יעל גרמן,יש עתיד,הרצליה
-34,רונן הופמן,יש עתיד,הרצליה
-47,בועז טופורובסקי,יש עתיד,תל אביב
-56,מאיר כהן,יש עתיד,דימונה
-60,עליזה לביא,יש עתיד,נתניה
-64,מיקי לוי,יש עתיד,ירושלים
-67,דב ליפמן,יש עתיד,בית שמש
-71,יאיר לפיד,יש עתיד,תל אביב
-88,שמעון סולומון,יש עתיד,אשדוד
-91,שי פירון,יש עתיד,אורנית
-93,יעקב פרי,יש עתיד,תל אביב
-95,רינה פרנקל,יש עתיד,נהריה
-99,עדי קול,יש עתיד,תל אביב
-101,רות קלדרון,יש עתיד,תל אביב
-102,יפעת קריב,יש עתיד,הוד השרון
-107,יואל רזבוזוב,יש עתיד,נתניה
-115,עפר שלח,יש עתיד,מושב גינתון
-120,פנינה תמנו-שטה,יש עתיד,פתח תקווה
-4,יצחק אהרונוביץ,ישראל ביתנו,אבן יהודה
-6,שמעון אוחיון,ישראל ביתנו,ראשון לציון
-10,רוברט אילטוב,ישראל ביתנו,נתניה
-63,אורלי לוי-אבקסיס,ישראל ביתנו,קיבוץ מסילות
-66,אביגדור ליברמן,ישראל ביתנו,נוקדים
-69,עוזי לנדאו,ישראל ביתנו,רעננה
-70,סופה לנדבר,ישראל ביתנו,אשדוד
-89,חמד עמאר,ישראל ביתנו,שפרעם
-100,פאינה (פניה) קירשנבאום,ישראל ביתנו,?
-106,דוד רותם,ישראל ביתנו,אפרת
-117,יאיר שמיר,ישראל ביתנו,סביון
-26,אילן גילאון,מרצ,אשדוד
-27,זהבה גלאון,מרצ,פתח תקווה
-35,ניצן הורוביץ,מרצ,תל אביב
-43,תמר זנדברג,מרצ,תל אביב
-94,עיסאווי פריג`,מרצ,כפר קסם
-104,מיכל רוזין,מרצ,פתח תקווה
-46,ישראל חסון,קדימה,טבעון
-74,שאול מופז,קדימה,?
-1,טלב אבו עראר,"רע""ם תע""ל",ערערה
-29,מסעוד גנאים,"רע""ם תע""ל",סח'נין
-48,אחמד טיבי,"רע""ם תע""ל",טייבה
-98,אברהים צרצור,"רע""ם תע""ל",כפר קסם
-7,דוד אזולאי,"ש""ס",עכו
-33,אריה דרעי,"ש""ס",ירושלים
-39,יצחק וקנין,"ש""ס",מושב יערה
-40,נסים זאב,"ש""ס",ירושלים
-52,אליהו ישי,"ש""ס",ירושלים
-54,אמנון כהן,"ש""ס",רחובות
-55,יצחק כהן,"ש""ס",אשקלון
-76,אברהם מיכאלי,"ש""ס",אור יהודה
-80,יעקב מרגי,"ש""ס",מושב שדה צבי
-82,משולם נהרי,"ש""ס",ירושלים
+number,name,party,address,image
+25,באסל גטאס,"בל""ד",כפר ראמה,http://www.knesset.gov.il/mk/images/members/Jitas_Basil.jpg
+41,חנין זועבי,"בל""ד",נצרת,http://www.news1.co.il/uploadimages/NEWS1-971340358257294.jpg
+42,ג`מאל זחאלקה,"בל""ד",כפר קרע,http://www.nrg.co.il/images/archive/300x225/1/173/426.jpg
+5,אורי אורבך,הבית היהודי,מודיעין,http://www.nrg.co.il/images/archive/300x225/1/111/352.jpg
+8,אריאל אטיאס,הבית היהודי,ירושלים,http://www.magazin.org.il/userfiles/Atias_.jpg
+15,אורי יהודה אריאל,הבית היהודי,כפר אדומים,http://upload.wikimedia.org/wikipedia/commons/7/7b/Ariel_uri-yehuda.jpg
+19,אלי בן-דהן,הבית היהודי,???,http://www.knesset.gov.il/mk/images/members/BenDahan_Eliahu.jpg
+20,נפתלי בנט,הבית היהודי,רעננה,http://davidmerhav.files.wordpress.com/2012/12/559838_502614673093539_2042063130_n.jpg
+38,אבי וורצמן,הבית היהודי,באר שבע,http://www.baityehudi.org.il/wp-content/uploads/2012/12/avi-new.jpg
+49,מרדכי יוגב,הבית היהודי,דולב,http://www.knesset.gov.il/mk/images/members/Yogev_Mordechai.jpg
+57,זבולון כלפה,הבית היהודי,קיבוץ שומריה,http://www.knesset.gov.il/mk/images/members/Kalfa_Zvulun.jpg
+73,שולי מועלם-רפאלי,הבית היהודי,נווה דניאל,http://upload.wikimedia.org/wikipedia/commons/c/c8/Shuli_Mualem.jpg
+85,אורית סטרוק,הבית היהודי,חברון,http://msc.wcdn.co.il/w/w-700/992404-5.jpg
+86,ניסן סלומינסקי,הבית היהודי,אלקנה,http://www.knesset.gov.il/mk/images/members/slomiansky_nisan.jpg
+109,יוני שטבון,הבית היהודי,ירושלים,http://upload.wikimedia.org/wikipedia/commons/c/c2/Yoni_Chetboun.jpeg
+119,איילת שקד,הבית היהודי,תל אביב,http://upload.wikimedia.org/wikipedia/commons/1/11/AYELET_SHAKED.jpg
+3,יולי - יואל אדלשטיין,הליכוד,נווה דניאל,http://www.knesset.gov.il/mk/images/members/edelstein_yoel.jpg
+12,זאב אלקין,הליכוד,ירושלים,http://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Elkin_zeev.jpg/200px-Elkin_zeev.jpg
+13,אופיר אקוניס,הליכוד,תל אביב,http://atzuma-wisebeetle1.netdna-ssl.com/uploaded/120526abea720cc0de87ff8a054ffddc986ff3.jpg
+14,גלעד ארדן,הליכוד,אשקלון,http://communabuilder.tapuz.co.il/UsersFolders/ErdanForIsraelPrise/images/31197_2773894_1.jpg
+28,גילה גמליאל,הליכוד,תל אביב,http://msc.wcdn.co.il/archive/636968-5.jpg
+32,דני דנון,הליכוד,מושב משמרת,http://www.magazin.org.il/userfiles/dani_dannon.jpg
+37,צחי הנגבי,הליכוד,מבשרת ציון,http://www.nrg.co.il/images/archive/300x225/134/230.jpg
+44,ציפי חוטובלי,הליכוד,רחובות,http://upload.wikimedia.org/wikipedia/commons/c/c5/Tzipi_Hotovely_Portrait.jpg
+51,משה יעלון,הליכוד,מכבים-רעות,http://lib.cet.ac.il/storage/items/12400_12499/0000012401/12401_M.jpg
+58,חיים כץ,הליכוד,שוהם,http://www.nrg.co.il/images/archive/300x225/1/070/549.jpg
+59,ישראל כץ,הליכוד,מושב כפר אחים,http://www.nrg.co.il/images/archive/300x225/1/059/312.jpg
+62,לימור לבנת,הליכוד,תל אביב,http://www.edb.co.il/blog/wp-content/static/2011/06/livnat_limor.jpg
+65,יריב לוין,הליכוד,מודיעין,http://media.israelhayom.co.il/2011/03/28/130126703190549011a_b.jpg
+83,בנימין נתניהו,הליכוד,ירושלים,http://www.knesset.gov.il/mk/images/members/netanyahu_bibi.jpg
+84,גדעון סער,הליכוד,תל אביב,http://blinker.co.il/wp-content/uploads/2012/06/saar_gidon.jpg
+90,משה זלמן פייגלין,הליכוד,גינות שומורון,http://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Moshe_Feiglin.jpg/200px-Moshe_Feiglin.jpg
+103,מירי רגב,הליכוד,ראש העין,http://img.mako.co.il/2012/05/31/IBAID3_g.jpg
+108,ראובן ריבלין,הליכוד,ירושלים,http://www.nrg.co.il/images/archive/300x225/1/082/126.jpg
+110,יובל שטייניץ,הליכוד,מבשרת ציון,http://megafon-news.co.il/asys/wp-content/uploads/2013/05/%D7%99%D7%95%D7%91%D7%9C-%D7%A9%D7%98%D7%99%D7%99%D7%A0%D7%99%D7%A5-%D7%9E%D7%90%D7%AA%D7%A8-%D7%94%D7%9B%D7%A0%D7%A1%D7%AA.jpg
+114,סילבן שלום,הליכוד,רמת גן,http://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Silvan_Shaloml.jpg/250px-Silvan_Shaloml.jpg
+17,מיכל בירן,העבודה,תל אביב,http://www.havoda.org.il/Items/05934/%D7%9E%D7%99%D7%9B%D7%9C%20%D7%91%D7%99%D7%A8%D7%9F.jpg
+18,בנימין (פואד) בן-אליעזר,העבודה,ראשון לציון,http://www.knesset.gov.il/mk/images/members/beneliezer_binyamin.jpg
+21,עמר בר-לב,העבודה,כוכב יאיר,http://members.havoda.org.il/primaries/051770048.jpg
+22,חיליק בר,העבודה,ירושלים,http://www.havoda.org.il/Items/06106/06%20%D7%97%D7%99%D7%9C%D7%99%D7%A7%20%D7%91%D7%A8%20%D7%90.jpg
+23,אבישי ברוורמן,העבודה,תל אביב,http://www.knesset.gov.il/mk/images/members/braverman_avishay.jpg
+36,יצחק הרצוג,העבודה,תל אביב,http://www.havoda.org.il/Items/03558/%D7%99%D7%A6%D7%97%D7%A7%20%D7%94%D7%A8%D7%A6%D7%95%D7%923.JPG
+50,שלי יחימוביץ`,העבודה,תל אביב,http://www.havoda.org.il/Items/04962/%D7%A9%D7%9C%D7%99%20%D7%99%D7%97%D7%99%D7%9E%D7%95%D7%91%D7%99%D7%A5%20%207.jpg
+53,איתן כבל,העבודה,ראש העין,http://www.havoda.org.il/Items/02513/%D7%90%D7%99%D7%AA%D7%9F%20%D7%9B%D7%91%D7%9C.jpg
+75,משה מזרחי,העבודה,שוהם,http://upload.wikimedia.org/wikipedia/he/thumb/4/46/MizrahiMoshe.jpg/200px-MizrahiMoshe.jpg
+77,מרב מיכאלי,העבודה,תל אביב,http://www.havoda.org.il/Items/05978/%D7%9E%D7%A8%D7%91%20%D7%9E%D7%99%D7%9B%D7%90%D7%9C%D7%99.jpg
+81,אראל מרגלית,העבודה,ירושלים,http://www.havoda.org.il/Items/05922/%D7%90%D7%A8%D7%90%D7%9C%20%D7%9E%D7%A8%D7%92%D7%9C%D7%99%D7%AA.jpg
+105,מיקי רוזנטל,העבודה,גבעתיים,http://img.mako.co.il/2010/04/21/miki_c.jpg
+113,נחמן שי,העבודה,מבשרת ציון,http://www.nrg.co.il/images/archive/300x225/1/031/888.jpg
+116,איציק שמולי,העבודה,לוד,http://www.themarker.com/polopoly_fs/1.682147.1313083216!/image/3684488948.jpg_gen/derivatives/landscape_468/3684488948.jpg
+118,סתיו שפיר,העבודה,?,http://www.themarker.com/polopoly_fs/1.1857803.1352139935!/image/1450474671.jpg_gen/derivatives/landscape_300/1450474671.jpg
+61,ציפי לבני,התנועה,תל אביב,http://images.globes.co.il/Images/NewGlobes/bomba200x150/livni_200x150_01.gif
+78,עמרם מצנע,התנועה,חיפה,http://www.news1.co.il/uploadimages/NEWS1NEW-78121364116669.jpg
+96,עמיר פרץ,התנועה,שדרות,http://www.havoda.org.il/Items/02468/peretz_amir%20face.jpg
+97,דוד צור,התנועה,?,http://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/David_Tzur.jpg/250px-David_Tzur.jpg
+111,מאיר שטרית,התנועה,יבנה,http://mida.org.il/wp-content/uploads/2012/12/%D7%9E%D7%90%D7%99%D7%A8-%D7%A9%D7%98%D7%A8%D7%99%D7%AA-%D7%90%D7%AA%D7%A8-%D7%94%D7%9B%D7%A0%D7%A1%D7%AA.jpg
+112,אלעזר שטרן,התנועה,הושעיה,http://upload.wikimedia.org/wikipedia/commons/thumb/2/24/%D7%90%D7%9C%D7%A2%D7%96%D7%A8_%D7%A9%D7%98%D7%A8%D7%9F.jpg/250px-%D7%90%D7%9C%D7%A2%D7%96%D7%A8_%D7%A9%D7%98%D7%A8%D7%9F.jpg
+2,עפו אגבאריה,"חד""ש",אום אל פחם,http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Afu_Agbaria.jpg/180px-Afu_Agbaria.jpg
+24,מוחמד ברכה,"חד""ש",שפרעם,http://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Mohammad_Barakeh_2011.jpg/150px-Mohammad_Barakeh_2011.jpg
+45,דב חנין,"חד""ש",תל אביב,http://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Dovkhenin.jpg/250px-Dovkhenin.jpg
+87,חנא סוייד,"חד""ש",עילבון,http://www.knesset.gov.il/mk/images/members/swaid_hana.jpg
+9,ישראל אייכלר,יהדות התורה,ירושלים,http://megafon-news.co.il/asys/wp-content/uploads/2012/02/%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%90%D7%99%D7%99%D7%9B%D7%9C%D7%A8-%D7%9E%D7%90%D7%AA%D7%A8-%D7%94%D7%9B%D7%A0%D7%A1%D7%AA.jpg
+16,יעקב אשר,יהדות התורה,בני ברק,http://www.netonews.co.il/var/2211/273399-%D7%99%D7%A2%D7%A7%D7%91%20%D7%90%D7%A9%D7%A8,%20%D7%A8%D7%90%D7%A9%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%91%D7%A0%D7%99%20%D7%91%D7%A8%D7%A7.jpg
+30,משה גפני,יהדות התורה,בני ברק,http://www.iba.org.il/bet/pictures/P546567.jpg
+68,יעקב ליצמן,יהדות התורה,ירושלים,http://www.nrg.co.il/images/archive/300x225/908/902.jpg
+72,מנחם אליעזר מוזס,יהדות התורה,ירושלים,http://www.nrg.co.il/images/archive/300x225/1/160/139.jpg
+79,אורי מקלב,יהדות התורה,ירושלים,http://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Uri_Maklev.JPG/200px-Uri_Maklev.JPG
+92,מאיר פרוש,יהדות התורה,ירושלים,http://www.nrg.co.il/images/archive/300x225/513/671.jpg
+11,קארין אלהרר,יש עתיד,קריית אונו,http://yeshatid.org.il/wp-content/uploads/2012/11/karin.jpg
+31,יעל גרמן,יש עתיד,הרצליה,http://yeshatid.org.il/wp-content/uploads/2012/11/german.jpg
+34,רונן הופמן,יש עתיד,הרצליה,http://upload.wikimedia.org/wikipedia/he/c/ce/Ronenhofman.jpg
+47,בועז טופורובסקי,יש עתיד,תל אביב,http://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Boaz_Toporovsky.JPG/200px-Boaz_Toporovsky.JPG
+56,מאיר כהן,יש עתיד,דימונה,http://yeshatid.org.il/wp-content/uploads/2012/11/candidate_image5.jpg
+60,עליזה לביא,יש עתיד,נתניה,http://upload.wikimedia.org/wikipedia/he/thumb/9/97/Alizalaviewiki.jpg/250px-Alizalaviewiki.jpg
+64,מיקי לוי,יש עתיד,ירושלים,http://yeshatid.org.il/wp-content/uploads/2012/11/miki.jpg
+67,דב ליפמן,יש עתיד,בית שמש,http://www.knesset.gov.il/mk/images/members/Lipman_Dov.jpg
+71,יאיר לפיד,יש עתיד,תל אביב,http://www.haaretz.co.il/polopoly_fs/1.642098.1325168484!/image/4271621870.jpg_gen/derivatives/landscape_300/4271621870.jpg
+88,שמעון סולומון,יש עתיד,אשדוד,http://yeshatid.org.il/wp-content/uploads/2012/11/candidate_image6.jpg
+91,שי פירון,יש עתיד,אורנית,http://yeshatid.org.il/wp-content/uploads/2012/11/shay.jpg
+93,יעקב פרי,יש עתיד,תל אביב,http://yeshatid.org.il/wp-content/uploads/2012/11/perry.jpg
+95,רינה פרנקל,יש עתיד,נהריה,http://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/%D7%97%22%D7%9B_%D7%A8%D7%99%D7%A0%D7%94_%D7%A4%D7%A8%D7%A0%D7%A7%D7%9C.jpg/250px-%D7%97%22%D7%9B_%D7%A8%D7%99%D7%A0%D7%94_%D7%A4%D7%A8%D7%A0%D7%A7%D7%9C.jpg
+99,עדי קול,יש עתיד,תל אביב,http://yeshatid.org.il/wp-content/uploads/2012/11/adi.jpg
+101,רות קלדרון,יש עתיד,תל אביב,http://www.knesset.gov.il/mk/images/members/Calderon_Ruth.jpg
+102,יפעת קריב,יש עתיד,הוד השרון,http://www.nrg.co.il/images/archive/300x225/1/175/124.jpg
+107,יואל רזבוזוב,יש עתיד,נתניה,http://yeshatid.org.il/wp-content/uploads/2012/11/yoel-275x300.jpg
+115,עפר שלח,יש עתיד,מושב גינתון,http://yeshatid.org.il/wp-content/uploads/2012/11/ofer.jpg
+120,פנינה תמנו-שטה,יש עתיד,פתח תקווה,http://www.knesset.gov.il/mk/images/members/Tamnu-Shata_Penina.jpg
+4,יצחק אהרונוביץ,ישראל ביתנו,אבן יהודה,http://img.mako.co.il/2009/05/29/32531.jpg
+6,שמעון אוחיון,ישראל ביתנו,ראשון לציון,http://www.knesset.gov.il/mk/images/members/Ohayon_Shimon.jpg
+10,רוברט אילטוב,ישראל ביתנו,נתניה,http://www.pc.co.il/wp-content/uploads/2011/01/robert300.jpg
+63,אורלי לוי-אבקסיס,ישראל ביתנו,קיבוץ מסילות,http://www.beytenu.org.il/wp-content/uploads/2012/06/%D7%90%D7%95%D7%A8%D7%9C%D7%99-%D7%9C%D7%95%D7%99-%D7%90%D7%91%D7%A7%D7%A1%D7%99%D7%A1-%D7%90%D7%AA%D7%A8-%D7%94%D7%9B%D7%A0%D7%A1%D7%AA.jpg
+66,אביגדור ליברמן,ישראל ביתנו,נוקדים,http://images.globes.co.il/Images/NewGlobes/bomba200x150/AvigdorLiberman2_200x150.jpg
+69,עוזי לנדאו,ישראל ביתנו,רעננה,http://images.globes.co.il/Images/NewGlobes/bomba200x150/0531198-200.jpg
+70,סופה לנדבר,ישראל ביתנו,אשדוד,http://img.mako.co.il/2009/05/10/SOFA-LANDVER2_c.jpg
+89,חמד עמאר,ישראל ביתנו,שפרעם,http://www.hona.co.il/VIRUF/%D7%A0%D7%A0%D7%A0%D7%A0(2).jpg
+100,פאינה (פניה) קירשנבאום,ישראל ביתנו,?,http://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Faina_Kirschenbaum.jpg/220px-Faina_Kirschenbaum.jpg
+106,דוד רותם,ישראל ביתנו,אפרת,http://megafon-news.co.il/asys/wp-content/uploads/2012/06/David_Rotem.jpg
+117,יאיר שמיר,ישראל ביתנו,סביון,http://www.news1.co.il/Thumbs/200/NEW-770809352397919.jpg
+26,אילן גילאון,מרצ,אשדוד,http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Ilan_Gilon3.jpg/200px-Ilan_Gilon3.jpg
+27,זהבה גלאון,מרצ,פתח תקווה,http://images.nana10.co.il/upload/mediastock/img/15/0/5/5149.jpg
+35,ניצן הורוביץ,מרצ,תל אביב,http://www.news1.co.il/UploadImages/NEW-263286769390107.jpg
+43,תמר זנדברג,מרצ,תל אביב,http://www.nrg.co.il/images/archive/465x349/1/470/598.jpg
+94,עיסאווי פריג`,מרצ,כפר קסם,http://www.knesset.gov.il/mk/images/members/Farij_Issawi.jpg
+104,מיכל רוזין,מרצ,פתח תקווה,http://www.knesset.gov.il/mk/images/members/Rozin_Michal.jpg
+46,ישראל חסון,קדימה,טבעון,http://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Israel_hasson.JPG/220px-Israel_hasson.JPG
+74,שאול מופז,קדימה,?,http://www.bts-security.com/wp-content/uploads/2012/04/mofaz_shaul.jpg
+1,טלב אבו עראר,"רע""ם תע""ל",ערערה,http://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Talab_Abu_Arar.jpg/200px-Talab_Abu_Arar.jpg
+29,מסעוד גנאים,"רע""ם תע""ל",סח'נין,http://upload.wikimedia.org/wikipedia/he/thumb/f/f3/Ghanayim.JPG/200px-Ghanayim.JPG
+48,אחמד טיבי,"רע""ם תע""ל",טייבה,http://www.haaretz.co.il/polopoly_fs/1.1619226.1326793344!/image/3066886301.jpg_gen/derivatives/landscape_300/3066886301.jpg
+98,אברהים צרצור,"רע""ם תע""ל",כפר קסם,http://upload.wikimedia.org/wikipedia/he/thumb/8/86/Sheik_Ibrahim_(28).JPG/250px-Sheik_Ibrahim_(28).JPG
+7,דוד אזולאי,"ש""ס",עכו,http://www.datili.co.il/files_media/c2bb8626ea49aa7f3c2f847454047214.jpg
+33,אריה דרעי,"ש""ס",ירושלים,http://images1.ynet.co.il/PicServer2/24012010/2661809/zzz_s.jpg
+39,יצחק וקנין,"ש""ס",מושב יערה,http://shas.org.il/Items/03177/%D7%99%D7%A6%D7%97%D7%A7%20%D7%95%D7%A7%D7%A0%D7%99%D7%9F.JPG
+40,נסים זאב,"ש""ס",ירושלים,http://www.knesset.gov.il/mk/images/members/zeev_nissim.jpg
+52,אליהו ישי,"ש""ס",ירושלים,http://www.nrg.co.il/images/archive/300x225/1/024/824.jpg
+54,אמנון כהן,"ש""ס",רחובות,http://images.globes.co.il/Images/NewGlobes/bomba200x150/153880-200.jpg
+55,יצחק כהן,"ש""ס",אשקלון,http://www.nrg.co.il/images/archive/300x225/1/002/268.jpg
+76,אברהם מיכאלי,"ש""ס",אור יהודה,http://images.globes.co.il/Images/NewGlobes/bomba200x150/c12_avram-220.jpg
+80,יעקב מרגי,"ש""ס",מושב שדה צבי,http://www.news1.co.il/Uploadimages/NEWS1-13-354101836681366.jpg
+82,משולם נהרי,"ש""ס",ירושלים,http://www.knesset.gov.il/mk/images/members/nahari_meshulam.jpg
