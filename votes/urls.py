@@ -18,4 +18,7 @@ urlpatterns = patterns('',
     url(r'^logout/$',
         'django.contrib.auth.views.logout',
         {'next_page': reverse_lazy('votes:index')}, name="logout"),
+
+    url(r'^vote/(?P<candidate_pk>\d+)/$', views.vote, name='vote'),
+    url(r'^unvote/(?P<candidate_pk>\d+)/$', views.unvote, name='unvote'),
 )

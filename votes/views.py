@@ -1,8 +1,11 @@
 from django.http import HttpResponse
+from django.db.models import F
 from django.views import generic
 from django.shortcuts import render_to_response, redirect
+from django.core.urlresolvers import reverse_lazy
 from django.core.context_processors import csrf
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 from votes.models import Candidate
@@ -18,10 +21,7 @@ class IndexView(generic.ListView):
 
 def register(request):
 
-    if request.method == 'GET':
-        context = {}
-        context.update(csrf(request))
-        return render_to_response('votes/register.html', context)
+    error = None
 
     if request.method == 'POST':
 
@@ -30,14 +30,41 @@ def register(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
 
-        # create and save the user to the db
-        user = User.objects.create_user(username, email, password)
-        user.save()
+        # continue only if the username is unique
+        if len(User.objects.filter(username=username)) == 0:
 
-        # authenticate the user
-        user = authenticate(username=username, password=password)
+            # create and save the user to the db
+            user = User.objects.create_user(username, email, password)
+            user.save()
 
-        # log the user in
-        login(request, user)
+            # authenticate the user, log in and redirect
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return redirect('votes:index')
 
-        return redirect('votes:index')
+        # if username is not unique set the error
+        error = 'Username already exist'
+
+    context = dict(error=error)
+    context.update(csrf(request))
+    return render_to_response('votes/register.html', context)
+
+@login_required(login_url=reverse_lazy('votes:login'))
+def vote(request, candidate_pk):
+    candidate = Candidate.objects.get(pk=candidate_pk)
+    if request.user not in candidate.voters.all():
+        candidate.voters.add(request.user)
+        candidate.number_of_votes = F('number_of_votes') + 1
+        candidate.save()
+
+    return redirect('votes:index')
+
+@login_required(login_url=reverse_lazy('votes:login'))
+def unvote(request, candidate_pk):
+    candidate = Candidate.objects.get(pk=candidate_pk)
+    if request.user in candidate.voters.all():
+        candidate.voters.remove(request.user)
+        candidate.number_of_votes = F('number_of_votes') - 1
+        candidate.save()
+
+    return redirect('votes:index')

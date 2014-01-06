@@ -1,7 +1,7 @@
 {% load facebook_image %}
 <div class="navbar-collapse collapse">
 	<div class="navbar-right navbar-form">
-		{% if user.id %}
+		{% if user.is_authenticated %}
 			<a  href="{% url 'votes:logout' %}" class="btn btn-success">Logout</a>
 			<img src="{{ user|fb_image }}" class="img-circle">
 		{% else %}
