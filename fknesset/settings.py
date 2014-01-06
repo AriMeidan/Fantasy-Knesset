@@ -104,6 +104,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django_facebook.context_processors.facebook',
 )
 
+LOGIN_REDIRECT_URL = '/'
+
 AUTHENTICATION_BACKENDS = (
     'django_facebook.auth_backends.FacebookBackend',
     'django.contrib.auth.backends.ModelBackend',

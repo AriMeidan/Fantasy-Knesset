@@ -31,7 +31,7 @@
 					{% if user|voted_for:candidate %}
 						<a class="btn btn-primary" href="{% url 'votes:unvote' candidate.pk %}" role="button">unVote!</a>
 					{% else %}
-						<a class="btn btn-default" href="{% url 'votes:vote' candidate.pk %}" role="button">Vote!</a>
+						<a class="btn btn-default" href="{% url 'votes:vote' candidate.pk %}" next="{{request.path}}" role="button">Vote!</a>
 					{% endif %}
 				</p>
 			</div>
