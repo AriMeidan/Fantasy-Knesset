@@ -4,6 +4,7 @@
 *.pyc
 .project
 .pydevproject
+.settings/
 *.conflict
 *.sqlite3
 images
