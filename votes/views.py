@@ -27,6 +27,24 @@ def index(request):
                }
     
     return render(request, 'votes/index.html', context)
+ 
+@login_required(login_url=reverse_lazy('votes:login'))   
+def batch_vote(request):   
+   
+    if request.method == 'POST': 
+        
+        batch_vote = request.POST.getlist('candidate_checkbox')
+        
+        for candidate_pk in batch_vote:
+            candidate = Candidate.objects.get(pk=candidate_pk)
+            if request.user not in candidate.voters.all():
+                candidate.voters.add(request.user)
+                candidate.number_of_votes = F('number_of_votes') + 1
+                candidate.save()
+
+    return redirect('votes:index')
+    
+    
     
     
     

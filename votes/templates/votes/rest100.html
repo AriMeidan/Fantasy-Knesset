@@ -1,12 +1,13 @@
 <div class="container">
     <h1 align="center">Rest 100 Candidates</h1>
-      <form role="form">
+      <form role="form" method="post" action="{% url 'votes:batch_vote' %}" >
+        {% csrf_token %}
         <div class="row">
           {% for candidate in rest100 %}
-          <div class="col-md-3 col-xs-2 text-center">
+          <div class="col-md-3 col-xs-6">
             <div class="row">
              <div class="col-md-1 col-xs-9 text-right">
-              <input type="checkbox" placeholder=".col-xs-2" style="display: inline" class="form-control">
+              <input type="checkbox" name="candidate_checkbox" value="{{candidate.pk}}" placeholder=".col-xs-2" style="display: inline" class="form-control">
              </div>
            <div class="col-md-6 col-xs-9 text-left">
              <span style="display: inline" >{{candidate.name}}</span>
@@ -16,5 +17,6 @@
           </div>  
           {% endfor %}        
         </div>
+        <input class="btn btn-primary btn-block" type="submit" value="VOTE" />
       </form>
 </div>
