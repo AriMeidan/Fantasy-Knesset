@@ -1,0 +1,20 @@
+<div class="container">
+    <h1 align="center">Rest 100 Candidates</h1>
+      <form role="form">
+        <div class="row">
+          {% for candidate in rest100 %}
+          <div class="col-md-3 col-xs-2 text-center">
+            <div class="row">
+             <div class="col-md-1 col-xs-9 text-right">
+              <input type="checkbox" placeholder=".col-xs-2" style="display: inline" class="form-control">
+             </div>
+           <div class="col-md-6 col-xs-9 text-left">
+             <span style="display: inline" >{{candidate.name}}</span>
+          </div>
+            </div>
+           
+          </div>  
+          {% endfor %}        
+        </div>
+      </form>
+</div>

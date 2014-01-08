@@ -23,10 +23,12 @@
 <div class="container">
 	<div class="row">
 		<h1 align="center">Top 20 Candidates</h1>
-		{% for candidate in candidate_list %}
+		{% for candidate in top20 %}
 			<div class="col-md-2 text-center">
+			  <div class="well">
 				<p><b>{{ candidate.name }}</b></p>
-				<p><img class="img-thumbnail" src={{ candidate.image_url}} width="96" height="96"></p>
+				<!-- <p><img class="img-thumbnail" src={{ candidate.image_url}} width="96" height="96"></p> -->
+          <p><img class="img-thumbnail" src="http://www.mouserunner.com/ShinySmileys/angel.png" width="96" height="96"></p>
 				<p>
 					{% if user|voted_for:candidate %}
 						<a class="btn btn-primary" href="{% url 'votes:unvote' candidate.pk %}" role="button">unVote!</a>
@@ -34,9 +36,11 @@
 						<a class="btn btn-default" href="{% url 'votes:vote' candidate.pk %}" next="{{request.path}}" role="button">Vote!</a>
 					{% endif %}
 				</p>
+				</div>
 			</div>
 		{% endfor %} 
 	</div>
 </div> <!-- /container -->
 
+{% include "votes/rest100.html" %}
 {% endblock %}

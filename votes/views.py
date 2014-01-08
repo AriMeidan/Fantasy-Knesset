@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.db.models import F
 from django.views import generic
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import render_to_response, redirect, render
 from django.core.urlresolvers import reverse_lazy
 from django.core.context_processors import csrf
 from django.contrib.auth import login, authenticate
@@ -18,7 +18,18 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Candidate.objects.all()[:20]
 
-
+def index(request):
+    top20 = Candidate.objects.all()[:20]
+    rest100 = Candidate.objects.all()[21:120]
+    context = {
+               'top20' : top20,
+               'rest100' : rest100
+               }
+    
+    return render(request, 'votes/index.html', context)
+    
+    
+    
 def register(request):
 
     error = None
