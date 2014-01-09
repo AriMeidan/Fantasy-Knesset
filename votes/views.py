@@ -10,7 +10,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
-from votes.models import Candidate
+from votes.models import Candidate, Party
 
 
 class IndexView(generic.TemplateView):
@@ -26,6 +26,11 @@ class IndexView(generic.TemplateView):
         )
         return context
 
+
+class CandidatesByPartyView(generic.ListView):
+    template_name = 'votes/candidates.html'
+    context_object_name = 'parties'
+    model = Party
  
 @login_required(login_url=reverse_lazy('votes:login'))   
 def batch_vote(request):   
