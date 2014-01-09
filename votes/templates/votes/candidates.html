@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load voting %}
+
+
+{% block navbar_panel %}
+	{% include "register_login_panel.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+	<p class="lead">Your candidate is not in this list? Add him / her <a href="#">here</a></p>
+	<div class="panel-group" id="accordion">
+		{% for party in parties %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#{{ party.pk }}">
+							{{ party }}
+						</a>
+					</h4>
+				</div>
+				<div id="{{ party.pk }}" class="panel-collapse collapse out">
+					{% for candidate in party.candidate_set.all %}
+						<div class="panel-body row">
+							<div class="col-xs-9">{{ candidate }}</div>
+							<div class="col-xs-3">
+								{% if user|voted_for:candidate %}
+									<a class="btn btn-primary" href="{% url 'votes:unvote' candidate.pk %}" role="button">unVote!</a>
+								{% else %}
+									<a class="btn btn-default" href="{% url 'votes:vote' candidate.pk %}" next="{{request.path}}" role="button">Vote!</a>
+								{% endif %}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+</div><!-- /container -->
+
+{% endblock %}

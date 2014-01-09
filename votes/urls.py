@@ -9,6 +9,13 @@ urlpatterns = patterns('',
 
     url(r'^$', views.IndexView.as_view(), name='index'),
 
+    url(r'^candidates/$', views.CandidatesByPartyView.as_view(),
+        name='candidates'
+    ),
+    
+    #used for voting in a form
+    url(r'^votes/$', views.batch_vote, name='batch_vote'),
+
     url(r'^account/register/$', views.register, name='register'),
 
     url(r'^login/$',
