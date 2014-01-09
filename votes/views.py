@@ -1,3 +1,5 @@
+import random
+
 from django.http import HttpResponse
 from django.db.models import F
 from django.views import generic
@@ -16,8 +18,12 @@ class IndexView(generic.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-        context['top20'] = Candidate.objects.all()[:20]
-        context['rest100'] = Candidate.objects.all()[20:120]
+        context['top20'] = sorted(Candidate.objects.all()[:20],
+            key=lambda x: random.random()
+        )
+        context['rest100'] = sorted(Candidate.objects.all()[20:120],
+            key=lambda x: random.random()
+        )
         return context
 
  
