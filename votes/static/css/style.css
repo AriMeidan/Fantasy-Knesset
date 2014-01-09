@@ -1,0 +1,9 @@
+div.center-cropped {
+    display: inline-block;
+    width: 96px;
+    height: 96px;
+    margin: 5px;
+    border: 2px solid LightGray;
+    background-position: center center;
+    background-size: cover;
+}

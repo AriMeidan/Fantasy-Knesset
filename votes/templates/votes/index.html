@@ -26,11 +26,12 @@
 	<h1 align="center">Top 20 Candidates</h1>
 	<div class="row">
 		{% for candidate in top20 %}
-			<div class="col-md-2 text-center">
+			<div class="col-md-2 col-xs-4 text-center">
 				<div class="well">
 					<p><b>{{ candidate.name }}</b></p>
 					<!-- <p><img class="img-thumbnail" src={{ candidate.image_url}} width="96" height="96"></p> -->
-	        <p><img class="img-thumbnail" src="http://www.mouserunner.com/ShinySmileys/angel.png" width="96" height="96"></p>
+					<div class="center-cropped center" style="background-image: url('{{ candidate.image_url}}');">
+					</div>
 					<p>
 						{% if user|voted_for:candidate %}
 							<a class="btn btn-primary" href="{% url 'votes:unvote' candidate.pk %}" role="button">unVote!</a>
