@@ -7,8 +7,7 @@ from votes import views
 
 urlpatterns = patterns('',
 
-#     url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.IndexView.as_view(), name='index'),
     
     #used for voting in a form
     url(r'^votes/$', views.batch_vote, name='batch_vote'),
