@@ -1,14 +1,15 @@
-from django.http import HttpResponse
-from django.db.models import F
-from django.views import generic
-from django.shortcuts import render_to_response, redirect
-from django.core.urlresolvers import reverse_lazy
-from django.core.context_processors import csrf
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-
+from django.core.context_processors import csrf
+from django.core.urlresolvers import reverse_lazy
+from django.db.models import F
+from django.http import HttpResponse
+from django.shortcuts import render_to_response, redirect
+from django.views import generic
+from votes.forms import CreateCandidateForm
 from votes.models import Candidate
+
 
 
 class IndexView(generic.ListView):
@@ -68,3 +69,8 @@ def unvote(request, candidate_pk):
         candidate.save()
 
     return redirect('votes:index')
+
+
+class CreateCandidateView(generic.CreateView):
+    model = Candidate
+    form_class = CreateCandidateForm

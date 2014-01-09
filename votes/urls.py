@@ -21,4 +21,7 @@ urlpatterns = patterns('',
 
     url(r'^vote/(?P<candidate_pk>\d+)/$', views.vote, name='vote'),
     url(r'^unvote/(?P<candidate_pk>\d+)/$', views.unvote, name='unvote'),
+
+    url(r'^add-candidate/$', views.CreateCandidateView.as_view(), name='add-candidate'),
+
 )
