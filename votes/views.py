@@ -22,7 +22,7 @@ class IndexView(generic.TemplateView):
             key=lambda x: random.random()
         )
         context['rest100'] = sorted(Candidate.objects.all()[20:120],
-            key=lambda x: random.random()
+            key=lambda x: x.name
         )
         return context
 
