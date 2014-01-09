@@ -52,7 +52,12 @@
 				<div class="col-md-3 col-xs-6">
 					<input type="checkbox" name="candidate_checkbox" value="{{ candidate.pk }}"> {{ candidate.name }}
 				</div>
-			{% endfor %}    
+			{% endfor %}
+      {% for candidate in top20 %}
+        {% if user|voted_for:candidate %}
+          <input type="hidden" name="candidate_checkbox" value="{{ candidate.pk }}">
+        {% endif %}
+      {% endfor %}     
 		</div>
 		<input class="btn btn-primary btn-block" type="submit" value="VOTE" />
 	</form>
