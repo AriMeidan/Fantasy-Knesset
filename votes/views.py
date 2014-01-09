@@ -11,22 +11,15 @@ from django.contrib.auth.models import User
 from votes.models import Candidate
 
 
-class IndexView(generic.ListView):
+class IndexView(generic.TemplateView):
     template_name = 'votes/index.html'
-    context_object_name = 'candidate_list'
 
-    def get_queryset(self):
-        return Candidate.objects.all()[:20]
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context['top20'] = Candidate.objects.all()[:20]
+        context['rest100'] = Candidate.objects.all()[20:120]
+        return context
 
-def index(request):
-    top20 = Candidate.objects.all()[:20]
-    rest100 = Candidate.objects.all()[21:120]
-    context = {
-               'top20' : top20,
-               'rest100' : rest100
-               }
-    
-    return render(request, 'votes/index.html', context)
  
 @login_required(login_url=reverse_lazy('votes:login'))   
 def batch_vote(request):   
