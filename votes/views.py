@@ -31,22 +31,33 @@ def index(request):
 @login_required(login_url=reverse_lazy('votes:login'))   
 def batch_vote(request):   
    
+    log_string = ""
+    handle1=open('file.txt','w')    
+   
     if request.method == 'POST': 
         
-        batch_vote = request.POST.getlist('candidate_checkbox')
+        batch_votes = request.POST.getlist('candidate_checkbox')
         
-        for candidate_pk in batch_vote:
-            candidate = Candidate.objects.get(pk=candidate_pk)
-            if request.user not in candidate.voters.all():
-                candidate.voters.add(request.user)
-                candidate.number_of_votes = F('number_of_votes') + 1
-                candidate.save()
+        users_new_votes = Candidate.objects.filter(pk__in=batch_votes)
+        users_current_votes = request.user.candidate_set.all().values().only("id")
 
+        votes_to_add = set(users_new_votes) - set(users_current_votes)
+        votes_to_remove = set(users_current_votes) - set(users_new_votes)
+        
+        for candidate in votes_to_add:
+            candidate.voters.add(request.user)
+            candidate.number_of_votes = F('number_of_votes') + 1
+            candidate.save()
+        
+        for candidate in votes_to_remove :
+            candidate.voters.remove(request.user)
+            candidate.number_of_votes = F('number_of_votes') - 1
+            candidate.save()
+            
+    handle1.write(log_string)            
+    handle1.close();
     return redirect('votes:index')
-    
-    
-    
-    
+
     
 def register(request):
 
