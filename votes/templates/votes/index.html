@@ -50,7 +50,11 @@
 		<div class="row">
 			{% for candidate in rest100 %}
 				<div class="col-md-3 col-xs-6">
-					<input type="checkbox" name="candidate_checkbox" value="{{ candidate.pk }}"> {{ candidate.name }}
+	        {% if user|voted_for:candidate %}
+						<input type="checkbox" name="candidate_checkbox" value="{{ candidate.pk }}" checked> {{ candidate.name }}
+					{% else %}
+						<input type="checkbox" name="candidate_checkbox" value="{{ candidate.pk }}"> {{ candidate.name }}
+					{% endif %}
 				</div>
 			{% endfor %}
       {% for candidate in top20 %}
