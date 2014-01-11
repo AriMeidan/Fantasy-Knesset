@@ -32,15 +32,14 @@
 					<div class="center-cropped center" style="background-image: url('{{ candidate.image_url}}');">
 					</div>
 					<form role="form" method="post" action="{% url 'votes:vote' %}" >
-						<p>
-							{% csrf_token %}
-							{% if user|voted_for:candidate %}
-								<button class="btn btn-primary btn-block" type="submit" name="method" value="unvote">UnVote</button> 
-							{% else %}
-								<button class="btn btn-default btn-block" type="submit" name="method" value="vote">Vote</button>
-							{% endif %}
-						</p>
+						{% csrf_token %}
+						{% if user|voted_for:candidate %}
+							<button class="btn btn-primary btn-block" type="submit" name="method" value="unvote">UnVote</button> 
+						{% else %}
+							<button class="btn btn-default btn-block" type="submit" name="method" value="vote">Vote</button>
+						{% endif %}
 						<input type="hidden" name="candidate_pk" value="{{ candidate.pk }}">
+						<input type="hidden" name="next" value="{% url 'votes:index' %}" />
 					</form>
 				</div>
 			</div>

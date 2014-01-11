@@ -60,6 +60,8 @@ def batch_vote(request):
 @login_required(login_url=reverse_lazy('votes:login'))
 def vote(request):
 
+    next = 'votes:index'  # temporary next view
+
     if request.method == 'POST':
         candidate_pk = request.POST.get('candidate_pk')
         candidate = Candidate.objects.get(pk=candidate_pk)
@@ -69,7 +71,9 @@ def vote(request):
         elif method == 'unvote':
             candidate.unvote_by(request.user)
 
-    return redirect('votes:index')
+        next = request.POST.get('next')
+
+    return redirect(next)
 
 
 def register(request):
