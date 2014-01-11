@@ -56,6 +56,22 @@ def batch_vote(request):
     return redirect('votes:index')
 
 
+# for voting and unvoting
+@login_required(login_url=reverse_lazy('votes:login'))
+def vote(request):
+
+    if request.method == 'POST':
+        candidate_pk = request.POST.get('candidate_pk')
+        candidate = Candidate.objects.get(pk=candidate_pk)
+        method = request.POST.get('method');
+        if method == 'vote':
+            candidate.vote_by(request.user)
+        elif method == 'unvote':
+            candidate.unvote_by(request.user)
+
+    return redirect('votes:index')
+
+
 def register(request):
 
     error = None
@@ -85,17 +101,3 @@ def register(request):
     context = dict(error=error)
     context.update(csrf(request))
     return render_to_response('votes/register.html', context)
-
-
-@login_required(login_url=reverse_lazy('votes:login'))
-def vote(request, candidate_pk):
-    candidate = Candidate.objects.get(pk=candidate_pk)
-    candidate.vote_by(request.user)
-    return redirect('votes:index')
-
-
-@login_required(login_url=reverse_lazy('votes:login'))
-def unvote(request, candidate_pk):
-    candidate = Candidate.objects.get(pk=candidate_pk)
-    candidate.unvote_by(request.user)
-    return redirect('votes:index')
