@@ -36,6 +36,7 @@
 										<button class="btn btn-default btn-block" type="submit" name="method" value="vote">Vote</button>
 									{% endif %}
 									<input type="hidden" name="candidate_pk" value="{{ candidate.pk }}">
+									<input type="hidden" name="next" value="{% url 'votes:candidates' %}" />
 								</form>
 							</div>
 						</div>
