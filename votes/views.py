@@ -19,11 +19,11 @@ class IndexView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
         context['top20'] = sorted(Candidate.objects.all()[:20],
-            key=lambda x: random.random()
-        )
+                                  key=lambda x: random.random()
+                                  )
         context['rest100'] = sorted(Candidate.objects.all()[20:120],
-            key=lambda x: x.name
-        )
+                                    key=lambda x: x.name
+                                    )
         return context
 
 
@@ -31,34 +31,31 @@ class CandidatesByPartyView(generic.ListView):
     template_name = 'votes/candidates.html'
     context_object_name = 'parties'
     model = Party
- 
-@login_required(login_url=reverse_lazy('votes:login'))   
-def batch_vote(request):   
-      
-    if request.method == 'POST': 
-        
+
+
+@login_required(login_url=reverse_lazy('votes:login'))
+def batch_vote(request):
+
+    if request.method == 'POST':
+
         batch_votes = request.POST.getlist('candidate_checkbox')
 
         votes_to_add = Candidate.objects.filter(pk__in=batch_votes) \
-            .exclude(pk__in=request.user.candidate_set.all(). \
-                values('pk'))
-        
+            .exclude(pk__in=request.user.candidate_set.all().
+                     values('pk'))
+
         for candidate in votes_to_add:
-            candidate.voters.add(request.user)
-            candidate.number_of_votes = F('number_of_votes') + 1
-            candidate.save()
+            candidate.vote_by(request.user)
 
         votes_to_remove = request.user.candidate_set.all() \
             .exclude(pk__in=batch_votes)
-        
-        for candidate in votes_to_remove :
-            candidate.voters.remove(request.user)
-            candidate.number_of_votes = F('number_of_votes') - 1
-            candidate.save()
+
+        for candidate in votes_to_remove:
+            candidate.unvote_by(request.user)
 
     return redirect('votes:index')
 
-    
+
 def register(request):
 
     error = None
@@ -89,22 +86,16 @@ def register(request):
     context.update(csrf(request))
     return render_to_response('votes/register.html', context)
 
+
 @login_required(login_url=reverse_lazy('votes:login'))
 def vote(request, candidate_pk):
     candidate = Candidate.objects.get(pk=candidate_pk)
-    if request.user not in candidate.voters.all():
-        candidate.voters.add(request.user)
-        candidate.number_of_votes = F('number_of_votes') + 1
-        candidate.save()
-
+    candidate.vote_by(request.user)
     return redirect('votes:index')
+
 
 @login_required(login_url=reverse_lazy('votes:login'))
 def unvote(request, candidate_pk):
     candidate = Candidate.objects.get(pk=candidate_pk)
-    if request.user in candidate.voters.all():
-        candidate.voters.remove(request.user)
-        candidate.number_of_votes = F('number_of_votes') - 1
-        candidate.save()
-
+    candidate.unvote_by(request.user)
     return redirect('votes:index')
