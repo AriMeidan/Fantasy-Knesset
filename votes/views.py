@@ -11,6 +11,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 from votes.models import Candidate, Party
+from votes.forms import CreateCandidateForm
+
 
 
 class IndexView(generic.TemplateView):
@@ -89,6 +91,7 @@ def register(request):
     context.update(csrf(request))
     return render_to_response('votes/register.html', context)
 
+
 @login_required(login_url=reverse_lazy('votes:login'))
 def vote(request, candidate_pk):
     candidate = Candidate.objects.get(pk=candidate_pk)
@@ -99,6 +102,7 @@ def vote(request, candidate_pk):
 
     return redirect('votes:index')
 
+
 @login_required(login_url=reverse_lazy('votes:login'))
 def unvote(request, candidate_pk):
     candidate = Candidate.objects.get(pk=candidate_pk)
@@ -108,3 +112,8 @@ def unvote(request, candidate_pk):
         candidate.save()
 
     return redirect('votes:index')
+
+
+class CreateCandidateView(generic.CreateView):
+    model = Candidate
+    form_class = CreateCandidateForm
