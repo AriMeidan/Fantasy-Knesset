@@ -2,7 +2,6 @@ from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
 from django.core.urlresolvers import reverse_lazy
 
-
 from votes import views
 
 urlpatterns = patterns('',
@@ -12,9 +11,11 @@ urlpatterns = patterns('',
     url(r'^candidates/$', views.CandidatesByPartyView.as_view(),
         name='candidates'
     ),
-    
-    #used for voting in a form
+    # used for voting in a form
     url(r'^votes/$', views.batch_vote, name='batch_vote'),
+
+    # used for single vote
+    url(r'^vote/$', views.vote, name='vote'),
 
     url(r'^account/register/$', views.register, name='register'),
 
@@ -25,9 +26,6 @@ urlpatterns = patterns('',
     url(r'^logout/$',
         'django.contrib.auth.views.logout',
         {'next_page': reverse_lazy('votes:index')}, name="logout"),
-
-    url(r'^vote/(?P<candidate_pk>\d+)/$', views.vote, name='vote'),
-    url(r'^unvote/(?P<candidate_pk>\d+)/$', views.unvote, name='unvote'),
 
     url(r'^add-candidate/$', views.CreateCandidateView.as_view(), name='add-candidate'),
 
