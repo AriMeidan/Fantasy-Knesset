@@ -8,11 +8,12 @@ from django.core.urlresolvers import reverse_lazy
 from django.core.context_processors import csrf
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 from votes.models import Candidate, Party
 from votes.forms import CreateCandidateForm
 
+User = get_user_model()
 
 
 class IndexView(generic.TemplateView):
