@@ -10,7 +10,7 @@
 
 <div class="container">
 
-	<p class="lead">Your candidate is not in this list? Add him / her <a href="#">here</a></p>
+	<p class="lead">Your candidate is not in this list? Add him / her <a href="{% url 'votes:add-candidate' %}">here</a></p>
 	<div class="panel-group" id="accordion">
 		{% for party in parties %}
 			<div class="panel panel-default">
