@@ -48,3 +48,16 @@ class Candidate(models.Model):
 
     class Meta:
         ordering = ['-number_of_votes']
+
+
+class Log(models.Model):
+    candidate = models.ForeignKey(Candidate)
+    number_of_votes = models.PositiveIntegerField(default=0)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return 'candidate: {}, votes: {}, timestamp: {}' \
+            .format(self.candidate.name,
+                    self.number_of_votes,
+                    self.timestamp.strftime('%Y-%m-%d %H:%M')
+                    )
