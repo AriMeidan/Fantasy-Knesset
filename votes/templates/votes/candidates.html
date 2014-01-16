@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load voting %}
 {% load static %}
+{% load i18n %}
 
 {% block navbar_panel %}
 	{% include "register_login_panel.html" %}
@@ -10,8 +11,8 @@
 
 <div class="container">
 
-	<input type="text" class="form-control" name="search" id="candidate-search" placeholder="Search for candidate">
-	<p class="lead">Your candidate is not in this list? Add him / her <a href="#">here</a></p>
+	<input type="text" class="form-control" name="search" id="candidate-search" placeholder="{% trans "Search for candidate" %}">
+	<p class="lead">{% trans "Your candidate is not in this list? Add him / her" %} <a href="#">{% trans "here" %}</a></p>
 
 	<div class="panel-group" id="accordion">
 		{% for party in parties %}
@@ -31,9 +32,9 @@
 								<form role="form" method="post" action="{% url 'votes:vote' %}" >
 									{% csrf_token %}
 									{% if user|voted_for:candidate %}
-										<button class="btn btn-primary btn-block" type="submit" name="method" value="unvote">UnVote</button> 
+										<button class="btn btn-primary btn-block" type="submit" name="method" value="unvote">{% trans "UnVote" %}</button> 
 									{% else %}
-										<button class="btn btn-default btn-block" type="submit" name="method" value="vote">Vote</button>
+										<button class="btn btn-default btn-block" type="submit" name="method" value="vote">{% trans "Vote" %}</button>
 									{% endif %}
 									<input type="hidden" name="candidate_pk" value="{{ candidate.pk }}">
 									<input type="hidden" name="next" value="{% url 'votes:candidates' %}" />

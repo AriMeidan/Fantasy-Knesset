@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load voting %}
-
+{% load i18n %}
 
 {% block navbar_panel %}
 	{% include "register_login_panel.html" %}
@@ -12,18 +12,18 @@
 <div class="jumbotron">
 	<div class="container">
 		{% if user.is_authenticated %}
-			<h1> Hello, {{ user.username }}!</h1>
+			<h1>{% trans "Hello," %} {{ user.username }}!</h1>
 		{% else %}
-			<h1>Hello, Voters!</h1>
+			<h1>{% trans "Hello, Voters!" %}</h1>
 		{% endif %}
-		<p>Choose your own Knesset Members, Check the differences between our representitves and what people accually want!</p>
+		<p>{% trans "Choose your own Knesset Members, Check the differences between our representitves and what people accually want!" %}</p>
 	</div>
 </div>
 
 <div class="container">
 
 	<!-- Top 20 Candidates -->
-	<h1 align="center">Top 20 Candidates</h1>
+	<h1 align="center">{% trans "Top 20 Candidates" %}</h1>
 	<div class="row">
 		{% for candidate in top20 %}
 			<div class="col-md-2 col-xs-4 text-center">
@@ -34,9 +34,9 @@
 					<form role="form" method="post" action="{% url 'votes:vote' %}" >
 						{% csrf_token %}
 						{% if user|voted_for:candidate %}
-							<button class="btn btn-primary btn-block" type="submit" name="method" value="unvote">UnVote</button> 
+							<button class="btn btn-primary btn-block" type="submit" name="method" value="unvote">{% trans "UnVote" %}</button> 
 						{% else %}
-							<button class="btn btn-default btn-block" type="submit" name="method" value="vote">Vote</button>
+							<button class="btn btn-default btn-block" type="submit" name="method" value="vote">{% trans "Vote" %}</button>
 						{% endif %}
 						<input type="hidden" name="candidate_pk" value="{{ candidate.pk }}">
 						<input type="hidden" name="next" value="{% url 'votes:index' %}" />
@@ -47,7 +47,7 @@
 	</div>
 
 	<!-- Rest 100 Candidates -->
-	<h1 align="center">Rest 100 Candidates</h1>
+	<h1 align="center">{% trans "Rest 100 Candidates" %}</h1>
 	<form role="form" method="post" action="{% url 'votes:batch_vote' %}" >
 		{% csrf_token %}
 		<div class="row">
@@ -66,7 +66,7 @@
 				{% endif %}
 			{% endfor %}     
 		</div>
-		<input class="btn btn-primary btn-block" type="submit" value="VOTE" />
+		<input class="btn btn-primary btn-block" type="submit" value="{% trans "VOTE" %}" />
 	</form>
 
 </div><!-- /container -->

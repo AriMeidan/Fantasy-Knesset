@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-16 16:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/base.html:8 templates/base.html.py:27
+msgid "fantasy Knesset"
+msgstr "פנטזי כנסת"
+
+#: templates/base.html:22
+msgid "Toggle navigation"
+msgstr "אפשר ניווט"
+
+#: templates/base.html:44
+msgid "Hackita 2013"
+msgstr "הכיתה 2013"
+
+#: templates/register_login_panel.html:7
+msgid "Logout"
+msgstr "התנתק"
+
+#: templates/register_login_panel.html:12
+msgid "Register"
+msgstr "הרשמה"
+
+#: templates/register_login_panel.html:13
+msgid "Login"
+msgstr "התחבר"
+
+#: templates/votes/candidates.html:14
+msgid "Search for candidate"
+msgstr "חפש מועמד"
+
+#: templates/votes/candidates.html:15
+msgid "Your candidate is not in this list? Add him / her"
+msgstr "לא מוצא מועמד/ת ברשימה? הוסף אותו/ה בלינק"
+
+#: templates/votes/candidates.html:15 templates/votes/login.html:39
+msgid "here"
+msgstr "הבא"
+
+#: templates/votes/candidates.html:35 templates/votes/index.html:37
+msgid "UnVote"
+msgstr "בטל הצבעה"
+
+#: templates/votes/candidates.html:37 templates/votes/index.html:39
+msgid "Vote"
+msgstr "הצבע"
+
+#: templates/votes/index.html:15
+msgid "Hello,"
+msgstr "ברוך הבא"
+
+#: templates/votes/index.html:17
+msgid "Hello, Voters!"
+msgstr "ברוך הבא!"
+
+#: templates/votes/index.html:19
+msgid ""
+"Choose your own Knesset Members, Check the differences between our "
+"representitves and what people accually want!"
+msgstr "בחר את חברי הכנסת שלך וגלה את ההבדל בין הכנסת הקיימת לרצון העם"
+
+#: templates/votes/index.html:26
+msgid "Top 20 Candidates"
+msgstr "20 המועמדים המובילים"
+
+#: templates/votes/index.html:50
+msgid "Rest 100 Candidates"
+msgstr "יתר 100 המועמדים המובילים"
+
+#: templates/votes/index.html:69
+msgid "VOTE"
+msgstr "הצבע"
+
+#: templates/votes/login.html:12
+msgid "Please login"
+msgstr "מלא פרטי התחברות"
+
+#: templates/votes/login.html:27
+msgid "Your username and password didn't match. Please try again."
+msgstr "שם המתשמש והסיסמא אינם תואמים. אנא נסה שוב."
+
+#: templates/votes/login.html:32 templates/votes/register.html:16
+msgid "Username"
+msgstr "שם משתמש"
+
+#: templates/votes/login.html:33 templates/votes/register.html:17
+msgid "Password"
+msgstr "סיסמא"
+
+#: templates/votes/login.html:34
+msgid "Sign in"
+msgstr "התחבר"
+
+#: templates/votes/login.html:39
+msgid "Don't have an account? create one"
+msgstr "אין לך עדיין משתמש? צור אחד בלינק"
+
+#: templates/votes/register.html:15
+msgid "Please register"
+msgstr "מלא פרטי הרשמה"
+
+#: templates/votes/register.html:18
+msgid "Sign up"
+msgstr "הרשם"
