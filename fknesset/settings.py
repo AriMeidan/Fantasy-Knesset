@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'votes',
     'django_facebook',
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (
