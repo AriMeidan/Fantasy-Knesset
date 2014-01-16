@@ -2,7 +2,7 @@
 
 {% load facebook_image %}
 <div class="navbar-collapse collapse">
-	<div class="navbar-right navbar-form">
+	<div class="navbar-left navbar-form">
 		{% if user.is_authenticated %}
 			<a  href="{% url 'votes:logout' %}" class="btn btn-success">{% trans "Logout" %}</a>
 			{% if user.access_token %}
