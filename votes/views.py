@@ -12,6 +12,7 @@ from django.contrib.auth import get_user_model
 
 from votes.models import Candidate, Party
 from votes.forms import CreateCandidateForm
+from open_facebook.api import OpenFacebook
 
 User = get_user_model()
 
@@ -110,8 +111,28 @@ def register(request):
     return render_to_response('votes/register.html', context)
 
 
-
-
 class CreateCandidateView(generic.CreateView):
     model = Candidate
     form_class = CreateCandidateForm
+
+    def get_context_data(self, **kwargs):
+        context = super(CreateCandidateView, self).get_context_data(**kwargs)
+        context['parties'] = Party.objects.all()
+        return context
+
+
+def add_candidate_from_fb(request):
+    next = 'votes:index'  # temporary next view
+
+    if request.method == 'POST':
+        fb_url = request.POST.get('fb_page')
+        party = Party.objects.get(id=request.POST.get('party'))
+        fb = OpenFacebook()
+        res = fb.get(fb_url, fields='name, website, picture')
+        c = Candidate(name=res['name'], image_url=res['picture']['data']['url'],
+                      pesonal_site=res['website'], party=party)
+        c.save()
+
+        next = request.POST.get('next')
+
+    return redirect(next)

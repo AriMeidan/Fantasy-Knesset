@@ -5,24 +5,45 @@
 {% endblock %} 
 
 {% block content %}
-	<style type="text/css">
-		div.well {text-align: center}
-	</style>
-	
+
 <div class="container">
+
+	<div class="well">
+		<form class="form-signin" role="form" method="post"
+			action="{% url 'votes:add-from-fb' %}">
+			<input type="hidden" value="{{ request.path }}" name="next" /> {%
+			csrf_token %}
+			<table>
+				<tr>
+					<td><label> Paste a Facebook page url</label></td>
+					<td><input type="url" name="fb_page"></td>
+				<tr>
+					<td><label> Select the party</label></td>
+					<td><select class="form-control" name="party"> 
+						{% for party in parties %}
+							<option value="{{ party.id }} ">{{ party }}</option>
+						{% endfor %}
+						</select></td>
+			</table>
+			<input class="btn btn-primary" type="submit" name="Add"	style="text-align: center" />
+
+		</form>
+	</div>
+
 	<div class="well">
 
 		<h2 class="form-signin-heading">Please Enter Candidate Data</h2>
 		<div class="form-group">
-		<form class="form-signin" role="form" method="post" next="/">
-			{% csrf_token %}
-			<table>
-				{{ form.as_table}}
-			</table>
-			<input class="btn btn-primary" type="submit" name="Save" style="text-align: center" />
-		</form>
+			<form class="form-signin" role="form" method="post" next="/">
+				{% csrf_token %}
+				<table>
+					{{ form.as_table}}
+				</table>
+				<input class="btn btn-primary" type="submit" name="Save"
+					style="text-align: center" />
+			</form>
+		</div>
 	</div>
-</div>
 </div>
 
 {% endblock %}
