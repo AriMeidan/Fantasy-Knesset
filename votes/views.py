@@ -36,6 +36,10 @@ class CandidatesByPartyView(generic.ListView):
     model = Party
 
 
+class CandidateView(generic.DetailView):
+    model = Candidate
+
+
 @login_required(login_url=reverse_lazy('votes:login'))
 def batch_vote(request):
 

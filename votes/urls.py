@@ -8,9 +8,14 @@ urlpatterns = patterns('',
 
     url(r'^$', views.IndexView.as_view(), name='index'),
 
-    url(r'^candidates/$', views.CandidatesByPartyView.as_view(),
-        name='candidates'
-    ),
+    url(r'^candidates/$',
+        views.CandidatesByPartyView.as_view(),
+        name='candidates'),
+
+    url(r'^candidate/(?P<pk>\d+)/$',
+        views.CandidateView.as_view(),
+        name='candidate'),
+
     # used for voting in a form
     url(r'^votes/$', views.batch_vote, name='batch_vote'),
 
