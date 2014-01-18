@@ -1,18 +1,21 @@
 import random
 
-from django.http import HttpResponse
-from django.db.models import F
-from django.views import generic
-from django.shortcuts import render_to_response, redirect, render
-from django.core.urlresolvers import reverse_lazy
-from django.core.context_processors import csrf
-from django.contrib.auth import login, authenticate
+from django import forms
+from django.contrib import messages
+from django.contrib.auth import get_user_model, login, authenticate
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import get_user_model
-
-from votes.models import Candidate, Party
-from votes.forms import CreateCandidateForm
+from django.core.context_processors import csrf
+from django.core.urlresolvers import reverse_lazy, reverse
+from django.db.models import F
+from django.http import HttpResponse
+from django.shortcuts import render_to_response, redirect, render
+from django.views import generic
 from open_facebook.api import OpenFacebook
+from open_facebook.exceptions import ParameterException
+
+from votes.forms import CreateCandidateForm
+from votes.models import Candidate, Party
+
 
 User = get_user_model()
 
@@ -69,7 +72,7 @@ def vote(request):
     if request.method == 'POST':
         candidate_pk = request.POST.get('candidate_pk')
         candidate = Candidate.objects.get(pk=candidate_pk)
-        method = request.POST.get('method');
+        method = request.POST.get('method')
         if method == 'vote':
             candidate.vote_by(request.user)
         elif method == 'unvote':
@@ -121,18 +124,32 @@ class CreateCandidateView(generic.CreateView):
         return context
 
 
+class MyForm(forms.Form):
+    url = forms.URLField()
+    party = forms.ModelChoiceField(Party.objects.all())
+
+
 def add_candidate_from_fb(request):
-    next = 'votes:index'  # temporary next view
 
     if request.method == 'POST':
-        fb_url = request.POST.get('fb_page')
-        party = Party.objects.get(id=request.POST.get('party'))
-        fb = OpenFacebook()
-        res = fb.get(fb_url, fields='name, website, picture')
-        c = Candidate(name=res['name'], image_url=res['picture']['data']['url'],
-                      pesonal_site=res['website'], party=party)
-        c.save()
+        form = MyForm(request.POST)
+        if form.is_valid():
+            fb = OpenFacebook()
+            # fb_url = request.POST.get('fb_page')
+            fb_url = form.cleaned_data['url']
+            # party = Party.objects.get(id=request.POST.get('party'))
+            party = form.cleaned_data['party']
+            try:
+                res = fb.get(fb_url, fields='name, website, picture')
+                # add another validation
+                c = Candidate(name=res['name'], image_url=res['picture']['data']['url'],
+                              pesonal_site=res.get('website', None), party=party)
+                c.save()
+                messages.info(request, "Added Succesfully")
+                return redirect('votes:candidates')
+            except ParameterException as e:
+                messages.error(request, e.message)
+    else:
+        form = MyForm()
 
-        next = request.POST.get('next')
-
-    return redirect(next)
+    return render(request, 'votes/candidate_fb_form.html', {'form': form})
