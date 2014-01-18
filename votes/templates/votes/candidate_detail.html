@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load voting %}
-
+{% load i18n %}
 
 {% block navbar_panel %}
 	{% include "register_login_panel.html" %}
@@ -13,26 +13,26 @@
 	<h1>{{ object }}</h1>
 	<p class="lead">{{ object.party }}</p>
 	{% if object.is_knesset_member %}
-		<p class="lead">Knesset member</p>
+		<p class="lead">{% trans "Knesset member" %}</p>
 	{% endif %}
 	<div class="row">
 		<div class="col-md-9">
 			<div><!-- buttons -->
 				{% if object.pesonal_site %}
-					<a class="btn btn-default" href="{{ object.personal_site }}">Personal site</a>	
+					<a class="btn btn-default" href="{{ object.personal_site }}">{% trans "Personal site" %}</a>	
 				{% endif %}
 				{% if object.facebook_page %}
-					<a class="btn btn-default" href="{{ object.facebook_page }}">Facebook site</a>	
+					<a class="btn btn-default" href="{{ object.facebook_page }}">{% trans "Facebook page" %}</a>	
 				{% endif %}
 				{% if object.wikpedia_article %}
-					<a class="btn btn-default" href="{{ object.wikpedia_article }}">Wikipedia</a>	
+					<a class="btn btn-default" href="{{ object.wikpedia_article }}">{% trans "Wikipedia" %}</a>
 				{% endif %}
 				{% if object.open_k_url %}
-					<a class="btn btn-default" href="{{ object.open_k_url }}">OpenKnesset page</a>	
+					<a class="btn btn-default" href="{{ object.open_k_url }}">{% trans "OpenKnesset page" %}</a>
 				{% endif %}
 			</div>
 			<div><!-- history -->
-			VOTING HISTORY WILL BE GRAPHED HERE USING D3
+			{% trans "VOTING HISTORY WILL BE GRAPHED HERE USING D3" %}
 			</div>
 		</div>
 		<div class="col-md-3">

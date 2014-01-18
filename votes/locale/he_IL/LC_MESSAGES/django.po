@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-16 16:01+0200\n"
+"POT-Creation-Date: 2014-01-18 18:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/base.html:8 templates/base.html.py:27
+#: templates/base.html:8 templates/base.html.py:28
 msgid "fantasy Knesset"
 msgstr "פנטזי כנסת"
 
-#: templates/base.html:22
+#: templates/base.html:23
 msgid "Toggle navigation"
 msgstr "אפשר ניווט"
 
-#: templates/base.html:44
+#: templates/base.html:45
 msgid "Hackita 2013"
 msgstr "הכיתה 2013"
 
@@ -41,6 +41,30 @@ msgstr "הרשמה"
 msgid "Login"
 msgstr "התחבר"
 
+#: templates/votes/candidate_detail.html:16
+msgid "Knesset member"
+msgstr "חבר/ה בכנסת הנוכחית"
+
+#: templates/votes/candidate_detail.html:22
+msgid "Personal site"
+msgstr "אתר אישי"
+
+#: templates/votes/candidate_detail.html:25
+msgid "Facebook page"
+msgstr "עמוד פייסבוק"
+
+#: templates/votes/candidate_detail.html:28
+msgid "Wikipedia"
+msgstr "ויקיפדיה"
+
+#: templates/votes/candidate_detail.html:31
+msgid "OpenKnesset page"
+msgstr "עמוד בכנסת פתוחה"
+
+#: templates/votes/candidate_detail.html:35
+msgid "VOTING HISTORY WILL BE GRAPHED HERE USING D3"
+msgstr "היסטורית ההצבעות תופיעה כאן בויזואליזציה מאוד מאוד מרשימה בקרוב :-)"
+
 #: templates/votes/candidates.html:14
 msgid "Search for candidate"
 msgstr "חפש מועמד"
@@ -53,11 +77,11 @@ msgstr "לא מוצא מועמד/ת ברשימה? הוסף אותו/ה בלינ�
 msgid "here"
 msgstr "הבא"
 
-#: templates/votes/candidates.html:35 templates/votes/index.html:37
+#: templates/votes/candidates.html:37 templates/votes/index.html:37
 msgid "UnVote"
 msgstr "בטל הצבעה"
 
-#: templates/votes/candidates.html:37 templates/votes/index.html:39
+#: templates/votes/candidates.html:39 templates/votes/index.html:39
 msgid "Vote"
 msgstr "הצבע"
 
