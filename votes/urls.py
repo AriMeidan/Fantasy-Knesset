@@ -16,6 +16,10 @@ urlpatterns = patterns('',
         views.CandidateView.as_view(),
         name='candidate'),
 
+    url(r'^candidate/(?P<pk>\d+)/history$',
+        views.candidate_history,
+        name='candidate_history'),
+
     # used for voting in a form
     url(r'^votes/$', views.batch_vote, name='batch_vote'),
 
