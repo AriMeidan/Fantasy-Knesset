@@ -3,6 +3,7 @@
 
 *.orig
 *.pyc
+.metadata/
 .project
 .pydevproject
 .settings/

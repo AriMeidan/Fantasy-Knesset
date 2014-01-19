@@ -31,4 +31,8 @@ urlpatterns = patterns('',
     url(r'^logout/$',
         'django.contrib.auth.views.logout',
         {'next_page': reverse_lazy('votes:index')}, name="logout"),
+
+    url(r'^add-candidate/$', views.CreateCandidateView.as_view(), name='add-candidate'),
+    url(r'^add-candidate/new/$', views.add_candidate_from_fb, name='add-from-fb'),
+
 )
