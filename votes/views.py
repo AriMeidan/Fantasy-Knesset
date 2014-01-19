@@ -1,4 +1,5 @@
 import random
+import json
 
 from django import forms
 from django.contrib import messages
@@ -15,7 +16,7 @@ from open_facebook.api import OpenFacebook
 from open_facebook.exceptions import ParameterException
 
 from votes.forms import CreateCandidateForm
-from votes.models import Candidate, Party
+from votes.models import Candidate, Party, Log
 
 User = get_user_model()
 
@@ -42,6 +43,16 @@ class CandidatesByPartyView(generic.ListView):
 
 class CandidateView(generic.DetailView):
     model = Candidate
+
+
+def candidate_history(request, pk):
+    logs = Log.objects.filter(candidate__pk=pk)
+    history = []
+    for log in logs:
+        timestamp = log.timestamp.strftime("%Y-%m-%d %H:%M")
+        value = log.number_of_votes
+        history.append(dict(timestamp=timestamp, value=value))
+    return HttpResponse(json.dumps(history))
 
 
 @login_required(login_url=reverse_lazy('votes:login'))

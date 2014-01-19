@@ -40,11 +40,34 @@ class Candidate(models.Model):
             self.number_of_votes = models.F('number_of_votes') + 1
             self.save()
 
+            Log.log(self.pk)
+
     def unvote_by(self, user):
         if user in self.voters.all():
             self.voters.remove(user)
             self.number_of_votes = models.F('number_of_votes') - 1
             self.save()
 
+            Log.log(self.pk)
+
     class Meta:
         ordering = ['-number_of_votes']
+
+
+class Log(models.Model):
+    candidate = models.ForeignKey(Candidate)
+    number_of_votes = models.PositiveIntegerField(default=0)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return u'candidate: {}, votes: {}, timestamp: {}' \
+            .format(self.candidate.name,
+                    self.number_of_votes,
+                    self.timestamp.strftime('%Y-%m-%d %H:%M')
+                    )
+
+    @classmethod
+    def log(cls, pk):
+        c = Candidate.objects.get(pk=pk)
+        cls.objects.create(candidate=c,
+                           number_of_votes=c.number_of_votes)
