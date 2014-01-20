@@ -1,6 +1,7 @@
-from django.contrib.auth.models import User
-from django.db import models
 from django.conf import settings
+from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
+from django.db import models
 
 
 class Party(models.Model):
@@ -30,6 +31,9 @@ class Candidate(models.Model):
     wikpedia_url = models.URLField(null=True, blank=True)
     open_k_url = models.URLField(null=True, blank=True)
     image_url = models.URLField(null=True, blank=True)
+
+    def get_absolute_url(self):
+        return reverse('votes:candidate', args=(self.id,))
 
     def __unicode__(self):
         return self.name
