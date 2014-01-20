@@ -17,6 +17,8 @@
 			<h1>{% trans "Hello, Voters!" %}</h1>
 		{% endif %}
 		<p>{% trans "Choose your own Knesset Members, Check the differences between our representitves and what people accually want!" %}</p>
+		<p><a href="{% url 'votes:candidates' %}" role="button" class="btn btn-primary btn-lg">{% trans "Start voting now" %} »</a></p>
+		
 	</div>
 </div>
 
