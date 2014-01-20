@@ -1,4 +1,6 @@
 {% extends "base.html" %} 
+{% load i18n %}
+
 
 {% block navbar_panel %} 
 	{% include "register_login_panel.html" %} 
@@ -10,7 +12,7 @@
 
 	<div class="well">
 
-		<h2 class="form-signin-heading">Please Paste Candidates Facebook Page Link</h2>
+		<h2 class="form-signin-heading">{% trans "Paste Candidates Facebook Page Link" %}</h2>
 		<div class="form-group">
 			<form class="form-signin" role="form" method="post" next="/">
 				{% csrf_token %}

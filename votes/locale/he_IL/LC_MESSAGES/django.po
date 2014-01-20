@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-18 18:55+0200\n"
+"POT-Creation-Date: 2014-01-20 14:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,63 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/base.html:8 templates/base.html.py:28
+#: forms.py:20
+msgid "Independent"
+msgstr "לא משוייך"
+
+#: models.py:9 models.py:28
+msgid "name"
+msgstr "שם"
+
+#: models.py:10
+msgid "official site"
+msgstr "אתר רשמי"
+
+#: models.py:11 models.py:32
+msgid "facebook_page"
+msgstr "דף פייסבוק"
+
+#: models.py:12 models.py:33
+msgid "wikipedia_article"
+msgstr "עמוד הויקיפדיה"
+
+#: models.py:13 models.py:34
+msgid "wikipedia_url"
+msgstr "קישור ויקיפדיה"
+
+#: models.py:14 models.py:35
+msgid "open_knesset_url"
+msgstr "הדף באתר כנסת פתוחה"
+
+#: models.py:15
+msgid "logo_url"
+msgstr "קישור לתמונת הלוגו"
+
+#: models.py:24
+msgid "party"
+msgstr "מפלגה"
+
+#: models.py:31
+msgid "personal site"
+msgstr "אתר אישי"
+
+#: models.py:36
+msgid "picture_url"
+msgstr "קישור לתמונה"
+
+#: templates/base.html:8
 msgid "fantasy Knesset"
 msgstr "פנטזי כנסת"
 
-#: templates/base.html:23
+#: templates/base.html:50
 msgid "Toggle navigation"
 msgstr "אפשר ניווט"
 
-#: templates/base.html:45
+#: templates/base.html:55
+msgid "Fantasy Knesset"
+msgstr "פנטזי כנסת"
+
+#: templates/base.html:73
 msgid "Hackita 2013"
 msgstr "הכיתה 2013"
 
@@ -41,29 +89,33 @@ msgstr "הרשמה"
 msgid "Login"
 msgstr "התחבר"
 
-#: templates/votes/candidate_detail.html:16
+#: templates/votes/candidate_detail.html:17
 msgid "Knesset member"
 msgstr "חבר/ה בכנסת הנוכחית"
 
-#: templates/votes/candidate_detail.html:22
+#: templates/votes/candidate_detail.html:23
 msgid "Personal site"
 msgstr "אתר אישי"
 
-#: templates/votes/candidate_detail.html:25
+#: templates/votes/candidate_detail.html:26
 msgid "Facebook page"
 msgstr "עמוד פייסבוק"
 
-#: templates/votes/candidate_detail.html:28
+#: templates/votes/candidate_detail.html:29
 msgid "Wikipedia"
 msgstr "ויקיפדיה"
 
-#: templates/votes/candidate_detail.html:31
+#: templates/votes/candidate_detail.html:32
 msgid "OpenKnesset page"
 msgstr "עמוד בכנסת פתוחה"
 
-#: templates/votes/candidate_detail.html:35
-msgid "VOTING HISTORY WILL BE GRAPHED HERE USING D3"
-msgstr "היסטורית ההצבעות תופיעה כאן בויזואליזציה מאוד מאוד מרשימה בקרוב :-)"
+#: templates/votes/candidate_fb_form.html:15
+msgid "Paste Candidates Facebook Page Link"
+msgstr "הדבק/י את הקישור לדף הפייסבוק של המועמד שלך"
+
+#: templates/votes/candidate_form.html:14
+msgid "Enter Candidate Data"
+msgstr "הכנס/י את הנתונים של המועמד שלך"
 
 #: templates/votes/candidates.html:14
 msgid "Search for candidate"
@@ -77,11 +129,11 @@ msgstr "לא מוצא מועמד/ת ברשימה? הוסף אותו/ה בלינ�
 msgid "here"
 msgstr "הבא"
 
-#: templates/votes/candidates.html:37 templates/votes/index.html:37
+#: templates/votes/candidates.html:37 templates/votes/index.html:39
 msgid "UnVote"
 msgstr "בטל הצבעה"
 
-#: templates/votes/candidates.html:39 templates/votes/index.html:39
+#: templates/votes/candidates.html:39 templates/votes/index.html:41
 msgid "Vote"
 msgstr "הצבע"
 
@@ -99,15 +151,19 @@ msgid ""
 "representitves and what people accually want!"
 msgstr "בחר את חברי הכנסת שלך וגלה את ההבדל בין הכנסת הקיימת לרצון העם"
 
-#: templates/votes/index.html:26
+#: templates/votes/index.html:20
+msgid "Start voting now"
+msgstr "את מי את/ה היית רוצה לראות בכנסת?"
+
+#: templates/votes/index.html:28
 msgid "Top 20 Candidates"
 msgstr "20 המועמדים המובילים"
 
-#: templates/votes/index.html:50
+#: templates/votes/index.html:52
 msgid "Rest 100 Candidates"
 msgstr "יתר 100 המועמדים המובילים"
 
-#: templates/votes/index.html:69
+#: templates/votes/index.html:71
 msgid "VOTE"
 msgstr "הצבע"
 
@@ -142,3 +198,6 @@ msgstr "מלא פרטי הרשמה"
 #: templates/votes/register.html:18
 msgid "Sign up"
 msgstr "הרשם"
+
+#~ msgid "VOTING HISTORY WILL BE GRAPHED HERE USING D3"
+#~ msgstr "היסטורית ההצבעות תופיעה כאן בויזואליזציה מאוד מאוד מרשימה בקרוב :-)"

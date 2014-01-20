@@ -2,35 +2,38 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.utils.translation import ugettext as _
 
 
 class Party(models.Model):
-    name = models.CharField(max_length=200)
-    official_site = models.URLField(null=True, blank=True)
-    facebook_page = models.URLField(null=True, blank=True)
-    wikpedia_article = models.URLField(null=True, blank=True)
-    wikpedia_url = models.URLField(null=True, blank=True)
-    open_k_url = models.URLField(null=True, blank=True)
-    logo_url = models.URLField(null=True, blank=True)
+    name = models.CharField(_('name'), max_length=200)
+    official_site = models.URLField(_('official site'), null=True, blank=True)
+    facebook_page = models.URLField(_('facebook_page'), null=True, blank=True)
+    wikpedia_article = models.URLField(_('wikipedia_article'), null=True, blank=True)
+    wikpedia_url = models.URLField(_('wikipedia_url'), null=True, blank=True)
+    open_k_url = models.URLField(_('open_knesset_url'), null=True, blank=True)
+    logo_url = models.URLField(_('logo_url'), null=True, blank=True)
 
     def __unicode__(self):
-        return self.name
+        output = self.name
+        return output
 
 
 class Candidate(models.Model):
-    party = models.ForeignKey(Party, null=True, blank=True)
+    party = models.ForeignKey(Party, null=True, blank=True,
+                              verbose_name=_('party'))
     voters = models.ManyToManyField(
         settings.AUTH_USER_MODEL, null=True, blank=True
     )
-    name = models.CharField(max_length=200)
+    name = models.CharField(_('name'),max_length=200)
     number_of_votes = models.PositiveIntegerField(default=0)
     is_knesset_member = models.BooleanField(default=False)
-    pesonal_site = models.URLField(null=True, blank=True)
-    facebook_page = models.URLField(null=True, blank=True)
-    wikpedia_article = models.URLField(null=True, blank=True)
-    wikpedia_url = models.URLField(null=True, blank=True)
-    open_k_url = models.URLField(null=True, blank=True)
-    image_url = models.URLField(null=True, blank=True)
+    pesonal_site = models.URLField(_('personal site'), null=True, blank=True)
+    facebook_page = models.URLField(_('facebook_page'), null=True, blank=True)
+    wikpedia_article = models.URLField(_('wikipedia_article'), null=True, blank=True)
+    wikpedia_url = models.URLField(_('wikipedia_url'), null=True, blank=True)
+    open_k_url = models.URLField(_('open_knesset_url'), null=True, blank=True)
+    image_url = models.URLField(_('picture_url'), null=True, blank=True)
 
     def get_absolute_url(self):
         return reverse('votes:candidate', args=(self.id,))
