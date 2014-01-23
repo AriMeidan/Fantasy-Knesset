@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-23 15:59+0200\n"
+"POT-Creation-Date: 2014-01-23 17:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,19 +61,19 @@ msgstr "אתר אישי"
 msgid "picture_url"
 msgstr "קישור לתמונה"
 
-#: templates/400.html:11
+#: templates/400.html:7
 msgid "400: Bad request"
 msgstr "שגיאת 400"
 
-#: templates/403.html:11
+#: templates/403.html:7
 msgid "403: Forbidden"
 msgstr "שגיאת 403"
 
-#: templates/404.html:11
+#: templates/404.html:7
 msgid "404: No such page"
 msgstr "שגיאת 404"
 
-#: templates/500.html:11
+#: templates/500.html:7
 msgid "500: Internal server error"
 msgstr "שגיאת 500"
 
@@ -89,101 +89,117 @@ msgstr "אפשר ניווט"
 msgid "Fantasy Knesset"
 msgstr "פנטזי כנסת"
 
-#: templates/base.html:73
+#: templates/base.html:71
 msgid "Hackita 2013"
 msgstr "הכיתה 2013"
 
-#: templates/register_login_panel.html:7
+#: templates/navbar_panel.html:7
+msgid "Home"
+msgstr "עמוד הבית"
+
+#: templates/navbar_panel.html:8
+msgid "All candidates"
+msgstr "כל המועמדים"
+
+#: templates/navbar_panel.html:9
+msgid "Add candidate"
+msgstr "הוסף מועמד"
+
+#: templates/navbar_panel.html:10
+msgid "About"
+msgstr "אודות"
+
+#: templates/navbar_panel.html:15
 msgid "Logout"
 msgstr "התנתק"
 
-#: templates/register_login_panel.html:12
+#: templates/navbar_panel.html:20
 msgid "Register"
 msgstr "הרשמה"
 
-#: templates/register_login_panel.html:13
+#: templates/navbar_panel.html:21
 msgid "Login"
 msgstr "התחבר"
 
-#: templates/votes/candidate_detail.html:17
+#: templates/votes/candidate_detail.html:13
 msgid "Knesset member"
 msgstr "חבר/ה בכנסת הנוכחית"
 
-#: templates/votes/candidate_detail.html:23
+#: templates/votes/candidate_detail.html:19
 msgid "Personal site"
 msgstr "אתר אישי"
 
-#: templates/votes/candidate_detail.html:26
+#: templates/votes/candidate_detail.html:22
 msgid "Facebook page"
 msgstr "עמוד פייסבוק"
 
-#: templates/votes/candidate_detail.html:29
+#: templates/votes/candidate_detail.html:25
 msgid "Wikipedia"
 msgstr "ויקיפדיה"
 
-#: templates/votes/candidate_detail.html:32
+#: templates/votes/candidate_detail.html:28
 msgid "OpenKnesset page"
 msgstr "עמוד בכנסת פתוחה"
 
-#: templates/votes/candidate_fb_form.html:15
+#: templates/votes/candidate_fb_form.html:10
 msgid "Paste Candidates Facebook Page Link"
 msgstr "הדבק/י את הקישור לדף הפייסבוק של המועמד שלך"
 
-#: templates/votes/candidate_form.html:14
+#: templates/votes/candidate_form.html:9
 msgid "Enter Candidate Data"
 msgstr "הכנס/י את הנתונים של המועמד שלך"
 
-#: templates/votes/candidate_form.html:21
+#: templates/votes/candidate_form.html:16
 msgid "Submit"
 msgstr ""
 
-#: templates/votes/candidates.html:14
+#: templates/votes/candidates.html:10
 msgid "Search for candidate"
 msgstr "חפש מועמד"
 
-#: templates/votes/candidates.html:15
+#: templates/votes/candidates.html:11
 msgid "Your candidate is not in this list? Add him / her"
 msgstr "לא מוצא מועמד/ת ברשימה? הוסף אותו/ה בלינק"
 
-#: templates/votes/candidates.html:15 templates/votes/login.html:39
+#: templates/votes/candidates.html:11 templates/votes/login.html:39
 msgid "here"
 msgstr "הבא"
 
-#: templates/votes/candidates.html:37 templates/votes/index.html:39
+#: templates/votes/candidates.html:33 templates/votes/index.html:35
 msgid "UnVote"
 msgstr "בטל הצבעה"
 
-#: templates/votes/candidates.html:39 templates/votes/index.html:41
+#: templates/votes/candidates.html:35 templates/votes/index.html:37
 msgid "Vote"
 msgstr "הצבע"
 
-#: templates/votes/index.html:15
+#: templates/votes/index.html:11
 msgid "Hello,"
 msgstr "ברוך הבא"
 
-#: templates/votes/index.html:17
+#: templates/votes/index.html:13
 msgid "Hello, Voters!"
 msgstr "ברוך הבא!"
 
-#: templates/votes/index.html:19
+#: templates/votes/index.html:15
 msgid ""
 "Choose your own Knesset Members, Check the differences between our "
 "representitves and what people accually want!"
 msgstr "בחר את חברי הכנסת שלך וגלה את ההבדל בין הכנסת הקיימת לרצון העם"
 
-#: templates/votes/index.html:20
+#: templates/votes/index.html:16
 msgid "Start voting now"
 msgstr "את מי את/ה היית רוצה לראות בכנסת?"
 
-#: templates/votes/index.html:28
+#: templates/votes/index.html:24
 msgid "Top 20 Candidates"
 msgstr "20 המועמדים המובילים"
 
-#: templates/votes/index.html:52
+#: templates/votes/index.html:48
 msgid "Rest 100 Candidates"
 msgstr "יתר 100 המועמדים המובילים"
 
-#: templates/votes/index.html:71
+#: templates/votes/index.html:67
 msgid "VOTE"
 msgstr "הצבע"
 
