@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-20 14:39+0200\n"
+"POT-Creation-Date: 2014-01-23 15:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,45 +21,61 @@ msgstr ""
 msgid "Independent"
 msgstr "לא משוייך"
 
-#: models.py:9 models.py:28
+#: models.py:19 models.py:38
 msgid "name"
 msgstr "שם"
 
-#: models.py:10
+#: models.py:20
 msgid "official site"
 msgstr "אתר רשמי"
 
-#: models.py:11 models.py:32
+#: models.py:21 models.py:42
 msgid "facebook_page"
 msgstr "דף פייסבוק"
 
-#: models.py:12 models.py:33
+#: models.py:22 models.py:43
 msgid "wikipedia_article"
 msgstr "עמוד הויקיפדיה"
 
-#: models.py:13 models.py:34
+#: models.py:23 models.py:44
 msgid "wikipedia_url"
 msgstr "קישור ויקיפדיה"
 
-#: models.py:14 models.py:35
+#: models.py:24 models.py:45
 msgid "open_knesset_url"
 msgstr "הדף באתר כנסת פתוחה"
 
-#: models.py:15
+#: models.py:25
 msgid "logo_url"
 msgstr "קישור לתמונת הלוגו"
 
-#: models.py:24
+#: models.py:34
 msgid "party"
 msgstr "מפלגה"
 
-#: models.py:31
+#: models.py:41
 msgid "personal site"
 msgstr "אתר אישי"
 
-#: models.py:36
+#: models.py:46
 msgid "picture_url"
 msgstr "קישור לתמונה"
+
+#: templates/400.html:11
+msgid "400: Bad request"
+msgstr "שגיאת 400"
+
+#: templates/403.html:11
+msgid "403: Forbidden"
+msgstr "שגיאת 403"
+
+#: templates/404.html:11
+msgid "404: No such page"
+msgstr "שגיאת 404"
+
+#: templates/500.html:11
+msgid "500: Internal server error"
+msgstr "שגיאת 500"
 
 #: templates/base.html:8
 msgid "fantasy Knesset"
@@ -116,6 +132,10 @@ msgstr "הדבק/י את הקישור לדף הפייסבוק של המועמד 
 #: templates/votes/candidate_form.html:14
 msgid "Enter Candidate Data"
 msgstr "הכנס/י את הנתונים של המועמד שלך"
+
+#: templates/votes/candidate_form.html:21
+msgid "Submit"
+msgstr ""
 
 #: templates/votes/candidates.html:14
 msgid "Search for candidate"
