@@ -25,6 +25,7 @@ ALLOWED_HOSTS = ['*']
 # Static asset configuration
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 print('base dir is:', BASE_DIR)
+print('current working dir: ', os.getcwd())
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
