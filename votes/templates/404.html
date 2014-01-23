@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block navbar_panel %}
+	{% include "register_login_panel.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+	<div class="container">
+		<h1>{% trans "404: No such page" %}</h1>
+	</div>
+</div>
+{% endblock %}
