@@ -3,7 +3,7 @@ import csv
 
 from django.core.management.base import BaseCommand, CommandError
 
-from fknesset import settings
+from fknesset.settings.base import BASE_DIR
 from votes.models import Party, Candidate
 
 
@@ -12,7 +12,7 @@ class Command(BaseCommand):
            'from "19th knesset.csv"'
 
     def handle(self, *args, **options):
-        path = os.path.join(settings.BASE_DIR,
+        path = os.path.join(BASE_DIR,
                             'docs',
                             '19th_knesset.csv')
         with open(path) as csvfile:
