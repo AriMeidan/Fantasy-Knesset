@@ -10,3 +10,4 @@
 *.conflict
 *.sqlite3
 images
+staticfiles
