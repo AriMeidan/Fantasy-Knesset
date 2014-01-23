@@ -7,61 +7,15 @@ from django.db import models
 
 class Migration(SchemaMigration):
 
-    depends_on = (
-        ("django_facebook", "0001_initial"),
-    )
-
-
     def forwards(self, orm):
-        # Adding model 'Party'
-        db.create_table(u'votes_party', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=200)),
-            ('official_site', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-            ('facebook_page', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-            ('wikpedia_article', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-            ('wikpedia_url', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-            ('open_k_url', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-            ('logo_url', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-        ))
-        db.send_create_signal(u'votes', ['Party'])
 
-        # Adding model 'Candidate'
-        db.create_table(u'votes_candidate', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('party', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['votes.Party'], null=True, blank=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=200)),
-            ('number_of_votes', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
-            ('is_knesset_member', self.gf('django.db.models.fields.BooleanField')(default=False)),
-            ('pesonal_site', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-            ('facebook_page', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-            ('wikpedia_article', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-            ('wikpedia_url', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-            ('open_k_url', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-            ('image_url', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-        ))
-        db.send_create_signal(u'votes', ['Candidate'])
-
-        # Adding M2M table for field voters on 'Candidate'
-        m2m_table_name = db.shorten_name(u'votes_candidate_voters')
-        db.create_table(m2m_table_name, (
-            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('candidate', models.ForeignKey(orm[u'votes.candidate'], null=False)),
-            ('facebookcustomuser', models.ForeignKey(orm[u'django_facebook.facebookcustomuser'], null=False))
-        ))
-        db.create_unique(m2m_table_name, ['candidate_id', 'facebookcustomuser_id'])
-
+        # Changing field 'Candidate.image_url'
+        db.alter_column(u'votes_candidate', 'image_url', self.gf('django.db.models.fields.URLField')(max_length=255, null=True))
 
     def backwards(self, orm):
-        # Deleting model 'Party'
-        db.delete_table(u'votes_party')
 
-        # Deleting model 'Candidate'
-        db.delete_table(u'votes_candidate')
-
-        # Removing M2M table for field voters on 'Candidate'
-        db.delete_table(db.shorten_name(u'votes_candidate_voters'))
-
+        # Changing field 'Candidate.image_url'
+        db.alter_column(u'votes_candidate', 'image_url', self.gf('django.db.models.fields.URLField')(max_length=200, null=True))
 
     models = {
         u'auth.group': {
@@ -118,7 +72,7 @@ class Migration(SchemaMigration):
             'Meta': {'ordering': "['-number_of_votes']", 'object_name': 'Candidate'},
             'facebook_page': ('django.db.models.fields.URLField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'image_url': ('django.db.models.fields.URLField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'}),
+            'image_url': ('django.db.models.fields.URLField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
             'is_knesset_member': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
             'number_of_votes': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
@@ -128,6 +82,13 @@ class Migration(SchemaMigration):
             'voters': ('django.db.models.fields.related.ManyToManyField', [], {'symmetrical': 'False', 'to': u"orm['django_facebook.FacebookCustomUser']", 'null': 'True', 'blank': 'True'}),
             'wikpedia_article': ('django.db.models.fields.URLField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'}),
             'wikpedia_url': ('django.db.models.fields.URLField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'})
+        },
+        u'votes.log': {
+            'Meta': {'object_name': 'Log'},
+            'candidate': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['votes.Candidate']"}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'number_of_votes': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
+            'timestamp': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'})
         },
         u'votes.party': {
             'Meta': {'object_name': 'Party'},

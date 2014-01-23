@@ -3,6 +3,16 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext as _
+from django.core.validators import URLValidator
+
+
+# class CustomURLField(models.URLField):
+#     def __init__(self, *args, **kwargs):
+#         kwargs['max_length'] = 255
+#         super(CustomURLField, self).__init__(*args, **kwargs)
+
+
+# models.URLField = models.TextField
 
 
 class Party(models.Model):
@@ -33,7 +43,7 @@ class Candidate(models.Model):
     wikpedia_article = models.URLField(_('wikipedia_article'), null=True, blank=True)
     wikpedia_url = models.URLField(_('wikipedia_url'), null=True, blank=True)
     open_k_url = models.URLField(_('open_knesset_url'), null=True, blank=True)
-    image_url = models.URLField(_('picture_url'), null=True, blank=True)
+    image_url = models.URLField(_('picture_url'), null=True, blank=True, max_length=255)
 
     def get_absolute_url(self):
         return reverse('votes:candidate', args=(self.id,))

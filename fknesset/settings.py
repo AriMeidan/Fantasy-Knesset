@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3wnx8%hq+3u&4lf3j0eunsz)bop6!cj4l913q(l=n*uetbhzpz'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -60,12 +60,19 @@ WSGI_APPLICATION = 'fknesset.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'fknesset_db.sqlite3'),
-    }
+        'ENGINE':'django.db.backends.postgresql_psycopg2',
+        'NAME': 'fknesset',
+        'USER': 'su',
+        'PASSWORD': os.environ['DB_PASSWORD'],
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    },
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'fknesset_db.sqlite3'),
+#     }
 }
 
 # Internationalization
