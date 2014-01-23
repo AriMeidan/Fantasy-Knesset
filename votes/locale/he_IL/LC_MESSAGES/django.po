@@ -151,7 +151,7 @@ msgstr "הכנס/י את הנתונים של המועמד שלך"
 
 #: templates/votes/candidate_form.html:16
 msgid "Submit"
-msgstr ""
+msgstr "שלח"
 
 #: templates/votes/candidates.html:10
 msgid "Search for candidate"
