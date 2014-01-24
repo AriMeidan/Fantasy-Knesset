@@ -5,12 +5,10 @@ from base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-
-# CSRF_COOKIE_SECURE = True
-
-
-# SESSION_COOKIE_SECURE = True
-
+# SECURITY!
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+MIDDLEWARE_CLASSES.insert(0, 'sslify.middleware.SSLifyMiddleware')
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
