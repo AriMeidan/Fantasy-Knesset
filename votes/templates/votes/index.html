@@ -32,9 +32,9 @@
 					<form role="form" method="post" action="{% url 'votes:vote' %}" >
 						{% csrf_token %}
 						{% if user|voted_for:candidate %}
-							<button class="btn btn-primary btn-block" type="submit" name="method" value="unvote">{% trans "UnVote" %}</button> 
+							<button class="btn btn-primary btn-block" type="submit" name="upvote" value="0">{% trans "UnVote" %}</button> 
 						{% else %}
-							<button class="btn btn-default btn-block" type="submit" name="method" value="vote">{% trans "Vote" %}</button>
+							<button class="btn btn-default btn-block" type="submit" name="upvote" value="1">{% trans "Vote" %}</button>
 						{% endif %}
 						<input type="hidden" name="candidate_pk" value="{{ candidate.pk }}">
 						<input type="hidden" name="next" value="{% url 'votes:index' %}" />

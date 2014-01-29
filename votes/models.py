@@ -44,21 +44,17 @@ class Candidate(models.Model):
     def __unicode__(self):
         return self.name
 
-    def vote_by(self, user):
-        if user not in self.voters.all():
+    def vote(self, user, upvote):
+        if upvote and user not in self.voters.all():
             self.voters.add(user)
             self.number_of_votes = models.F('number_of_votes') + 1
-            self.save()
-
-            Log.log(self.pk)
-
-    def unvote_by(self, user):
-        if user in self.voters.all():
+        elif not upvote and user in self.voters.all():
             self.voters.remove(user)
             self.number_of_votes = models.F('number_of_votes') - 1
-            self.save()
+        
+        self.save()
 
-            Log.log(self.pk)
+        Log.log(self.pk)
 
     class Meta:
         ordering = ['-number_of_votes']

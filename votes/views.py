@@ -67,13 +67,13 @@ def batch_vote(request):
                      values('pk'))
 
         for candidate in votes_to_add:
-            candidate.vote_by(request.user)
+            candidate.vote(request.user, upvote=True)
 
         votes_to_remove = request.user.candidate_set.all() \
             .exclude(pk__in=batch_votes)
 
         for candidate in votes_to_remove:
-            candidate.unvote_by(request.user)
+            candidate.vote(request.user, upvote=False)
 
     return redirect('votes:index')
 
@@ -87,11 +87,8 @@ def vote(request):
     if request.method == 'POST':
         candidate_pk = request.POST.get('candidate_pk')
         candidate = Candidate.objects.get(pk=candidate_pk)
-        method = request.POST.get('method')
-        if method == 'vote':
-            candidate.vote_by(request.user)
-        elif method == 'unvote':
-            candidate.unvote_by(request.user)
+        upvote = int(request.POST.get('upvote'))
+        candidate.vote(request.user, upvote=upvote)
 
         next = request.POST.get('next')
 
