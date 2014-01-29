@@ -28,8 +28,8 @@ $( document ).ready(function() {
             },
             context: this,  // set this as the context of any callback function
             success: function(json) {
-                console.log(json);
-                if (json.success) {
+                json = JSON.parse(json);
+                if (json.success == true) {
                     var oldButtonValue = $( this ).attr("value");
                     $( this ).removeClass($.config.btn_class[oldButtonValue]);
                     var newButtonValue = $.numToggle(oldButtonValue);
