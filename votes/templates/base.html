@@ -78,6 +78,7 @@
 <!-- Custom script for ajax voting -->
 <script>
 	$.config = {
+		login_url: "{% url 'votes:login' %}",
 		vote_url: "{% url 'votes:vote' %}",
 		vote_text: ["{% trans 'UnVote' %}", "{% trans 'Vote' %}"],
 		btn_class: ["btn-primary", "btn-default"],

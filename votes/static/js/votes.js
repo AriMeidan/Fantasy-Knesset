@@ -28,15 +28,21 @@ $( document ).ready(function() {
             },
             context: this,  // set this as the context of any callback function
             success: function(json) {
-
-                var oldButtonValue = $( this ).attr("value");
-                $( this ).removeClass($.config.btn_class[oldButtonValue]);
-                var newButtonValue = $.numToggle(oldButtonValue);
-                $( this ).attr("value", newButtonValue);
-                $( this ).addClass($.config.btn_class[newButtonValue]);
-                $( this ).text($.config.vote_text[this.value]);
+                console.log(json);
+                if (json.success) {
+                    var oldButtonValue = $( this ).attr("value");
+                    $( this ).removeClass($.config.btn_class[oldButtonValue]);
+                    var newButtonValue = $.numToggle(oldButtonValue);
+                    $( this ).attr("value", newButtonValue);
+                    $( this ).addClass($.config.btn_class[newButtonValue]);
+                    $( this ).text($.config.vote_text[this.value]);
+                } else {
+                    console.log("error: ajax call succeeded but without success value = true");
+                }
+            },
+            error: function( xhr, status ) {
+                window.location.replace($.config.login_url);
             },
         });
-
     });
 });
