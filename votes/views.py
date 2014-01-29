@@ -153,7 +153,7 @@ def add_candidate_from_fb(request):
                 res = fb.get(fb_url, fields='name, website, picture')
                 # add another validation
                 c = Candidate(name=res['name'], image_url=res['picture']['data']['url'],
-                              pesonal_site=res.get('website', None), party=party)
+                              personal_site=res.get('website', None), party=party)
                 c.save()
                 messages.info(request, "Added Succesfully")
                 return redirect('votes:candidates')
