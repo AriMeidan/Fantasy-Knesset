@@ -27,7 +27,7 @@
 								<b><a href="{{ candidate.get_absolute_url }}">{{ candidate.name }}</a></b>
 							</div>
 							<div class="col-xs-3">
-							<button class="btn btn-block btn-candidate" name="{{ candidate.pk }}" value="{{ user|button_value:candidate }}"></button>
+							<button class="btn btn-block btn-candidate" pk="{{ candidate.pk }}" upvote="{{ user|button_value:candidate }}"></button>
 							</div>
 						</div>
 					{% endfor %}

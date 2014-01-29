@@ -8,7 +8,7 @@ $( document ).ready(function() {
 
     // apply classes and text according to value
     $( ".btn-candidate" ).each(function() {
-        var value = $( this ).attr("value");
+        var value = $( this ).attr("upvote");
         $( this ).addClass($.config.btn_class[value]);
         $( this ).text($.config.vote_text[value])
     });
@@ -23,19 +23,19 @@ $( document ).ready(function() {
                 request.setRequestHeader("X-CSRFToken", $.cookie("csrftoken"));
             },
             data: {
-                upvote: $( this ).attr("value"),
-                candidate_pk: $( this ).attr("name"),
+                upvote: $( this ).attr("upvote"),
+                candidate_pk: $( this ).attr("pk"),
             },
             context: this,  // set this as the context of any callback function
             success: function(json) {
                 json = JSON.parse(json);
                 if (json.success == true) {
-                    var oldButtonValue = $( this ).attr("value");
+                    var oldButtonValue = $( this ).attr("upvote");
                     $( this ).removeClass($.config.btn_class[oldButtonValue]);
                     var newButtonValue = $.numToggle(oldButtonValue);
-                    $( this ).attr("value", newButtonValue);
+                    $( this ).attr("upvote", newButtonValue);
                     $( this ).addClass($.config.btn_class[newButtonValue]);
-                    $( this ).text($.config.vote_text[this.value]);
+                    $( this ).text($.config.vote_text[newButtonValue]);
                 } else {
                     console.log("error: ajax call succeeded but without success value = true");
                 }
