@@ -78,21 +78,20 @@ def batch_vote(request):
     return redirect('votes:index')
 
 
-# for voting and unvoting
+# for voting and unvoting using AJAX
 @login_required(login_url=reverse_lazy('votes:login'))
 def vote(request):
 
-    next = 'votes:index'  # temporary next view
+    results = dict(success=False)
 
     if request.method == 'POST':
         candidate_pk = request.POST.get('candidate_pk')
         candidate = Candidate.objects.get(pk=candidate_pk)
         upvote = int(request.POST.get('upvote'))
         candidate.vote(request.user, upvote=upvote)
+        results['success'] = True
 
-        next = request.POST.get('next')
-
-    return redirect(next)
+    return HttpResponse(json.dumps(results))
 
 
 def register(request):
