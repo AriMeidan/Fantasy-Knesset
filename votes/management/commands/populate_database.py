@@ -1,3 +1,5 @@
+# coding=utf-8
+
 import os
 import csv
 
@@ -25,3 +27,6 @@ class Command(BaseCommand):
                         name=row[1], party=p, is_knesset_member=True,
                         image_url=row[4]
                     )
+
+        # adding independent party to the DB
+        Party.objects.get_or_create(name=u'לא משוייך')
