@@ -10,6 +10,7 @@ from django.core.urlresolvers import reverse_lazy, reverse
 from django.db.models import F
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, redirect, render
+from django.utils import timezone
 
 from django.views import generic
 from open_facebook.api import OpenFacebook
@@ -72,10 +73,17 @@ class CandidateView(generic.DetailView):
 def candidate_history(request, pk):
     logs = Log.objects.filter(candidate__pk=pk)
     history = []
+    fmt = "%Y-%m-%d %H:%M"
     for log in logs:
-        timestamp = log.timestamp.strftime("%Y-%m-%d %H:%M")
+        timestamp = log.timestamp.strftime(fmt)
         value = log.number_of_votes
         history.append(dict(timestamp=timestamp, value=value))
+
+    # always add current number of votes
+    timestamp = timezone.now().strftime(fmt)
+    value = Candidate.objects.get(pk=pk).number_of_votes
+    history.append(dict(timestamp=timestamp, value=value))
+
     return HttpResponse(json.dumps(history))
 
 
