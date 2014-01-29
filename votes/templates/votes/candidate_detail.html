@@ -7,11 +7,18 @@
 
 <div class="container">
 
-	<h1>{{ object }}</h1>
-	<p class="lead">{{ object.party }}</p>
-	{% if object.is_knesset_member %}
-		<p class="lead">{% trans "Knesset member" %}</p>
-	{% endif %}
+	<div class="row">
+		<div class="col-md-9">
+			<h1>{{ object }}</h1>
+			<p class="lead">{{ object.party }}</p>
+			{% if object.is_knesset_member %}
+				<p class="lead">{% trans "Knesset member" %}</p>
+			{% endif %}
+		</div>
+		<div class="col-md-3">
+				<button class="btn btn-block btn-candidate" name="{{ candidate.pk }}" value="{{ user|button_value:candidate }}"></button>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-md-9">
 			<div><!-- buttons -->
