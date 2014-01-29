@@ -6,7 +6,15 @@ $.numToggle = function(input) {
 
 $( document ).ready(function() {
 
-    $( ".candidate-btn" ).click(function( event ) {
+    // apply classes and text according to value
+    $( ".btn-candidate" ).each(function() {
+        var value = $( this ).attr("value");
+        $( this ).addClass($.config.btn_class[value]);
+        $( this ).text($.config.vote_text[value])
+    });
+
+    // buttons on click AJAX
+    $( ".btn-candidate" ).click(function( event ) {
 
         $.ajax({
             url: $.config.vote_url,
@@ -15,8 +23,8 @@ $( document ).ready(function() {
                 request.setRequestHeader("X-CSRFToken", $.cookie("csrftoken"));
             },
             data: {
-                upvote: this.value,
-                candidate_pk: this.id,
+                upvote: $( this ).attr("value"),
+                candidate_pk: $( this ).attr("name"),
             },
             context: this,  // set this as the context of any callback function
             success: function(json) {

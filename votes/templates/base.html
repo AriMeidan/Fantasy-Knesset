@@ -75,6 +75,16 @@
 <!-- D3 scripts -->
 <script src="{% static 'js/d3.v3.min.js' %}"></script>
 
+<!-- Custom script for ajax voting -->
+<script>
+	$.config = {
+		vote_url: "{% url 'votes:vote' %}",
+		vote_text: ["{% trans 'UnVote' %}", "{% trans 'Vote' %}"],
+		btn_class: ["btn-primary", "btn-default"],
+	}
+</script>
+<script src="{% static 'js/votes.js' %}"></script>
+
 <!-- Custom made scripts should be loaded last -->
 {% block load_scripts %}
 

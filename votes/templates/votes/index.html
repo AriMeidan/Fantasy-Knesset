@@ -29,11 +29,7 @@
 				<div class="well">
 					<p><b><a href="{{ candidate.get_absolute_url }}">{{ candidate.name }}</a></b></p>
 					<div class="center-cropped center" style="background-image: url('{{ candidate.image_url}}');"></div>
-					{% if user|voted_for:candidate %}
-						<button id="{{ candidate.pk }}" class="btn btn-primary btn-block candidate-btn" type="submit" name="upvote" value="0">{% trans "UnVote" %}</button> 
-					{% else %}
-						<button id="{{ candidate.pk }}" class="btn btn-default btn-block candidate-btn" type="submit" name="upvote" value="1">{% trans "Vote" %}</button>
-					{% endif %}
+					<button class="btn btn-block btn-candidate" name="{{ candidate.pk }}" value="{{ user|button_value:candidate }}"></button>
 				</div>
 			</div>
 		{% endfor %}
@@ -62,22 +58,6 @@
 		<input class="btn btn-primary btn-block" type="submit" value="{% trans "VOTE" %}" />
 	</form>
 
-	{{ csrf_token }}
-
 </div><!-- /container -->
-
-{% endblock %}
-
-{% block load_scripts %}
-
-<!-- Custom script for ajax voting -->
-<script>
-	$.config = {
-		vote_url: "{% url 'votes:vote' %}",
-		vote_text: ["{% trans 'UnVote' %}", "{% trans 'Vote' %}"],
-		btn_class: ["btn-primary", "btn-default"],
-	}
-</script>
-<script src="{% static 'js/votes.js' %}"></script>
 
 {% endblock %}

@@ -9,3 +9,10 @@ def voted_for(user, candidate):
         return False
 
     return candidate.voters.filter(id=user.id).exists()
+
+
+@register.filter
+def button_value(user, candidate):
+    if candidate.voters.filter(id=user.id).exists():
+    	return 0
+    return 1
