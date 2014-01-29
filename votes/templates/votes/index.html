@@ -26,7 +26,7 @@
 		{% for candidate in top20 %}
 			<div class="col-md-2 col-xs-4 text-center">
 				<div class="well">
-					<p><b><a href="{% url 'votes:candidate' candidate.pk %}">{{ candidate.name }}</a></b></p>
+					<p><b><a href="{{ candidate.get_absolute_url }}">{{ candidate.name }}</a></b></p>
 					<div class="center-cropped center" style="background-image: url('{{ candidate.image_url}}');">
 					</div>
 					<form role="form" method="post" action="{% url 'votes:vote' %}" >

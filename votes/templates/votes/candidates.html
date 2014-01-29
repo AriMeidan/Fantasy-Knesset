@@ -24,7 +24,7 @@
 					{% for candidate in party.candidate_set.all %}
 						<div class="panel-body row" id="{{ candidate }}">
 							<div class="col-xs-9">
-								<b><a href="{% url 'votes:candidate' candidate.pk %}">{{ candidate.name }}</a></b>
+								<b><a href="{{ candidate.get_absolute_url }}">{{ candidate.name }}</a></b>
 							</div>
 							<div class="col-xs-3">
 								<form role="form" method="post" action="{% url 'votes:vote' %}" >
