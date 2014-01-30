@@ -22,13 +22,13 @@ var brush = d3.svg.brush()
 	.on("brush", brushed);
 
 var area = d3.svg.area()
-	.interpolate("monotone")
+	// .interpolate("monotone")
 	.x(function(d) { return x(d.timestamp); })
 	.y0(height)
 	.y1(function(d) { return y(d.value); });
 
 var area2 = d3.svg.area()
-	.interpolate("monotone")
+	// .interpolate("monotone")
 	.x(function(d) { return x2(d.timestamp); })
 	.y0(height2)
 	.y1(function(d) { return y2(d.value); });
