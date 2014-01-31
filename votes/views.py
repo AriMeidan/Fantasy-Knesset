@@ -164,7 +164,7 @@ class CreateCandidateView(generic.CreateView):
 
 class MyForm(forms.Form):
     url = forms.URLField()
-    party = forms.ModelChoiceField(Party.objects.all())
+    party = forms.ModelChoiceField(Party.objects.all(), initial=Party.objects.get(id=14))
 
 
 def add_candidate_from_fb(request):
