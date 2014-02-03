@@ -9,5 +9,5 @@
 .settings/
 *.conflict
 *.sqlite3
-images
+/images/
 staticfiles
