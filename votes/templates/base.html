@@ -11,6 +11,8 @@
 <!-- Bootstrap -->
 <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 <link href="{% static 'css/bootstrap-rtl.min.css' %}" rel="stylesheet">
+<link href="{% static 'jquery/jquery-ui.min.css' %}" rel="stylesheet">
+
 <!-- Fantasy Knesset stylesheet -->
 <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
@@ -78,6 +80,7 @@
 <!-- Custom script for ajax voting -->
 <script>
 	$.config = {
+		search_url: "{% url 'votes:autocomplete-search' %}",
 		login_url: "{% url 'votes:login' %}",
 		vote_url: "{% url 'votes:vote' %}",
 		vote_text: ["{% trans 'UnVote' %}", "{% trans 'Vote' %}"],
@@ -85,6 +88,9 @@
 	}
 </script>
 <script src="{% static 'js/votes.js' %}"></script>
+<script src="{% static 'jquery/jquery-ui.js' %}"></script>
+<script src="{% static 'votes/js/search_candidate.js' %}"></script>
+
 
 <!-- Custom made scripts should be loaded last -->
 {% block load_scripts %}
