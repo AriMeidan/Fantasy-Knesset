@@ -18,3 +18,10 @@ class CreateCandidateForm(forms.ModelForm):
                    'is_knesset_member',
                    'number_of_votes'
                    ]
+
+
+class FacebookCreateCandidateForm(forms.Form):
+    url = forms.URLField()
+    party = forms.ModelChoiceField(Party.objects.all(),
+                                   initial=Party.objects.get(id=14),
+                                   label=_('party'))

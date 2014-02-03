@@ -3,10 +3,11 @@ import pdb
 import random
 import sys
 
-from django import forms
 from django.contrib import messages
-from django.contrib.auth import get_user_model, login, authenticate
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model, authenticate
+from django.contrib.auth.decorators import (login_required,
+                                            permission_required)
+from django.utils.decorators import method_decorator
 from django.core import serializers
 from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse_lazy, reverse
@@ -19,12 +20,16 @@ from django.views import generic
 from open_facebook.api import OpenFacebook
 from open_facebook.exceptions import ParameterException
 
-from votes.forms import CreateCandidateForm
+from votes.forms import (CreateCandidateForm,
+                         FacebookCreateCandidateForm)
 from votes.models import Candidate, Party, Log
-
 
 User = get_user_model()
 
+
+#----------------------------------------------------------
+#       CUSTOM DECORATORS
+#----------------------------------------------------------
 
 def login_required_ajax(function=None, redirect_field_name=None):
     """
@@ -50,6 +55,10 @@ def login_required_ajax(function=None, redirect_field_name=None):
     return _decorator
 
 
+#----------------------------------------------------------
+#       MAIN VIEWS
+#----------------------------------------------------------
+
 class IndexView(generic.TemplateView):
     template_name = 'votes/index.html'
 
@@ -74,23 +83,11 @@ class CandidateView(generic.DetailView):
     model = Candidate
 
 
-def candidate_history(request, pk):
-    logs = Log.objects.filter(candidate__pk=pk)
-    history = []
-    fmt = "%Y-%m-%d %H:%M"
-    for log in logs:
-        timestamp = log.timestamp.strftime(fmt)
-        value = log.number_of_votes
-        history.append(dict(timestamp=timestamp, value=value))
+#----------------------------------------------------------
+#       DATA CREATION VIEWS (POSTS -> redirect)
+#----------------------------------------------------------
 
-    # always add current number of votes
-    timestamp = timezone.now().strftime(fmt)
-    value = Candidate.objects.get(pk=pk).number_of_votes
-    history.append(dict(timestamp=timestamp, value=value))
-
-    return HttpResponse(json.dumps(history))
-
-
+# batch voting from index view
 @login_required(login_url=reverse_lazy('votes:login'))
 def batch_vote(request):
 
@@ -114,7 +111,72 @@ def batch_vote(request):
     return redirect('votes:index')
 
 
-# for voting and unvoting using AJAX
+# creating a candidate manually
+class CreateCandidateView(generic.CreateView):
+    model = Candidate
+    form_class = CreateCandidateForm
+
+    @method_decorator(permission_required('votes.add_candidate'))
+    def dispatch(self, *args, **kwargs):
+        return super(CreateCandidateView, self). \
+            dispatch(*args, **kwargs)
+
+
+# creating a candidate from facebook page
+@permission_required('votes.add_candidate')
+def add_candidate_from_fb(request):
+
+    if request.method == 'POST':
+        form = FacebookCreateCandidateForm(request.POST)
+        if form.is_valid():
+            fb = OpenFacebook()
+            # fb_url = request.POST.get('fb_page')
+            fb_url = form.cleaned_data['url']
+            # party = Party.objects.get(id=request.POST.get('party'))
+            party = form.cleaned_data['party']
+            try:
+                res = fb.get(fb_url, fields='name, website, picture')
+                # add another validation
+                c = Candidate(name=res['name'],
+                              image_url=res['picture']['data']['url'],
+                              personal_site=res.get('website', None),
+                              party=party)
+                c.save()
+                messages.info(request, "Added Succesfully")
+                return redirect('votes:candidates')
+            except ParameterException as e:
+                messages.error(request, e.message)
+    else:
+        form = FacebookCreateCandidateForm()
+
+    return render(request,
+                  'votes/candidate_fb_form.html',
+                  {'form': form})
+
+
+#----------------------------------------------------------
+#       AJAX / JSON VIEWS
+#----------------------------------------------------------
+
+# get candidate history json
+def candidate_history(request, pk):
+    logs = Log.objects.filter(candidate__pk=pk)
+    history = []
+    fmt = "%Y-%m-%d %H:%M"
+    for log in logs:
+        timestamp = log.timestamp.strftime(fmt)
+        value = log.number_of_votes
+        history.append(dict(timestamp=timestamp, value=value))
+
+    # always add current number of votes
+    timestamp = timezone.now().strftime(fmt)
+    value = Candidate.objects.get(pk=pk).number_of_votes
+    history.append(dict(timestamp=timestamp, value=value))
+
+    return HttpResponse(json.dumps(history))
+
+
+# for vote and unvote using AJAX
 @login_required_ajax
 def vote(request):
 
@@ -130,13 +192,19 @@ def vote(request):
     return HttpResponse(json.dumps(results))
 
 
-#for searching via autocomplete
+# for searching via autocomplete
 def search(request):
         search_str = request.GET.get('item')
         results = Candidate.objects.filter(name__contains=search_str)
-        data = serializers.serialize('json', results, fields=('id', 'name'))
+        data = serializers.serialize('json',
+                                     results,
+                                     fields=('id', 'name'))
         return HttpResponse(data)
 
+
+#----------------------------------------------------------
+#       ACCOUNTS MANAGEMENT
+#----------------------------------------------------------
 
 def register(request):
 
@@ -167,41 +235,3 @@ def register(request):
     context = dict(error=error)
     context.update(csrf(request))
     return render_to_response('votes/register.html', context)
-
-
-class CreateCandidateView(generic.CreateView):
-    model = Candidate
-    form_class = CreateCandidateForm
-
-
-class MyForm(forms.Form):
-    url = forms.URLField()
-    party = forms.ModelChoiceField(Party.objects.all(),
-                                   initial=Party.objects.get(id=14),
-                                   label=_('party'))
-
-
-def add_candidate_from_fb(request):
-
-    if request.method == 'POST':
-        form = MyForm(request.POST)
-        if form.is_valid():
-            fb = OpenFacebook()
-            # fb_url = request.POST.get('fb_page')
-            fb_url = form.cleaned_data['url']
-            # party = Party.objects.get(id=request.POST.get('party'))
-            party = form.cleaned_data['party']
-            try:
-                res = fb.get(fb_url, fields='name, website, picture')
-                # add another validation
-                c = Candidate(name=res['name'], image_url=res['picture']['data']['url'],
-                              personal_site=res.get('website', None), party=party)
-                c.save()
-                messages.info(request, "Added Succesfully")
-                return redirect('votes:candidates')
-            except ParameterException as e:
-                messages.error(request, e.message)
-    else:
-        form = MyForm()
-
-    return render(request, 'votes/candidate_fb_form.html', {'form': form})
