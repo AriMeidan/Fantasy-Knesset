@@ -25,11 +25,15 @@
 	<h1 align="center">{% trans "Top 20 Candidates" %}</h1>
 	<div class="row">
 		{% for candidate in top20 %}
-			<div class="col-md-2 col-xs-4 text-center">
-				<div class="well">
-					<p><b><a href="{{ candidate.get_absolute_url }}">{{ candidate.name }}</a></b></p>
-					<div class="center-cropped center" style="background-image: url('{{ candidate.image_url}}');"></div>
-					<button class="btn btn-block btn-candidate" pk="{{ candidate.pk }}" upvote="{{ user|button_value:candidate }}"></button>
+			<div class="col-md-3 col-xs-6 text-center">
+				<div class="well dense">
+					<div class="row">
+						<div class="col-xs-1 center-cropped center" style="background-image: url('{{ candidate.image_url}}');"></div>
+						<div class="with-margins">
+							<p><b><a href="{{ candidate.get_absolute_url }}">{{ candidate.name }}</a></b></p>
+							<p><button class="align-bottom btn btn-candidate" pk="{{ candidate.pk }}" upvote="{{ user|button_value:candidate }}"></button></p>
+						</div>
+					</div>
 				</div>
 			</div>
 		{% endfor %}

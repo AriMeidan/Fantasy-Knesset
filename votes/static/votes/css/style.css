@@ -16,6 +16,17 @@ footer{
 	margin-top:2em;
 }
 
+.well.dense{
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    margin: 0.25em;
+}
+
+div.with-margins{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
 /* D3 charts */
 svg {
     font: 10px sans-serif;
