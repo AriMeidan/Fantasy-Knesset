@@ -21,6 +21,7 @@ from open_facebook.exceptions import ParameterException
 
 from votes.forms import CreateCandidateForm
 from votes.models import Candidate, Party, Log
+from django.db.models.base import get_absolute_url
 
 
 User = get_user_model()
@@ -134,8 +135,14 @@ def vote(request):
 def search(request):
         search_str = request.GET.get('item')
         results = Candidate.objects.filter(name__contains=search_str)
-        data = serializers.serialize('json', results, fields=('id', 'name'))
-        return HttpResponse(data)
+        data = []
+        for candidate in results:
+            url = candidate.get_absolute_url()
+            name = candidate.name
+            data.append(dict(name=name, url=url))
+
+        return HttpResponse(json.dumps(data))
+
 
 
 def register(request):

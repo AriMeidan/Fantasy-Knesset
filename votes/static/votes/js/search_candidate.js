@@ -1,3 +1,5 @@
+var candidate_id;
+
 $( "#candidate-search" ).autocomplete({
 	 source: function( request, response ) {
 		 
@@ -12,15 +14,19 @@ $( "#candidate-search" ).autocomplete({
 	                json = JSON.parse(json);
 	                
 	                response($.map(json, function(item) {
+	                	
 	                	return {
-	                		label: item.fields.name
+	                		label: item.name,
+	                		url: item.url,
+	                		value: null,
 	                	}
 	                }));
-	                
-			 }
-				 
+			 },
 		 });
 		 return response
+	 },
+	 select: function( event, ui ) {
+		 window.location = ui.item.url;
 	 }
 
 });
