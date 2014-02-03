@@ -6,18 +6,15 @@
 {% block content %}
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-	<div class="container">
-		{% if user.is_authenticated %}
-			<h1>{% trans "Hello," %} {{ user.username }}!</h1>
-		{% else %}
+{% if user.is_authenticated %}
+{% else %}
+	<div class="jumbotron">
+		<div class="container">
 			<h1>{% trans "Hello, Voters!" %}</h1>
-		{% endif %}
-		<p>{% trans "Choose your own Knesset Members, Check the differences between our representitves and what people accually want!" %}</p>
-		<p><a href="{% url 'votes:candidates' %}" role="button" class="btn btn-primary btn-lg">{% trans "Start voting now" %} »</a></p>
-		
+			<p>{% trans "Choose your own Knesset Members, Check the differences between our representitves and what people accually want!" %}</p>
+		</div>
 	</div>
-</div>
+{% endif %}
 
 <div class="container">
 

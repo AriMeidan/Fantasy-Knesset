@@ -26,7 +26,7 @@ urlpatterns = patterns('',
     # used for single vote
     url(r'^vote/$', views.vote, name='vote'),
 
-    url(r'^account/register/$', views.register, name='register'),
+    url(r'^accounts/register/$', views.register, name='register'),
 
     url(r'^accounts/login/$',
         'django.contrib.auth.views.login',

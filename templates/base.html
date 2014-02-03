@@ -43,29 +43,42 @@
 			</ul>
 
 			<ul class="nav navbar-left navbar-nav">
+			<!-- Logout button -->
 			{% if user.is_authenticated %}
-				<li>
-					<a href="{% url 'votes:logout' %}">{% trans "Logout" %}</a>
+				<li class="dropdown">
+					<a href="#" data-toggle="dropdown">{% trans "Hello" %} {{ user.username }}<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">{% trans "Profile" %}</a></li>
+						<li class="divider"></li>
+						<li><a href="{% url 'votes:logout' %}">{% trans "Logout" %}</a></li>
+					</ul>
 				</li>
+				<!-- Facebook picture -->
 				{% if user.access_token %}
-					<li>
-						<img src="{{ user|fb_image }}" class="img-circle" style="height: 50px">
-					</li>
+					<li><img src="{{ user|fb_image }}" class="img-circle" style="height: 50px"></li>
 				{% endif %}
 			{% else %}
+				<!-- Login dropdown -->
 				<li class="dropdown">
 					<a href="#" data-toggle="dropdown">{% trans "Login" %}<b class="caret"></b></a>
 					<div class="dropdown-menu">
-						<!-- <div class="container"> -->
-							<form class="form-signin" role="form" method="post" action="{% url 'votes:login' %}">
-								{% csrf_token %}
-								<input type="text" class="form-control" placeholder="{% trans "Username" %}" name="username" required autofocus>
-								<input type="password" class="form-control" placeholder="{% trans "Password" %}" name="password" required>
-								<input class="btn btn-primary form-control" type="submit" value="{% trans "Sign in" %}" />
-							</form>
-						<!-- </div> -->
+						<form class="form-signin" role="form" method="post" action="{% url 'votes:login' %}">
+							{% csrf_token %}
+							<input type="text" class="form-control" placeholder="{% trans "Username" %}" name="username" required autofocus>
+							<input type="password" class="form-control" placeholder="{% trans "Password" %}" name="password" required>
+							<input class="btn btn-primary form-control" type="submit" value="{% trans "Sign in" %}" />
+						</form>
+						<!-- Log in with facebook -->
+						<form action="{% url 'facebook_connect' %}?facebook_login=1" method="post">
+							{% csrf_token %}
+							<input type="hidden" value="{{ request.path }}" name="next" />
+							<input type="hidden" value="{{ request.path }}" name="register_next" />
+							<input type="hidden" value="{{ request.path }}" name="error_next" />
+							<input onclick="F.connect(this.parentNode); return false;" type="image" src="{{ STATIC_URL }}django_facebook/images/facebook_login.png"/>
+						</form>
 					</div>
 				</li>
+				<!-- Register -->
 				<li>
 					<a href="{% url 'votes:register' %}">{% trans "Register" %}</a>
 				</li>
