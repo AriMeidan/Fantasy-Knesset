@@ -40,7 +40,9 @@
 				<li><a href="{% url 'votes:add-candidate' %}">{% trans "Add candidate" %}</a></li>
 				<li><a href="#">{% trans "About" %}</a></li>
 			</ul>
-
+        <div class="navbar-form navbar-nav">
+          <input id="candidate-search" type="text" class="form-control" placeholder="Search">
+        </div>
 			<div class="navbar-left navbar-form">
 				{% if user.is_authenticated %}
 					<a  href="{% url 'votes:logout' %}" class="btn btn-success">{% trans "Logout" %}</a>
