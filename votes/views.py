@@ -11,7 +11,7 @@ from django.db.models import F
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, redirect, render
 from django.utils import timezone
-
+from django.utils.translation import ugettext as _
 from django.views import generic
 from open_facebook.api import OpenFacebook
 from open_facebook.exceptions import ParameterException
@@ -164,7 +164,9 @@ class CreateCandidateView(generic.CreateView):
 
 class MyForm(forms.Form):
     url = forms.URLField()
-    party = forms.ModelChoiceField(Party.objects.all())
+    party = forms.ModelChoiceField(Party.objects.all(),
+                                   initial=Party.objects.get(id=14),
+                                   label=_('party'))
 
 
 def add_candidate_from_fb(request):

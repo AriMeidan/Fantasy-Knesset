@@ -7,6 +7,10 @@ from votes.models import Candidate, Party
 
 class CreateCandidateForm(forms.ModelForm):
 
+    party = forms.ModelChoiceField(Party.objects.all(),
+                                   initial=Party.objects.get(id=14),
+                                   label=_('party'))
+
     class Meta:
         model = Candidate
         exclude = [
