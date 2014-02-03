@@ -76,6 +76,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
 #Facebook login with django-facebook (5.3.1)
 
 FACEBOOK_APP_ID = '458539177591543'
