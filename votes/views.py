@@ -1,10 +1,13 @@
-import random
 import json
+import pdb
+import random
+import sys
 
 from django import forms
 from django.contrib import messages
 from django.contrib.auth import get_user_model, login, authenticate
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
 from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.db.models import F
@@ -18,6 +21,7 @@ from open_facebook.exceptions import ParameterException
 
 from votes.forms import CreateCandidateForm
 from votes.models import Candidate, Party, Log
+
 
 User = get_user_model()
 
@@ -124,6 +128,14 @@ def vote(request):
         results['success'] = True
 
     return HttpResponse(json.dumps(results))
+
+
+#for searching via autocomplete
+def search(request):
+        search_str = request.GET.get('item')
+        results = Candidate.objects.filter(name__contains=search_str)
+        data = serializers.serialize('json', results, fields=('id', 'name'))
+        return HttpResponse(data)
 
 
 def register(request):
