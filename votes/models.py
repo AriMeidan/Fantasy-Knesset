@@ -19,9 +19,6 @@ class Party(models.Model):
     def __unicode__(self):
         return self.name
 
-    class Meta:
-        verbose_name = _('party')
-
 
 class Candidate(models.Model):
     party = models.ForeignKey(Party,

@@ -8,8 +8,20 @@
 
 <div class="container">
 	<div class="well">
-	
-		<h2 class="form-signin-heading">{% trans "Please login" %}</h2>
+
+		<!-- Log in with auth user -->
+		{% if form.errors %}
+			<p>{% trans "Your username and password didn't match. Please try again." %}</p>
+		{% endif %}
+
+		<form class="form-signin" role="form" method="post" action="{% url 'votes:login' %}">
+			<h2 class="form-signin-heading">{% trans "Please login" %}</h2>
+			{% csrf_token %}
+			<input type="text" class="form-control" placeholder="{% trans "Username" %}" name="username" required autofocus>
+			<input type="password" class="form-control" placeholder="{% trans "Password" %}" name="password" required>
+			<input class="btn btn-lg btn-primary btn-block" type="submit" value="{% trans "Sign in" %}" />
+			<input type="hidden" name="next" value="{{ next }}" />
+		</form>
 
 		<!-- Log in with facebook -->
 		<div class="text-center">
@@ -21,19 +33,6 @@
 				<input onclick="F.connect(this.parentNode); return false;" type="image" src="{{ STATIC_URL }}django_facebook/images/facebook_login.png" />
 			</form>
 		</div>
-
-		<!-- Log in with auth user -->
-		{% if form.errors %}
-			<p>{% trans "Your username and password didn't match. Please try again." %}</p>
-		{% endif %}
-
-		<form class="form-signin" role="form" method="post" action="{% url 'votes:login' %}">
-			{% csrf_token %}
-			<input type="text" class="form-control" placeholder="{% trans "Username" %}" name="username" required autofocus>
-			<input type="password" class="form-control" placeholder="{% trans "Password" %}" name="password" required>
-			<input class="btn btn-lg btn-primary btn-block" type="submit" value="{% trans "Sign in" %}" />
-			<input type="hidden" name="next" value="{{ next }}" />
-		</form>
 
 		<div class="lead">
 			<p>{% trans "Don't have an account? create one" %} <a href="{% url 'votes:register' %}">{% trans "here" %}</a></p>

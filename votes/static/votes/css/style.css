@@ -16,6 +16,35 @@ footer{
 	margin-top:2em;
 }
 
+.well.dense{
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    margin: 0.25em;
+}
+
+div.with-margins{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Login */
+.form-signin {
+  text-align:center;
+  max-width: 280px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  margin-bottom: 5px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 /* D3 charts */
 svg {
     font: 10px sans-serif;

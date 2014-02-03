@@ -36,23 +36,56 @@
 
 			<ul class="nav navbar-nav">
 				<li><a href="{% url 'votes:index' %}">{% trans "Home" %}</a></li>
-				<li><a href="{% url 'votes:add-candidate' %}">{% trans "Add candidate" %}</a></li>
+				{% if perms.votes.add_candidate %}
+					<li><a href="{% url 'votes:add-from-fb' %}">{% trans "Add candidate" %}</a></li>
+				{% endif %}
 				<li><a href="#">{% trans "About" %}</a></li>
 			</ul>
         <div class="navbar-form navbar-nav">
           <input id="candidate-search" type="text" class="form-control" placeholder="Search">
         </div>
-			<div class="navbar-left navbar-form">
-				{% if user.is_authenticated %}
-					<a  href="{% url 'votes:logout' %}" class="btn btn-success">{% trans "Logout" %}</a>
-					{% if user.access_token %}
-						<img src="{{ user|fb_image }}" class="img-circle" style="height: 35px">
-					{% endif %}
-				{% else %}
-					<a  href="{% url 'votes:register' %}" class="btn btn-success">{% trans "Register" %}</a>
-					<a  href="{% url 'votes:login' %}" class="btn btn-success">{% trans "Login" %}</a>
+			<ul class="nav navbar-left navbar-nav">
+			<!-- Logout button -->
+			{% if user.is_authenticated %}
+				<li class="dropdown">
+					<a href="#" data-toggle="dropdown">{% trans "Hello" %} {{ user.username }}<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">{% trans "Profile" %}</a></li>
+						<li class="divider"></li>
+						<li><a href="{% url 'votes:logout' %}">{% trans "Logout" %}</a></li>
+					</ul>
+				</li>
+				<!-- Facebook picture -->
+				{% if user.access_token %}
+					<li><img src="{{ user|fb_image }}" class="img-circle" style="height: 50px"></li>
 				{% endif %}
-			</div>
+			{% else %}
+				<!-- Login dropdown -->
+				<li class="dropdown">
+					<a href="#" data-toggle="dropdown">{% trans "Login" %}<b class="caret"></b></a>
+					<div class="dropdown-menu">
+						<form class="form-signin" role="form" method="post" action="{% url 'votes:login' %}">
+							{% csrf_token %}
+							<input type="text" class="form-control" placeholder="{% trans "Username" %}" name="username" required autofocus>
+							<input type="password" class="form-control" placeholder="{% trans "Password" %}" name="password" required>
+							<input class="btn btn-primary form-control" type="submit" value="{% trans "Sign in" %}" />
+						</form>
+						<!-- Log in with facebook -->
+						<form action="{% url 'facebook_connect' %}?facebook_login=1" method="post">
+							{% csrf_token %}
+							<input type="hidden" value="{{ request.path }}" name="next" />
+							<input type="hidden" value="{{ request.path }}" name="register_next" />
+							<input type="hidden" value="{{ request.path }}" name="error_next" />
+							<input onclick="F.connect(this.parentNode); return false;" type="image" src="{{ STATIC_URL }}django_facebook/images/facebook_login.png"/>
+						</form>
+					</div>
+				</li>
+				<!-- Register -->
+				<li>
+					<a href="{% url 'votes:register' %}">{% trans "Register" %}</a>
+				</li>
+			{% endif %}
+			</ul>
 		</div>
 	</div>
 </div><!-- navbar -->

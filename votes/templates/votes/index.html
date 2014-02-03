@@ -6,18 +6,15 @@
 {% block content %}
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-	<div class="container">
-		{% if user.is_authenticated %}
-			<h1>{% trans "Hello," %} {{ user.username }}!</h1>
-		{% else %}
+{% if user.is_authenticated %}
+{% else %}
+	<div class="jumbotron">
+		<div class="container">
 			<h1>{% trans "Hello, Voters!" %}</h1>
-		{% endif %}
-		<p>{% trans "Choose your own Knesset Members, Check the differences between our representitves and what people accually want!" %}</p>
-		<p><a href="{% url 'votes:candidates' %}" role="button" class="btn btn-primary btn-lg">{% trans "Start voting now" %} »</a></p>
-		
+			<p>{% trans "Choose your own Knesset Members, Check the differences between our representitves and what people accually want!" %}</p>
+		</div>
 	</div>
-</div>
+{% endif %}
 
 <div class="container">
 
@@ -25,11 +22,15 @@
 	<h1 align="center">{% trans "Top 20 Candidates" %}</h1>
 	<div class="row">
 		{% for candidate in top20 %}
-			<div class="col-md-2 col-xs-4 text-center">
-				<div class="well">
-					<p><b><a href="{{ candidate.get_absolute_url }}">{{ candidate.name }}</a></b></p>
-					<div class="center-cropped center" style="background-image: url('{{ candidate.image_url}}');"></div>
-					<button class="btn btn-block btn-candidate" pk="{{ candidate.pk }}" upvote="{{ user|button_value:candidate }}"></button>
+			<div class="col-md-3 col-xs-6 text-center">
+				<div class="well dense">
+					<div class="row">
+						<div class="col-xs-1 center-cropped center" style="background-image: url('{{ candidate.image_url}}');"></div>
+						<div class="with-margins">
+							<p><b><a href="{{ candidate.get_absolute_url }}">{{ candidate.name }}</a></b></p>
+							<p><button class="align-bottom btn btn-candidate" pk="{{ candidate.pk }}" upvote="{{ user|button_value:candidate }}"></button></p>
+						</div>
+					</div>
 				</div>
 			</div>
 		{% endfor %}
