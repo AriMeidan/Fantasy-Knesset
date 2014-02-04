@@ -136,7 +136,7 @@ def add_candidate_from_fb(request):
             # party = Party.objects.get(id=request.POST.get('party'))
             party = form.cleaned_data['party']
             try:
-                res = fb.get(fb_url, fields='name, website, picture')
+                res = fb.get(fb_url, fields='name, website, picture.type(large)')
                 # add another validation
                 c = Candidate(name=res['name'],
                               image_url=res['picture']['data']['url'],
@@ -144,7 +144,7 @@ def add_candidate_from_fb(request):
                               party=party)
                 c.save()
                 messages.info(request, "Added Succesfully")
-                return redirect('votes:candidates')
+                return redirect(c.get_absolute_url())
             except ParameterException as e:
                 messages.error(request, e.message)
     else:
