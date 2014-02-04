@@ -1,5 +1,3 @@
-var candidate_id;
-
 $( "#candidate-search" ).autocomplete({
 	 source: function( request, response ) {
 		 
