@@ -74,12 +74,6 @@ class IndexView(generic.TemplateView):
         return context
 
 
-class CandidatesByPartyView(generic.ListView):
-    template_name = 'votes/candidates.html'
-    context_object_name = 'parties'
-    model = Party
-
-
 class CandidateView(generic.DetailView):
     model = Candidate
 
