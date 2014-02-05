@@ -80,6 +80,11 @@ class Candidate(models.Model):
         value = self.number_of_votes
         history.append(dict(timestamp=timestamp, value=value))
 
+        # history normalization
+        max_item = max(history, key=lambda x: x['value'])
+        for item in history:
+            item['value'] /= float(max_item['value'])
+
         return json.dumps(history)
 
 
