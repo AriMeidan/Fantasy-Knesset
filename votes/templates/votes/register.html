@@ -4,13 +4,13 @@
 {% block content %}
 
 <div class="container">
-	<div class="well">
+	<div class="well form-signin">
 
 		{% if error %}
 			<div style="color: red">{{ error }}</div>
 		{% endif %}
 
-		<form class="form-signin" role="form" method="POST" action="{% url 'votes:register' %}">
+		<form class="form-signin" role="form" method="POST">
 			{% csrf_token %}
 			<h2 class="form-signin-heading">{% trans "Please register" %}</h2>
 			<input type="text" class="form-control" placeholder="{% trans "Username" %}" name="username" required autofocus>
