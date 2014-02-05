@@ -1,20 +1,15 @@
 import json
-import pdb
 import random
-import sys
 
 from django.contrib import messages
 from django.contrib.auth import get_user_model, authenticate
 from django.contrib.auth.decorators import (login_required,
                                             permission_required)
 from django.utils.decorators import method_decorator
-from django.core import serializers
 from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse_lazy, reverse
-from django.db.models import F
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, redirect, render
-from django.utils import timezone
 from django.utils.translation import ugettext as _
 from django.views import generic
 from open_facebook.api import OpenFacebook
@@ -23,7 +18,6 @@ from open_facebook.exceptions import ParameterException
 from votes.forms import (CreateCandidateForm,
                          FacebookCreateCandidateForm)
 from votes.models import Candidate, Party, Log
-from django.db.models.base import get_absolute_url
 
 User = get_user_model()
 
@@ -155,20 +149,8 @@ def add_candidate_from_fb(request):
 
 # get candidate history json
 def candidate_history(request, pk):
-    logs = Log.objects.filter(candidate__pk=pk)
-    history = []
-    fmt = "%Y-%m-%d %H:%M"
-    for log in logs:
-        timestamp = log.timestamp.strftime(fmt)
-        value = log.number_of_votes
-        history.append(dict(timestamp=timestamp, value=value))
-
-    # always add current number of votes
-    timestamp = timezone.now().strftime(fmt)
-    value = Candidate.objects.get(pk=pk).number_of_votes
-    history.append(dict(timestamp=timestamp, value=value))
-
-    return HttpResponse(json.dumps(history))
+    c = Candidate.objects.get(pk=pk)
+    return HttpResponse(c.history())
 
 
 # for vote and unvote using AJAX
@@ -178,8 +160,9 @@ def vote(request):
     results = dict(success=False)
 
     if request.method == 'POST':
-        candidate_pk = request.POST.get('candidate_pk')
-        candidate = Candidate.objects.get(pk=candidate_pk)
+        candidate = Candidate.objects.get(
+            pk=request.POST.get('candidate_pk')
+        )
         upvote = int(request.POST.get('upvote'))
         candidate.vote(request.user, upvote=upvote)
         results['success'] = True
