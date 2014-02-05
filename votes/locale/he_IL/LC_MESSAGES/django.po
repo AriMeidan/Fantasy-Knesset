@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-05 19:27+0200\n"
+"POT-Creation-Date: 2014-02-05 21:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -162,9 +162,13 @@ msgstr "ויקיפדיה"
 msgid "OpenKnesset page"
 msgstr "עמוד בכנסת פתוחה"
 
-#: templates/votes/candidate_fb_form.html:10
+#: templates/votes/candidate_fb_form.html:11
 msgid "Paste Candidates Facebook Page Link"
 msgstr "הדבק/י את הקישור לדף הפייסבוק של המועמד שלך"
+
+#: templates/votes/candidate_fb_form.html:15
+msgid "Save"
+msgstr "שמור"
 
 #: templates/votes/candidate_form.html:9
 msgid "Enter Candidate Data"
@@ -195,15 +199,31 @@ msgid ""
 "representitves and what people accually want!"
 msgstr "בחר את חברי הכנסת שלך וגלה את ההבדל בין הכנסת הקיימת לרצון העם"
 
-#: templates/votes/index.html:22
+#: templates/votes/index.html:24
 msgid "Top 20 Candidates"
-msgstr "20 המועמדים המובילים"
+msgstr "הנבחרת - 20 המועמדים המובילים"
 
-#: templates/votes/index.html:40
+#: templates/votes/index.html:33
+msgid "weeks in top 20!"
+msgstr "שבועות בנבחרת"
+
+#: templates/votes/index.html:43
+msgid "New in top 20"
+msgstr "נכנסו לנבחרת"
+
+#: templates/votes/index.html:44 templates/votes/index.html.py:55
+msgid "Changes since last week"
+msgstr "שינויים מאז שבוע שעבר"
+
+#: templates/votes/index.html:54
+msgid "Out of top 20"
+msgstr "יצאו מהנבחרת"
+
+#: templates/votes/index.html:67
 msgid "Rest 100 Candidates"
 msgstr "יתר 100 המועמדים המובילים"
 
-#: templates/votes/index.html:59
+#: templates/votes/index.html:86
 msgid "VOTE"
 msgstr "הצבע"
 

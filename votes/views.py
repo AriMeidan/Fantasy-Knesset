@@ -65,10 +65,16 @@ class IndexView(generic.TemplateView):
         context['rest100'] = sorted(Candidate.objects.all()[20:120],
                                     key=lambda x: x.name
                                     )
-        context['fake10'] = sorted(context['top20'][:10],
+        context['fake5in'] = sorted(context['top20'][:5],
                                    key=lambda x: random.random()
                                    )
-        # context['fake10'] = Candidate.objects.order_by('?')[:10]
+        context['fake5out'] = sorted(context['rest100'][:5],
+                                     key=lambda x: random.random()
+                                     )
+
+        # adding faked time in top20
+        for cand in context['top20']:
+            cand.weeks = random.randrange(4) + 1
 
         return context
 
