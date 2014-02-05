@@ -45,6 +45,18 @@ div.with-margins{
           box-sizing: border-box;
 }
 
+/* for feedback */
+#floating_link {
+     position: fixed;
+     left: 0;
+     top: 400px;
+     display: block;
+     width: 30px;
+     height: 125px;
+     background-image: url(/static/votes/graphics/feedback.svg);
+     overflow: hidden;
+}
+
 /* D3 charts */
 svg {
     font: 10px sans-serif;
