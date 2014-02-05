@@ -4,20 +4,17 @@
 {% block content %}
 
 <div class="container">
+	<div class="well form-signin">
 
-	<div class="well">
+		<form role="form" method="post" next="/">
+			{% csrf_token %}
+			<h2 class="form-signin-heading">{% trans "Paste Candidates Facebook Page Link" %}</h2>
+			<table>
+				{{ form.as_table}}
+			</table>
+			<input class="btn btn-lg btn-primary btn-block" type="submit" value="{% trans "Save" %}" />
+		</form>
 
-		<h2 class="form-signin-heading">{% trans "Paste Candidates Facebook Page Link" %}</h2>
-		<div class="form-group">
-			<form class="form-signin" role="form" method="post" next="/">
-				{% csrf_token %}
-				<table>
-					{{ form.as_table}}
-				</table>
-				<input class="btn btn-primary" type="submit" name="Save"
-					style="text-align: center" />
-			</form>
-		</div>
 	</div>
 </div>
 
