@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-05 12:06+0200\n"
+"POT-Creation-Date: 2014-02-05 16:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,43 +16,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: forms.py:12 forms.py:27 models.py:25
+#: forms.py:12 forms.py:27 models.py:28
 msgid "party"
 msgstr "מפלגה"
 
-#: models.py:10 models.py:29
+#: models.py:13 models.py:32
 msgid "name"
 msgstr "שם"
 
-#: models.py:11
+#: models.py:14
 msgid "official site"
 msgstr "אתר רשמי"
 
-#: models.py:12 models.py:33
+#: models.py:15 models.py:36
 msgid "facebook_page"
 msgstr "דף פייסבוק"
 
-#: models.py:14 models.py:35
+#: models.py:17 models.py:38
 msgid "wikipedia_article"
 msgstr "עמוד הויקיפדיה"
 
-#: models.py:15 models.py:36
+#: models.py:18 models.py:39
 msgid "wikipedia_url"
 msgstr "קישור ויקיפדיה"
 
-#: models.py:16 models.py:37
+#: models.py:19 models.py:40
 msgid "open_knesset_url"
 msgstr "הדף באתר כנסת פתוחה"
 
-#: models.py:17
+#: models.py:20
 msgid "logo_url"
 msgstr "קישור לתמונת הלוגו"
 
-#: models.py:32
+#: models.py:35
 msgid "personal site"
 msgstr "אתר אישי"
 
-#: models.py:39
+#: models.py:42
 msgid "picture_url"
 msgstr "קישור לתמונה"
 
@@ -73,77 +72,69 @@ msgstr "שגיאת 404"
 msgid "500: Internal server error"
 msgstr "שגיאת 500"
 
-#: templates/base.html:9
-msgid "fantasy Knesset"
-msgstr "פנטזי כנסת"
+#: templates/base.html:9 templates/base.html.py:36
+msgid "Games of Knesset"
+msgstr "משחקי הכנסת"
 
-#: templates/base.html:27
+#: templates/base.html:29
 msgid "Toggle navigation"
 msgstr "אפשר ניווט"
 
-#: templates/base.html:32
-msgid "Fantasy Knesset"
-msgstr "פנטזי כנסת"
-
-#: templates/base.html:38
-msgid "Home"
-msgstr "עמוד הבית"
-
-#: templates/base.html:40
+#: templates/base.html:46
 msgid "Add candidate"
 msgstr "הוסף מועמד"
 
-#: templates/base.html:42
+#: templates/base.html:48
 msgid "About"
 msgstr "אודות"
 
-#: templates/base.html:45
+#: templates/base.html:50
 msgid "Search"
 msgstr "חפש"
 
-#: templates/base.html:51
+#: templates/base.html:61
 msgid "Hello"
 msgstr "שלום"
 
-#: templates/base.html:53
+#: templates/base.html:63
 msgid "Profile"
 msgstr "פרופיל"
 
-#: templates/base.html:55
+#: templates/base.html:65
 msgid "Logout"
 msgstr "התנתק"
 
-#: templates/base.html:65
+#: templates/base.html:78
+msgid "Register"
+msgstr "הרשמה"
+
+#: templates/base.html:82
 msgid "Login"
 msgstr "התחבר"
 
-#: templates/base.html:69 templates/votes/login.html:20
+#: templates/base.html:86 templates/votes/login.html:20
 #: templates/votes/register.html:16
 msgid "Username"
 msgstr "שם משתמש"
 
-#: templates/base.html:70 templates/votes/login.html:21
+#: templates/base.html:87 templates/votes/login.html:21
 #: templates/votes/register.html:17
 msgid "Password"
 msgstr "סיסמא"
 
-#: templates/base.html:71 templates/votes/login.html:22
+#: templates/base.html:88 templates/votes/login.html:22
 msgid "Sign in"
 msgstr "התחבר"
 
-#: templates/base.html:85
-msgid "Register"
-msgstr "הרשמה"
-
-#: templates/base.html:101
+#: templates/base.html:117
 msgid "Hackita 2013"
 msgstr "הכיתה 2013"
 
-#: templates/base.html:122
+#: templates/base.html:138
 msgid "UnVote"
 msgstr "בטל הצבעה"
 
-#: templates/base.html:122
+#: templates/base.html:138
 msgid "Vote"
 msgstr "הצבע"
 
