@@ -8,6 +8,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+from django.core.exceptions import ImproperlyConfigured
+
 def get_environ(key, critical=True):
     '''
     Safe way to get environment variable.
@@ -99,7 +101,8 @@ STATICFILES_DIRS = (
 
 FACEBOOK_APP_ID = '458539177591543'
 
-FACEBOOK_APP_SECRET = '251ae0871fc004b092782183a32cfc7f'
+FACEBOOK_APP_SECRET = get_environ('FACEBOOK_APP_SECRET',
+                                  critical=False)
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
