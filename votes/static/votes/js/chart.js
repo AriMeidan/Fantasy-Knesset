@@ -13,9 +13,13 @@ var x = d3.time.scale().range([0, width]),
 	y = d3.scale.linear().range([height, 0]),
 	y2 = d3.scale.linear().range([height2, 0]);
 
+// Removing yAxis
+// var xAxis = d3.svg.axis().scale(x).orient("bottom"),
+// 	xAxis2 = d3.svg.axis().scale(x2).orient("bottom"),
+// 	yAxis = d3.svg.axis().scale(y).orient("left");
+
 var xAxis = d3.svg.axis().scale(x).orient("bottom"),
-	xAxis2 = d3.svg.axis().scale(x2).orient("bottom"),
-	yAxis = d3.svg.axis().scale(y).orient("left");
+	xAxis2 = d3.svg.axis().scale(x2).orient("bottom");
 
 var brush = d3.svg.brush()
 	.x(x2)
@@ -71,9 +75,10 @@ d3.json("history", function(error, data) {
 	  .attr("transform", "translate(0," + height + ")")
 	  .call(xAxis);
 
-  focus.append("g")
-	  .attr("class", "y axis")
-	  .call(yAxis);
+  // Removing yAxis
+  // focus.append("g")
+	 //  .attr("class", "y axis")
+	 //  .call(yAxis);
 
   context.append("path")
 	  .datum(data)

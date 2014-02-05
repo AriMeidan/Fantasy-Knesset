@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="container">
+	<div class="well">
+
+		<h1>{% trans "Feedbacks are always welcome" %}</h1>
+		<p>
+			{% blocktrans %}A very pretty form will appear here shortly, meanwhile you are more then welcome to send your feedback to {% endblocktrans %}
+			<a href="mailto:games.of.knesset@gmail.com">games.of.knesset@gmail.com</a>
+		</p>
+
+	</div>
+</div>
+
+{% endblock %}

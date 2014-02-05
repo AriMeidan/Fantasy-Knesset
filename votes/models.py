@@ -1,7 +1,10 @@
+import json
+
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.utils import timezone
 from django.utils.translation import ugettext as _
 from django.core.validators import URLValidator
 
@@ -58,6 +61,31 @@ class Candidate(models.Model):
 
     class Meta:
         ordering = ['-number_of_votes']
+
+    def history(self):
+        '''
+        Returns a json with the candidate history log.
+        '''
+
+        logs = Log.objects.filter(candidate__pk=self.pk)
+        history = []
+        fmt = "%Y-%m-%d %H:%M"
+        for log in logs:
+            timestamp = log.timestamp.strftime(fmt)
+            value = log.number_of_votes
+            history.append(dict(timestamp=timestamp, value=value))
+
+        # always add current number of votes
+        timestamp = timezone.now().strftime(fmt)
+        value = self.number_of_votes
+        history.append(dict(timestamp=timestamp, value=value))
+
+        # history normalization
+        max_item = max(history, key=lambda x: x['value'])
+        for item in history:
+            item['value'] /= float(max_item['value'])
+
+        return json.dumps(history)
 
 
 class Log(models.Model):

@@ -8,6 +8,11 @@ div.center-cropped {
     background-size: cover;
 }
 
+.navbar-brand {
+  padding: 0px;
+  color: orange;
+}
+
 footer{
 	background: #333;
 	color: #fff;
@@ -43,6 +48,18 @@ div.with-margins{
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+/* for feedback */
+#floating_link {
+     position: fixed;
+     left: 0;
+     top: 400px;
+     display: block;
+     width: 30px;
+     height: 125px;
+     background-image: url(/static/votes/graphics/feedback.svg);
+     overflow: hidden;
 }
 
 /* D3 charts */
