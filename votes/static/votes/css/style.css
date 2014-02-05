@@ -8,6 +8,11 @@ div.center-cropped {
     background-size: cover;
 }
 
+.navbar-brand {
+  padding: 0px;
+  color: orange;
+}
+
 footer{
 	background: #333;
 	color: #fff;
