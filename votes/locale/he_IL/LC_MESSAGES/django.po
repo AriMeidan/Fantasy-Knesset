@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-23 17:08+0200\n"
+"POT-Creation-Date: 2014-02-05 12:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,47 +17,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: forms.py:20
-msgid "Independent"
-msgstr "לא משוייך"
-
-#: models.py:19 models.py:38
-msgid "name"
-msgstr "שם"
-
-#: models.py:20
-msgid "official site"
-msgstr "אתר רשמי"
-
-#: models.py:21 models.py:42
-msgid "facebook_page"
-msgstr "דף פייסבוק"
-
-#: models.py:22 models.py:43
-msgid "wikipedia_article"
-msgstr "עמוד הויקיפדיה"
-
-#: models.py:23 models.py:44
-msgid "wikipedia_url"
-msgstr "קישור ויקיפדיה"
-
-#: models.py:24 models.py:45
-msgid "open_knesset_url"
-msgstr "הדף באתר כנסת פתוחה"
-
-#: models.py:25
-msgid "logo_url"
-msgstr "קישור לתמונת הלוגו"
-
-#: models.py:34
+#: forms.py:12 forms.py:27 models.py:25
 msgid "party"
 msgstr "מפלגה"
 
-#: models.py:41
+#: models.py:10 models.py:29
+msgid "name"
+msgstr "שם"
+
+#: models.py:11
+msgid "official site"
+msgstr "אתר רשמי"
+
+#: models.py:12 models.py:33
+msgid "facebook_page"
+msgstr "דף פייסבוק"
+
+#: models.py:14 models.py:35
+msgid "wikipedia_article"
+msgstr "עמוד הויקיפדיה"
+
+#: models.py:15 models.py:36
+msgid "wikipedia_url"
+msgstr "קישור ויקיפדיה"
+
+#: models.py:16 models.py:37
+msgid "open_knesset_url"
+msgstr "הדף באתר כנסת פתוחה"
+
+#: models.py:17
+msgid "logo_url"
+msgstr "קישור לתמונת הלוגו"
+
+#: models.py:32
 msgid "personal site"
 msgstr "אתר אישי"
 
-#: models.py:46
+#: models.py:39
 msgid "picture_url"
 msgstr "קישור לתמונה"
 
@@ -77,67 +73,97 @@ msgstr "שגיאת 404"
 msgid "500: Internal server error"
 msgstr "שגיאת 500"
 
-#: templates/base.html:8
+#: templates/base.html:9
 msgid "fantasy Knesset"
 msgstr "פנטזי כנסת"
 
-#: templates/base.html:50
+#: templates/base.html:27
 msgid "Toggle navigation"
 msgstr "אפשר ניווט"
 
-#: templates/base.html:55
+#: templates/base.html:32
 msgid "Fantasy Knesset"
 msgstr "פנטזי כנסת"
 
-#: templates/base.html:71
-msgid "Hackita 2013"
-msgstr "הכיתה 2013"
-
-#: templates/navbar_panel.html:7
+#: templates/base.html:38
 msgid "Home"
 msgstr "עמוד הבית"
 
-#: templates/navbar_panel.html:8
-msgid "All candidates"
-msgstr "כל המועמדים"
-
-#: templates/navbar_panel.html:9
+#: templates/base.html:40
 msgid "Add candidate"
 msgstr "הוסף מועמד"
 
-#: templates/navbar_panel.html:10
+#: templates/base.html:42
 msgid "About"
 msgstr "אודות"
 
-#: templates/navbar_panel.html:15
+#: templates/base.html:45
+msgid "Search"
+msgstr "חפש"
+
+#: templates/base.html:51
+msgid "Hello"
+msgstr "שלום"
+
+#: templates/base.html:53
+msgid "Profile"
+msgstr "פרופיל"
+
+#: templates/base.html:55
 msgid "Logout"
 msgstr "התנתק"
 
-#: templates/navbar_panel.html:20
-msgid "Register"
-msgstr "הרשמה"
-
-#: templates/navbar_panel.html:21
+#: templates/base.html:65
 msgid "Login"
 msgstr "התחבר"
 
-#: templates/votes/candidate_detail.html:13
+#: templates/base.html:69 templates/votes/login.html:20
+#: templates/votes/register.html:16
+msgid "Username"
+msgstr "שם משתמש"
+
+#: templates/base.html:70 templates/votes/login.html:21
+#: templates/votes/register.html:17
+msgid "Password"
+msgstr "סיסמא"
+
+#: templates/base.html:71 templates/votes/login.html:22
+msgid "Sign in"
+msgstr "התחבר"
+
+#: templates/base.html:85
+msgid "Register"
+msgstr "הרשמה"
+
+#: templates/base.html:101
+msgid "Hackita 2013"
+msgstr "הכיתה 2013"
+
+#: templates/base.html:122
+msgid "UnVote"
+msgstr "בטל הצבעה"
+
+#: templates/base.html:122
+msgid "Vote"
+msgstr "הצבע"
+
+#: templates/votes/candidate_detail.html:15
 msgid "Knesset member"
 msgstr "חבר/ה בכנסת הנוכחית"
 
-#: templates/votes/candidate_detail.html:19
+#: templates/votes/candidate_detail.html:26
 msgid "Personal site"
 msgstr "אתר אישי"
 
-#: templates/votes/candidate_detail.html:22
+#: templates/votes/candidate_detail.html:29
 msgid "Facebook page"
 msgstr "עמוד פייסבוק"
 
-#: templates/votes/candidate_detail.html:25
+#: templates/votes/candidate_detail.html:32
 msgid "Wikipedia"
 msgstr "ויקיפדיה"
 
-#: templates/votes/candidate_detail.html:28
+#: templates/votes/candidate_detail.html:35
 msgid "OpenKnesset page"
 msgstr "עמוד בכנסת פתוחה"
 
@@ -153,79 +179,43 @@ msgstr "הכנס/י את הנתונים של המועמד שלך"
 msgid "Submit"
 msgstr "שלח"
 
-#: templates/votes/candidates.html:10
-msgid "Search for candidate"
-msgstr "חפש מועמד"
-
-#: templates/votes/candidates.html:11
-msgid "Your candidate is not in this list? Add him / her"
-msgstr "לא מוצא מועמד/ת ברשימה? הוסף אותו/ה בלינק"
-
-#: templates/votes/candidates.html:11 templates/votes/login.html:39
-msgid "here"
-msgstr "הבא"
-
-#: templates/votes/candidates.html:33 templates/votes/index.html:35
-msgid "UnVote"
-msgstr "בטל הצבעה"
-
-#: templates/votes/candidates.html:35 templates/votes/index.html:37
-msgid "Vote"
-msgstr "הצבע"
-
-#: templates/votes/index.html:11
-msgid "Hello,"
-msgstr "ברוך הבא"
-
 #: templates/votes/index.html:13
 msgid "Hello, Voters!"
 msgstr "ברוך הבא!"
 
-#: templates/votes/index.html:15
+#: templates/votes/index.html:14
 msgid ""
 "Choose your own Knesset Members, Check the differences between our "
 "representitves and what people accually want!"
 msgstr "בחר את חברי הכנסת שלך וגלה את ההבדל בין הכנסת הקיימת לרצון העם"
 
-#: templates/votes/index.html:16
-msgid "Start voting now"
-msgstr "את מי את/ה היית רוצה לראות בכנסת?"
-
-#: templates/votes/index.html:24
+#: templates/votes/index.html:22
 msgid "Top 20 Candidates"
 msgstr "20 המועמדים המובילים"
 
-#: templates/votes/index.html:48
+#: templates/votes/index.html:40
 msgid "Rest 100 Candidates"
 msgstr "יתר 100 המועמדים המובילים"
 
-#: templates/votes/index.html:67
+#: templates/votes/index.html:59
 msgid "VOTE"
 msgstr "הצבע"
 
-#: templates/votes/login.html:12
-msgid "Please login"
-msgstr "מלא פרטי התחברות"
-
-#: templates/votes/login.html:27
+#: templates/votes/login.html:14
 msgid "Your username and password didn't match. Please try again."
 msgstr "שם המתשמש והסיסמא אינם תואמים. אנא נסה שוב."
 
-#: templates/votes/login.html:32 templates/votes/register.html:16
-msgid "Username"
-msgstr "שם משתמש"
+#: templates/votes/login.html:18
+msgid "Please login"
+msgstr "מלא פרטי התחברות"
 
-#: templates/votes/login.html:33 templates/votes/register.html:17
-msgid "Password"
-msgstr "סיסמא"
-
-#: templates/votes/login.html:34
-msgid "Sign in"
-msgstr "התחבר"
-
-#: templates/votes/login.html:39
+#: templates/votes/login.html:38
 msgid "Don't have an account? create one"
 msgstr "אין לך עדיין משתמש? צור אחד בלינק"
+
+#: templates/votes/login.html:38
+msgid "here"
+msgstr "הבא"
 
 #: templates/votes/register.html:15
 msgid "Please register"
@@ -234,6 +224,3 @@ msgstr "מלא פרטי הרשמה"
 #: templates/votes/register.html:18
 msgid "Sign up"
 msgstr "הרשם"
-
-#~ msgid "VOTING HISTORY WILL BE GRAPHED HERE USING D3"
-#~ msgstr "היסטורית ההצבעות תופיעה כאן בויזואליזציה מאוד מאוד מרשימה בקרוב :-)"
