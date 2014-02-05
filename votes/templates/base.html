@@ -45,7 +45,7 @@
 				{% if perms.votes.add_candidate %}
 					<li><a href="{% url 'votes:add-from-fb' %}">{% trans "Add candidate" %}</a></li>
 				{% endif %}
-				<li><a href="#">{% trans "About" %}</a></li>
+				<li><a href="{% url 'votes:work-in-progress' %}">{% trans "About" %}</a></li>
 				<li class="navbar-form">
 					<input id="candidate-search" type="text" class="form-control" placeholder="{% trans "Search" %}">
 				</li>
@@ -60,7 +60,7 @@
 					<li class="dropdown">
 						<a href="#" data-toggle="dropdown">{% trans "Hello" %} {{ user.username }} <b class="caret"></b></a>
 						<ul class="dropdown-menu pull-left">
-							<li><a href="#">{% trans "Profile" %}</a></li>
+							<li><a href="{% url 'votes:work-in-progress' %}">{% trans "Profile" %}</a></li>
 							<li class="divider"></li>
 							<li><a href="{% url 'votes:logout' %}">{% trans "Logout" %}</a></li>
 						</ul>
@@ -109,7 +109,7 @@
 {% endblock %}
 
 <!-- floating feedback link -->
-<a id="floating_link" href="#"></a>
+<a id="floating_link" href="{% url 'votes:feedback' %}"></a>
 
 <!-- footer -->
 <footer>

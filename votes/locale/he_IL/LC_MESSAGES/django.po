@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-05 16:20+0200\n"
+"POT-Creation-Date: 2014-02-05 16:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -170,6 +170,17 @@ msgstr "הכנס/י את הנתונים של המועמד שלך"
 msgid "Submit"
 msgstr "שלח"
 
+#: templates/votes/feedback.html:9
+msgid "Feedbacks are always welcome"
+msgstr "יש לכם הערות? נשמח לשמוע!"
+
+#: templates/votes/feedback.html:11
+msgid ""
+"A very pretty form will appear here shortly, meanwhile you are more then "
+"welcome to send your feedback to "
+msgstr ""
+"טופס שליחת פידבק יופיע כאן בקרוב. בנתיים אתם מוזמנים לכתוב כל הערה לכתובת"
+
 #: templates/votes/index.html:13
 msgid "Hello, Voters!"
 msgstr "ברוך הבא!"
@@ -215,3 +226,11 @@ msgstr "מלא פרטי הרשמה"
 #: templates/votes/register.html:18
 msgid "Sign up"
 msgstr "הרשם"
+
+#: templates/votes/work_in_progress.html:9
+msgid "The page is still in construction"
+msgstr "העמוד עדיין בבניה"
+
+#: templates/votes/work_in_progress.html:11
+msgid "Visit again soon to see this cool feature in action!"
+msgstr "בקרו כאן בקרוב, יהיו הפתעות :-)"

@@ -73,6 +73,18 @@ class CandidateView(generic.DetailView):
 
 
 #----------------------------------------------------------
+#       STATIC CONTENT VIEWS
+#----------------------------------------------------------
+
+class FeedbackView(generic.TemplateView):
+    template_name = 'votes/feedback.html'
+
+
+class WorkInProgress(generic.TemplateView):
+    template_name = 'votes/work_in_progress.html'
+
+
+#----------------------------------------------------------
 #       DATA CREATION VIEWS (POSTS -> redirect)
 #----------------------------------------------------------
 
