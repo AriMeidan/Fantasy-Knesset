@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-05 16:57+0200\n"
+"POT-Creation-Date: 2014-02-05 19:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,69 +72,73 @@ msgstr "שגיאת 404"
 msgid "500: Internal server error"
 msgstr "שגיאת 500"
 
-#: templates/base.html:9 templates/base.html.py:36
+#: templates/base.html:9 templates/base.html.py:43
 msgid "Games of Knesset"
 msgstr "משחקי הכנסת"
 
-#: templates/base.html:29
+#: templates/base.html:27
+msgid "We are still in alpha. Lots of great features on the way!"
+msgstr "האתר בשלבי הקמה. מחכים עוד הרבה שיפורים בקנה!"
+
+#: templates/base.html:36
 msgid "Toggle navigation"
 msgstr "אפשר ניווט"
 
-#: templates/base.html:46
+#: templates/base.html:53
 msgid "Add candidate"
 msgstr "הוסף מועמד"
 
-#: templates/base.html:48
+#: templates/base.html:55
 msgid "About"
 msgstr "אודות"
 
-#: templates/base.html:50
+#: templates/base.html:57
 msgid "Search"
 msgstr "חפש"
 
-#: templates/base.html:61
+#: templates/base.html:68
 msgid "Hello"
 msgstr "שלום"
 
-#: templates/base.html:63
+#: templates/base.html:70
 msgid "Profile"
 msgstr "פרופיל"
 
-#: templates/base.html:65
+#: templates/base.html:72
 msgid "Logout"
 msgstr "התנתק"
 
-#: templates/base.html:78
+#: templates/base.html:85
 msgid "Register"
 msgstr "הרשמה"
 
-#: templates/base.html:82
+#: templates/base.html:89
 msgid "Login"
 msgstr "התחבר"
 
-#: templates/base.html:86 templates/votes/login.html:20
+#: templates/base.html:93 templates/votes/login.html:20
 #: templates/votes/register.html:16
 msgid "Username"
 msgstr "שם משתמש"
 
-#: templates/base.html:87 templates/votes/login.html:21
+#: templates/base.html:94 templates/votes/login.html:21
 #: templates/votes/register.html:17
 msgid "Password"
 msgstr "סיסמא"
 
-#: templates/base.html:88 templates/votes/login.html:22
+#: templates/base.html:95 templates/votes/login.html:22
 msgid "Sign in"
 msgstr "התחבר"
 
-#: templates/base.html:117
+#: templates/base.html:124
 msgid "Hackita 2013"
 msgstr "הכיתה 2013"
 
-#: templates/base.html:138
+#: templates/base.html:145
 msgid "UnVote"
 msgstr "בטל הצבעה"
 
-#: templates/base.html:138
+#: templates/base.html:145
 msgid "Vote"
 msgstr "הצבע"
 

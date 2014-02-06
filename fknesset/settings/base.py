@@ -8,6 +8,23 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+from django.core.exceptions import ImproperlyConfigured
+
+def get_environ(key, critical=True):
+    '''
+    Safe way to get environment variable.
+    Recommendation from "Two Scoops" (p. 39).
+    '''
+
+    try:
+        return os.environ[key]
+    except Exception, e:
+        if critical:
+            raise ImproperlyConfigured('Set the {}'
+                ' environment variable'.format(key))
+        return None
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
@@ -17,7 +34,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'not_so_secret_dev_secret_key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,7 +101,8 @@ STATICFILES_DIRS = (
 
 FACEBOOK_APP_ID = '458539177591543'
 
-FACEBOOK_APP_SECRET = '251ae0871fc004b092782183a32cfc7f'
+FACEBOOK_APP_SECRET = get_environ('FACEBOOK_APP_SECRET',
+                                  critical=False)
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
