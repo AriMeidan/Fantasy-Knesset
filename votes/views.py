@@ -187,7 +187,6 @@ def vote(request):
 def search(request):
         search_str = request.GET.get('item')
         str_to_match = re.compile(r'^'+search_str+'|([\u05D0-\u05EA]+(\s|[^\u05D0-\u05EA])+)'+search_str)
-        print str_to_match.pattern
         results = Candidate.objects.filter(name__regex=str_to_match.pattern)
         data = []
         for candidate in results:
