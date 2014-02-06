@@ -1,12 +1,10 @@
 import json
 
 from django.conf import settings
-from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext as _
-from django.core.validators import URLValidator
 
 
 class Party(models.Model):
@@ -68,22 +66,22 @@ class Candidate(models.Model):
         '''
 
         logs = Log.objects.filter(candidate__pk=self.pk)
-        history = []
         fmt = "%Y-%m-%d %H:%M"
-        for log in logs:
-            timestamp = log.timestamp.strftime(fmt)
-            value = log.number_of_votes
-            history.append(dict(timestamp=timestamp, value=value))
+        history = [dict(timestamp=log.timestamp.strftime(fmt),
+                        value=log.number_of_votes) \
+                   for log in logs]
 
         # always add current number of votes
-        timestamp = timezone.now().strftime(fmt)
-        value = self.number_of_votes
-        history.append(dict(timestamp=timestamp, value=value))
+        history.append(dict(
+            timestamp=timezone.now().strftime(fmt),
+            value=self.number_of_votes)
+        )
 
         # history normalization
         max_item = max(history, key=lambda x: x['value'])
-        for item in history:
-            item['value'] /= float(max_item['value'])
+        if max_item['value'] != 0:
+            for item in history:
+                item['value'] /= float(max_item['value'])
 
         return json.dumps(history)
 
