@@ -1,5 +1,6 @@
 import json
 import random
+import re
 
 from django.contrib import messages
 from django.contrib.auth import get_user_model, authenticate
@@ -196,7 +197,8 @@ def vote(request):
 # for searching via autocomplete
 def search(request):
         search_str = request.GET.get('item')
-        results = Candidate.objects.filter(name__contains=search_str)
+        str_to_match = re.compile(r'^'+search_str+'|([\u05D0-\u05EA]+(\s|[^\u05D0-\u05EA])+)'+search_str)
+        results = Candidate.objects.filter(name__regex=str_to_match.pattern)
         data = []
         for candidate in results:
             url = candidate.get_absolute_url()

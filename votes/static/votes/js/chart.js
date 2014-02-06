@@ -1,6 +1,6 @@
 var real_height = 300
-	margin = {top: 10, right: 0, bottom: 100, left: 30},
-	margin2 = {top: real_height - 70, right: 0, bottom: 20, left: 30},
+	margin = {top: 10, right: 5, bottom: 100, left: 5},
+	margin2 = {top: real_height - 70, right: 5, bottom: 20, left: 5},
 	available_width = parseInt(d3.select("#chart").style("width")),
 	width = available_width - margin.left - margin.right,
 	height = real_height - margin.top - margin.bottom,
