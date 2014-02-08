@@ -43,15 +43,8 @@ along with "Games of Knesset".  If not, see <http://www.gnu.org/licenses/>.
 </head>
 <body>
 
-<!-- Still in alpha note -->
-<div style="background-color:rgba(200, 0, 0, 0.5)">
-	<div class="container text-center">
-		{% trans "We are still in alpha. Lots of great features on the way!" %}
-	</div>
-</div>
-
 <!-- navbar -->
-<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+<div class="navbar navbar-inverse navbar-static-top navbar-fixed-top" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -132,20 +125,29 @@ along with "Games of Knesset".  If not, see <http://www.gnu.org/licenses/>.
 	</div>
 </div><!-- navbar -->
 
-{% include "_messages.html" %}
+<!-- Still in alpha note -->
+<div style="background-color:rgba(200, 0, 0, 0.5)">
+	<div class="container text-center">
+		{% trans "We are still in alpha. Lots of great features on the way!" %}
+	</div>
+</div>
+
+<!-- error messages -->
+{% for message in messages %}
+	<div class="container">
+		<div class="alert{% if message.tags %} alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}{% endif %} alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			{{ message|safe }}
+		</div>
+	</div>
+{% endfor %}
+
 {% block content %}
 
 {% endblock %}
 
 <!-- floating feedback link -->
 <a id="floating_link" href="{% url 'votes:feedback' %}"></a>
-
-<!-- footer -->
-<footer>
-	<div class="container">
-		<p>&copy; Ari Meidan And Tom Gurion</p>
-	</div>
-</footer>
 
 <!-- jQuery (necessary for Bootstrap's JS plugins) -->
 <script src="{% static 'jquery/jquery-2.1.0.min.js' %}"></script>
