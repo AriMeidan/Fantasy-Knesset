@@ -7,13 +7,13 @@ SECRET_KEY = get_environ('SECRET_KEY')
 DEBUG = False
 
 # SECURITY!
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
 
 # add SSLifyMiddleware as the first MIDDLEWARE_CLASSE
-classes = list(MIDDLEWARE_CLASSES)
-classes.insert(0, 'sslify.middleware.SSLifyMiddleware')
-MIDDLEWARE_CLASSES = tuple(classes)
+# classes = list(MIDDLEWARE_CLASSES)
+# classes.insert(0, 'sslify.middleware.SSLifyMiddleware')
+# MIDDLEWARE_CLASSES = tuple(classes)
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
