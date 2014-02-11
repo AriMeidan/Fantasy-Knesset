@@ -173,9 +173,10 @@ def add_candidate_from_fb(request):
                 c = Candidate(name=res['name'],
                               image_url=res['picture']['data']['url'],
                               personal_site=res.get('website', None),
+                              facebook_page = fb_url,
                               party=party)
                 c.save()
-                messages.info(request, "Added Succesfully")
+                messages.info(request, "Added Successfully")
                 return redirect(c.get_absolute_url())
             except ParameterException as e:
                 messages.error(request, e.message)
