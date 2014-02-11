@@ -17,7 +17,6 @@ You should have received a copy of the GNU General Public License
 along with "Games of Knesset".  If not, see <http://www.gnu.org/licenses/>.
 '''
 
-
 import json
 import random
 import re
@@ -26,19 +25,21 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model, authenticate
 from django.contrib.auth.decorators import (login_required,
                                             permission_required)
+from django.core.exceptions import ValidationError
+from django.core.validators import URLValidator
 from django.utils.decorators import method_decorator
 from django.core.context_processors import csrf
-from django.core.urlresolvers import reverse_lazy, reverse
+from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, redirect, render
-from django.utils.translation import ugettext as _
 from django.views import generic
 from open_facebook.api import OpenFacebook
 from open_facebook.exceptions import ParameterException
 
 from votes.forms import (CreateCandidateForm,
                          FacebookCreateCandidateForm)
-from votes.models import Candidate, Party, Log
+from votes.models import Candidate
+
 
 User = get_user_model()
 
@@ -169,11 +170,23 @@ def add_candidate_from_fb(request):
             party = form.cleaned_data['party']
             try:
                 res = fb.get(fb_url, fields='name, website, picture.type(large)')
+                sites = res.get('website', None).split(' ')
+                for site in sites:
+                    try:
+                        if site == '':
+                            continue
+                        URLValidator(site)
+                        val = site
+                        break
+                    except ValidationError as e:
+                        print site, "is not a valid url"
+                        continue
+
                 # add another validation
                 c = Candidate(name=res['name'],
                               image_url=res['picture']['data']['url'],
-                              personal_site=res.get('website', None),
-                              facebook_page = fb_url,
+                              personal_site=val,
+                              facebook_page=fb_url,
                               party=party)
                 c.save()
                 messages.info(request, "Added Successfully")
