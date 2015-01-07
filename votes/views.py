@@ -22,7 +22,7 @@ import random
 import re
 
 from django.contrib import messages
-from django.contrib.auth import get_user_model, authenticate
+from django.contrib.auth import get_user_model, authenticate, login
 from django.contrib.auth.decorators import (login_required,
                                             permission_required)
 from django.core.exceptions import ValidationError

@@ -13,7 +13,7 @@ First, run the initial requirements and local database setup:
 ```bash
 $ mkvirtualenv fknesset  # Using a Python virtualenv is highly recommended
 $ pip install -r requirements.txt
-$ python manage.py syncdb
+$ python manage.py syncdb --migrate
 ```
 
 Next, you can import some data using:
@@ -23,3 +23,7 @@ python manage.py populate_database
 ```
 
 You now have a basic environment to work on :)
+
+```bash
+python manage.py runserver
+```
